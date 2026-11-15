@@ -1849,13 +1849,6 @@
       topicPill.title = q.topic;
       leftTop.appendChild(topicPill);
 
-      if (isAnswered) {
-        const statusTag = document.createElement('span');
-        statusTag.className = `status-tag ${isCorrect ? 'correct' : 'wrong'}`;
-        statusTag.textContent = isCorrect ? '✓ Correct' : '✗ Incorrect';
-        leftTop.appendChild(statusTag);
-      }
-
       // Right Badges
       const badgesDiv = document.createElement('div');
       badgesDiv.className = 'card-badges';
@@ -1924,22 +1917,10 @@
         if (isRevealed) {
           if (key === userAns && isCorrect) {
             optBtn.classList.add('selected-correct');
-            const tag = document.createElement('span');
-            tag.className = 'opt-tag correct';
-            tag.textContent = '✓ Your Answer';
-            optBtn.appendChild(tag);
           } else if (key === userAns && !isCorrect) {
             optBtn.classList.add('selected-wrong');
-            const tag = document.createElement('span');
-            tag.className = 'opt-tag wrong';
-            tag.textContent = '✗ Your Choice';
-            optBtn.appendChild(tag);
           } else if (key === q.answer) {
             optBtn.classList.add('revealed-correct');
-            const tag = document.createElement('span');
-            tag.className = 'opt-tag correct';
-            tag.textContent = '✓ Correct Answer';
-            optBtn.appendChild(tag);
           } else {
             optBtn.classList.add('dimmed');
           }
@@ -1965,6 +1946,11 @@
           } else {
             msg.innerHTML = `<span>❌ Incorrect. The correct answer is <strong>Option ${q.answer}</strong>: ${escapeHtml(q.options[q.answer])}</span>`;
           }
+          footer.appendChild(msg);
+        } else {
+          const msg = document.createElement('div');
+          msg.className = 'feedback-message';
+          msg.innerHTML = `<span>The correct answer is <strong>Option ${q.answer}</strong>: ${escapeHtml(q.options[q.answer])}</span>`;
           footer.appendChild(msg);
         }
 
