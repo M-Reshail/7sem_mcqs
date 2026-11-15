@@ -1,0 +1,10 @@
+# Python cache & scripts
+__pycache__/
+*.pyc
+build_page.py
+update_app.py
+mcqs_data.json
+
+# OS files
+.DS_Store
+Thumbs.db
