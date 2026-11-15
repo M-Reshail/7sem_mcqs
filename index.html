@@ -651,18 +651,14 @@
       align-items: center;
       justify-content: space-between;
       gap: 0.5rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.55rem;
       width: 100%;
     }
 
     .card-meta-left {
       display: flex;
-      flex-wrap: nowrap;
       align-items: center;
-      gap: 0.4rem;
-      flex: 1;
-      min-width: 0;
-      overflow: hidden;
+      gap: 0.45rem;
     }
 
     .q-id-pill {
@@ -698,19 +694,25 @@
       border: 1px solid rgba(99, 102, 241, 0.3);
     }
 
+    .card-topic-row {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+    }
+
     .topic-pill {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-secondary);
       background: var(--bg-subtle);
-      padding: 0.18rem 0.58rem;
-      border-radius: 9999px;
+      padding: 0.22rem 0.65rem;
+      border-radius: 6px;
       border: 1px solid var(--border-color);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      flex-shrink: 1;
-      min-width: 0;
+      line-height: 1.35;
+      word-break: break-word;
+      white-space: normal;
+      display: inline-block;
+      max-width: 100%;
     }
 
     .card-badges {
@@ -1189,19 +1191,21 @@
         flex-wrap: nowrap;
         align-items: center;
         gap: 0.35rem;
-        margin-bottom: 0.65rem;
+        margin-bottom: 0.45rem;
       }
       .card-meta-left {
         width: auto;
         gap: 0.3rem;
-        min-width: 0;
+      }
+      .card-topic-row {
+        margin-bottom: 0.6rem;
       }
       .topic-pill {
-        font-size: 0.7rem;
-        max-width: 140px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 0.74rem;
+        padding: 0.18rem 0.52rem;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
       }
       .card-badges {
         width: auto;
@@ -1859,14 +1863,7 @@
       typePill.textContent = q.type === 'calculation' ? '🧮 Calc' : '📖 Theory';
       leftTop.appendChild(typePill);
 
-      // Topic Name
-      const topicPill = document.createElement('span');
-      topicPill.className = 'topic-pill';
-      topicPill.textContent = q.topic;
-      topicPill.title = q.topic;
-      leftTop.appendChild(topicPill);
-
-      // Right Badges
+      // Right Badges (Show Answer and Star in front of Question Number)
       const badgesDiv = document.createElement('div');
       badgesDiv.className = 'card-badges';
 
@@ -1901,6 +1898,15 @@
       topDiv.appendChild(leftTop);
       topDiv.appendChild(badgesDiv);
       card.appendChild(topDiv);
+
+      // Line 2: Dedicated Topic Row (Full topic name visible without cut-off)
+      const topicRow = document.createElement('div');
+      topicRow.className = 'card-topic-row';
+      const topicPill = document.createElement('span');
+      topicPill.className = 'topic-pill';
+      topicPill.textContent = q.topic;
+      topicRow.appendChild(topicPill);
+      card.appendChild(topicRow);
 
       // Question Text
       const title = document.createElement('div');
