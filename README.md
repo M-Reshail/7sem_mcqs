@@ -28,3 +28,4 @@ Ready to deploy on [Vercel](https://vercel.com) with zero configuration.
 - `index.html`: The main web application (fully self-contained, no external runtime dependencies).
 - `mcqs.json`: Full structured JSON dataset containing topics, questions, options, answers, formulas, and calculations.
 - `vercel.json`: Vercel static deployment configuration.
+
