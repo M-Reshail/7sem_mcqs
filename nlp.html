@@ -1347,6 +1347,144 @@
       }
     }
   
+    .header-brand-dropdown-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .header-brand-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s, border-color 0.15s;
+      user-select: none;
+      color: inherit;
+    }
+
+    .header-brand-btn:hover {
+      background: var(--bg-subtle);
+      border-color: var(--border-color);
+    }
+
+    .brand-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dropdown-chevron {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      transition: transform 0.2s ease;
+      line-height: 1;
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+    }
+
+    .header-brand-dropdown-wrapper.open .dropdown-chevron {
+      transform: rotate(180deg);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .subject-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      min-width: 270px;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 0.45rem;
+      z-index: 150;
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+      animation: dropdownFade 0.15s ease-out;
+    }
+
+    .header-brand-dropdown-wrapper.open .subject-dropdown-menu {
+      display: flex;
+    }
+
+    @keyframes dropdownFade {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown-header-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      padding: 0.25rem 0.5rem 0.1rem;
+    }
+
+    .subject-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.7rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.15s;
+    }
+
+    .subject-dropdown-item:hover {
+      background: var(--primary-light);
+    }
+
+    .subject-dropdown-item.active {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+    }
+
+    .subject-dropdown-item .subj-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .subject-dropdown-item .subj-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .subject-dropdown-item .subj-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .subject-dropdown-item .subj-meta {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+    }
+
+    .subject-dropdown-item .subj-check {
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
     .subject-switch-badge {
       font-size: 0.68rem;
       font-weight: 700;
@@ -1378,14 +1516,37 @@
           <span></span>
         </button>
 
-        <div class="header-brand">
-          <div class="brand-logo" style="background: linear-gradient(135deg, #10b981, #059669);">NLP</div>
-          <div class="brand-title-wrap">
-            <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
-              <h1>NLP MCQ Bank</h1>
-              <a href="./index.html" class="subject-switch-badge" title="Switch to Data Visualization MCQs">Switch to DV →</a>
+        <!-- Subject Dropdown Wrapper -->
+        <div class="header-brand-dropdown-wrapper" id="subjectDropdownWrap">
+          <button class="header-brand-btn" id="subjectDropdownBtn" aria-haspopup="true" aria-expanded="false" title="Click to switch subject">
+            <div class="brand-logo" style="background: linear-gradient(135deg, #10b981, #059669);">NLP</div>
+            <div class="brand-title-wrap">
+              <div class="brand-title-row">
+                <h1>NLP MCQ Bank</h1>
+                <span class="dropdown-chevron">▾</span>
+              </div>
+              <p>200 Questions &bull; Lectures 1–8</p>
             </div>
-            <p>200 Questions &bull; Lectures 1–8</p>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="subject-dropdown-menu" id="subjectDropdownMenu">
+            <div class="dropdown-header-label">Select Subject</div>
+            <a href="./index.html" class="subject-dropdown-item">
+              <span class="subj-icon">📊</span>
+              <div class="subj-info">
+                <span class="subj-name">Data Visualization</span>
+                <span class="subj-meta">300 Questions &bull; 23 Topics</span>
+              </div>
+            </a>
+            <a href="./nlp.html" class="subject-dropdown-item active">
+              <span class="subj-icon">🤖</span>
+              <div class="subj-info">
+                <span class="subj-name">Natural Language Processing</span>
+                <span class="subj-meta">200 Questions &bull; 8 Lectures</span>
+              </div>
+              <span class="subj-check">✓</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1680,6 +1841,21 @@
     const toastEl = document.getElementById('toast');
     const backToTopBtn = document.getElementById('backToTopBtn');
     const drawerShuffleBtn = document.getElementById('drawerShuffleBtn');
+
+    // Subject Dropdown Toggle
+    const subjectDropdownWrap = document.getElementById('subjectDropdownWrap');
+    const subjectDropdownBtn = document.getElementById('subjectDropdownBtn');
+    if (subjectDropdownBtn && subjectDropdownWrap) {
+      subjectDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        subjectDropdownWrap.classList.toggle('open');
+      });
+      document.addEventListener('click', (e) => {
+        if (!subjectDropdownWrap.contains(e.target)) {
+          subjectDropdownWrap.classList.remove('open');
+        }
+      });
+    }
 
     // Theme setup
     function applyTheme() {
