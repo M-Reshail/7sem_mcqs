@@ -1582,7 +1582,7 @@
     <!-- Active Filter & Mode Summary Strip -->
     <div class="filter-summary-strip">
       <div class="filter-summary-inner">
-        <span class="active-mode-tag" id="activeModeSummary">🔀 Mode 2: All MCQs (200)</span>
+        <span class="active-mode-tag" id="activeModeSummary">📚 All 200 MCQs (8 Lectures)</span>
         <span class="active-filter-tag" id="activeFilterSummary">All</span>
         <span class="active-revision-tag" id="activeRevisionSummary" style="display: none;">📖 Revision (Answers Green)</span>
         <span class="btn-open-menu-link" id="openMenuLink">⚙️ Menu &amp; Filters</span>
@@ -1635,33 +1635,20 @@
         </div>
       </div>
 
-      <!-- Section 1: Study Modes -->
-      <div>
+      <!-- Section 1: Lecture Filter -->
+      <div id="drawerTopicSection">
         <div class="drawer-section-title">
-          <span>⚡ Study Mode</span>
+          <span>🏷️ Filter by Lecture (8 Lectures)</span>
+          <span id="topicSelectedCountBadge" style="font-size:0.72rem; color:var(--text-secondary);">(8/8)</span>
         </div>
-        <div class="drawer-mode-list">
-          <label class="drawer-mode-card" data-mode="mode1">
-            <input type="radio" name="studyModeRadio" value="mode1" class="drawer-mode-radio" />
-            <div class="drawer-mode-text">
-              <div class="drawer-mode-name">
-                <span>📚 Mode 1: Lecture-wise</span>
-                <span style="font-size:0.75rem; color:var(--primary);">8 Lectures</span>
-              </div>
-              <div class="drawer-mode-sub">Study topic-by-topic with lecture filter checkboxes (25 MCQs each).</div>
-            </div>
-          </label>
-
-          <label class="drawer-mode-card active" data-mode="mode2">
-            <input type="radio" name="studyModeRadio" value="mode2" class="drawer-mode-radio" checked />
-            <div class="drawer-mode-text">
-              <div class="drawer-mode-name">
-                <span>🔀 Mode 2: All Mixed</span>
-                <span style="font-size:0.75rem; color:var(--success);">200 MCQs</span>
-              </div>
-              <div class="drawer-mode-sub">Full question bank in sequential (Q1→Q200) or shuffled order.</div>
-            </div>
-          </label>
+        <div class="drawer-topic-box">
+          <div style="display: flex; gap: 0.4rem; justify-content: flex-end;">
+            <button class="btn-filter-pill" id="selectAllTopicsBtn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;">Select All</button>
+            <button class="btn-filter-pill" id="clearAllTopicsBtn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;">Clear</button>
+          </div>
+          <div class="drawer-topic-chips-grid" id="topicChipsGrid">
+            <!-- Injected via JS -->
+          </div>
         </div>
       </div>
 
@@ -1702,32 +1689,15 @@
         </div>
       </div>
 
-      <!-- Section 5: Lecture Filter (Mode 1 only) -->
-      <div id="drawerTopicSection" style="display: none;">
-        <div class="drawer-section-title">
-          <span>🏷️ Filter by Lecture (8 Lectures)</span>
-          <span id="topicSelectedCountBadge" style="font-size:0.72rem; color:var(--text-secondary);">(8/8)</span>
-        </div>
-        <div class="drawer-topic-box">
-          <div style="display: flex; gap: 0.4rem; justify-content: flex-end;">
-            <button class="btn-filter-pill" id="selectAllTopicsBtn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;">Select All</button>
-            <button class="btn-filter-pill" id="clearAllTopicsBtn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;">Clear</button>
-          </div>
-          <div class="drawer-topic-chips-grid" id="topicChipsGrid">
-            <!-- Injected via JS -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 6: Quick Actions -->
+      <!-- Section 5: Quick Actions -->
       <div>
         <div class="drawer-section-title">
           <span>⚡ Actions</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 0.45rem;">
-          <!-- Mode 2 Shuffle Toggle -->
+          <!-- Shuffle Toggle -->
           <button class="drawer-action-btn" id="drawerShuffleBtn">
-            <span>🔀</span> <span id="shuffleBtnText">Shuffle Questions (Mode 2)</span>
+            <span>🔀</span> <span id="shuffleBtnText">Shuffle Questions (Random Order)</span>
           </button>
 
           <!-- Question Grid Jump -->
@@ -1798,7 +1768,6 @@
 
     // Application State
     const state = {
-      studyMode: localStorage.getItem('nlp_study_mode') || 'mode2',
       viewType: localStorage.getItem('nlp_view_type') || 'list',
       filter: 'all',
       searchQuery: '',
@@ -1931,17 +1900,14 @@
       document.getElementById('statAccuracy').textContent = `${accuracy}%`;
     }
 
-    // Get Base Pool by Active Study Mode
+    // Get Base Pool of MCQs
     function getBasePoolMCQs() {
-      if (state.studyMode === 'mode1') {
-        return MCQS.filter(m => state.selectedTopics.has(m.topicCode));
-      } else {
-        if (state.isShuffled && state.shuffledIds.length === MCQS.length) {
-          const map = new Map(MCQS.map(m => [m.id, m]));
-          return state.shuffledIds.map(id => map.get(id));
-        }
-        return MCQS;
+      const topicFiltered = MCQS.filter(m => state.selectedTopics.has(m.topicCode));
+      if (state.isShuffled && state.shuffledIds.length === MCQS.length) {
+        const map = new Map(MCQS.map(m => [m.id, m]));
+        return state.shuffledIds.map(id => map.get(id)).filter(m => state.selectedTopics.has(m.topicCode));
       }
+      return topicFiltered;
     }
 
     // Get Filtered MCQs
@@ -2043,15 +2009,10 @@
 
     // Update Summary Strip Text
     function updateSummaryStrip() {
-      if (state.studyMode === 'mode1') {
-        activeModeSummary.textContent = `📚 Mode 1: Lectures (${state.selectedTopics.size}/8)`;
-        drawerShuffleBtn.style.display = 'none';
-        drawerTopicSection.style.display = 'block';
-        buildTopicSelector();
+      if (state.isShuffled) {
+        activeModeSummary.textContent = state.selectedTopics.size === 8 ? '🔀 Shuffled (200)' : `🔀 Shuffled (${state.selectedTopics.size}/8)`;
       } else {
-        activeModeSummary.textContent = state.isShuffled ? '🔀 Mode 2: Shuffled (200)' : '🔀 Mode 2: All MCQs (200)';
-        drawerShuffleBtn.style.display = 'flex';
-        drawerTopicSection.style.display = 'none';
+        activeModeSummary.textContent = state.selectedTopics.size === 8 ? '📚 All 200 MCQs (8 Lectures)' : `📚 Lectures (${state.selectedTopics.size}/8)`;
       }
 
       let filterLabel = 'All';
@@ -2322,7 +2283,7 @@
     function renderActiveView() {
       const items = getFilteredMCQs();
 
-      if (state.studyMode === 'mode1' && state.selectedTopics.size === 0) {
+      if (state.selectedTopics.size === 0) {
         mcqListEl.innerHTML = '';
         focusContainerEl.style.display = 'none';
         emptyStateEl.style.display = 'block';
@@ -2412,33 +2373,6 @@
       focusCardEl.appendChild(nav);
     }
 
-    // Mode Selection in Drawer
-    function setStudyMode(mode) {
-      state.studyMode = mode;
-      localStorage.setItem('nlp_study_mode', mode);
-
-      document.querySelectorAll('.drawer-mode-card').forEach(card => {
-        const isMatch = card.dataset.mode === mode;
-        card.classList.toggle('active', isMatch);
-        const radio = card.querySelector('input[type="radio"]');
-        if (radio) radio.checked = isMatch;
-      });
-
-      state.focusIndex = 0;
-      updateSummaryStrip();
-      updateStats();
-      renderActiveView();
-    }
-
-    document.querySelectorAll('.drawer-mode-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const mode = card.dataset.mode;
-        if (mode && mode !== state.studyMode) {
-          setStudyMode(mode);
-        }
-      });
-    });
-
     // View Style Tabs (List vs Focus)
     document.getElementById('viewListTab').addEventListener('click', () => {
       if (state.viewType !== 'list') {
@@ -2498,11 +2432,8 @@
       renderActiveView();
     });
 
-    // Mode 2 Shuffle Button in Drawer
+    // Shuffle Button in Drawer
     drawerShuffleBtn.addEventListener('click', () => {
-      if (state.studyMode !== 'mode2') {
-        setStudyMode('mode2');
-      }
       state.isShuffled = !state.isShuffled;
       if (state.isShuffled) {
         const ids = MCQS.map(m => m.id);
@@ -2515,7 +2446,7 @@
         showToast('200 MCQs shuffled randomly');
       } else {
         state.shuffledIds = [];
-        document.getElementById('shuffleBtnText').textContent = 'Shuffle Questions (Mode 2)';
+        document.getElementById('shuffleBtnText').textContent = 'Shuffle Questions (Random Order)';
         showToast('Restored sequential order');
       }
       updateSummaryStrip();
@@ -2554,7 +2485,7 @@
         btn.onclick = () => {
           matrixModal.classList.remove('open');
 
-          if (state.studyMode === 'mode1' && !state.selectedTopics.has(q.topicCode)) {
+          if (!state.selectedTopics.has(q.topicCode)) {
             state.selectedTopics.add(q.topicCode);
             saveTopics();
             buildTopicSelector();
@@ -2665,9 +2596,11 @@
       document.getElementById('viewListTab').classList.remove('active');
       document.getElementById('viewFocusTab').classList.add('active');
     }
+    buildTopicSelector();
+    updateSummaryStrip();
     updateRevisionUI();
-    setStudyMode(state.studyMode);
     updateStats();
+    renderActiveView();
   </script>
 </body>
 </html>
