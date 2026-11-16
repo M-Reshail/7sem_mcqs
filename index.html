@@ -345,6 +345,22 @@
       padding: 0.15rem 0.5rem;
       border-radius: 9999px;
     }
+    .subject-switch-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+      border: 1px solid var(--border-color);
+      padding: 0.15rem 0.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .subject-switch-badge:hover {
+      background: var(--primary);
+      color: #fff;
+    }
 
     /* Active Mode & Filter Status Bar */
     .filter-summary-strip {
@@ -1363,7 +1379,10 @@
         <div class="header-brand">
           <div class="brand-logo">DV</div>
           <div class="brand-title-wrap">
-            <h1>DV MCQ Bank</h1>
+            <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+              <h1>DV MCQ Bank</h1>
+              <a href="./nlp.html" class="subject-switch-badge" title="Switch to NLP MCQs">Switch to NLP →</a>
+            </div>
             <p>300 Questions &bull; Clean View</p>
           </div>
         </div>
@@ -1422,6 +1441,21 @@
     </div>
 
     <div class="drawer-body">
+      <!-- Section: Subject Selection -->
+      <div>
+        <div class="drawer-section-title">
+          <span>📚 Select Subject</span>
+        </div>
+        <div class="drawer-segmented" style="padding: 4px; gap: 4px;">
+          <a href="./index.html" class="drawer-segmented-btn active" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem; padding:0.5rem 0.4rem;">
+            <span>📊 DV (300)</span>
+          </a>
+          <a href="./nlp.html" class="drawer-segmented-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem; padding:0.5rem 0.4rem;">
+            <span>🤖 NLP (200)</span>
+          </a>
+        </div>
+      </div>
+
       <!-- Section 0: Revision Mode Toggle -->
       <div>
         <div class="drawer-section-title">
@@ -1973,6 +2007,8 @@
 
       const isRevision = !!state.isRevisionMode;
       const userAns = state.userAnswers[q.id];
+      const isAnswered = !!userAns;
+      const isRevealed = state.revealedAnswers.has(q.id) || isAnswered;
       const isAnswered = !isRevision && !!userAns;
       const isRevealed = isRevision || state.revealedAnswers.has(q.id) || isAnswered;
       const isCorrect = userAns === q.answer;
@@ -2004,6 +2040,7 @@
       const badgesDiv = document.createElement('div');
       badgesDiv.className = 'card-badges';
 
+      if (isAnswered || isRevealed) {
       if (isRevision) {
         const keyPill = document.createElement('span');
         keyPill.className = 'revision-key-pill';
@@ -2080,6 +2117,7 @@
         optBtn.appendChild(letter);
         optBtn.appendChild(textSpan);
 
+        if (isRevealed) {
         if (isRevision) {
           if (key === q.answer) {
             optBtn.classList.add('selected-correct');
@@ -2111,6 +2149,7 @@
         const footer = document.createElement('div');
         footer.className = 'card-footer';
 
+        if (isAnswered) {
         if (isRevision) {
           const msg = document.createElement('div');
           msg.className = 'feedback-message correct';
