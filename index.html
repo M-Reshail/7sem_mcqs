@@ -245,6 +245,107 @@
       color: var(--text-primary);
     }
 
+    /* Fast Revision Pill Button */
+    .btn-revision-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.36rem 0.75rem;
+      border-radius: 9999px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      flex-shrink: 0;
+    }
+    .btn-revision-pill:hover {
+      border-color: var(--success);
+      background: var(--success-light);
+      color: var(--success-text);
+    }
+    .btn-revision-pill.active {
+      background: var(--success) !important;
+      border-color: var(--success) !important;
+      color: #fff !important;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+    }
+
+    .active-revision-tag {
+      font-size: 0.72rem;
+      background: var(--success-light);
+      color: var(--success-text);
+      border: 1px solid var(--success-border);
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .drawer-revision-card {
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transition: all 0.2s;
+    }
+    .drawer-revision-card.active {
+      border-color: var(--success);
+      background: var(--success-light);
+    }
+    .drawer-revision-text {
+      flex: 1;
+    }
+    .drawer-revision-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .drawer-revision-desc {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+      line-height: 1.35;
+    }
+    .drawer-revision-toggle-btn {
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 1px solid var(--border-color);
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+    .drawer-revision-card.active .drawer-revision-toggle-btn {
+      background: var(--success);
+      border-color: var(--success);
+      color: #fff;
+    }
+    .revision-key-pill {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--success-text);
+      background: var(--success-light);
+      border: 1px solid var(--success-border);
+      padding: 0.15rem 0.5rem;
+      border-radius: 9999px;
+    }
+
     /* Active Mode & Filter Status Bar */
     .filter-summary-strip {
       background: var(--bg-surface);
@@ -1236,6 +1337,13 @@
         height: 38px;
         font-size: 0.75rem;
       }
+      .btn-revision-pill {
+        padding: 0.28rem 0.55rem;
+        font-size: 0.75rem;
+      }
+      .btn-revision-pill .rev-pill-text {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -1262,6 +1370,12 @@
       </div>
 
       <div class="header-right">
+        <!-- Fast Revision Mode Pill Button -->
+        <button class="btn-revision-pill" id="revisionToggleBtn" title="Toggle Revision Mode (Pre-highlight all answers in green)">
+          <span>📖</span>
+          <span class="rev-pill-text">Revision</span>
+        </button>
+
         <!-- Compact Score Pill -->
         <div class="header-score-pill" id="scorePill" title="Your performance summary">
           <span class="score-item c-ok" id="statCorrect">✓ 0</span>
@@ -1288,6 +1402,7 @@
       <div class="filter-summary-inner">
         <span class="active-mode-tag" id="activeModeSummary">🔀 Mode 3: All MCQs (300)</span>
         <span class="active-filter-tag" id="activeFilterSummary">All</span>
+        <span class="active-revision-tag" id="activeRevisionSummary" style="display: none;">📖 Revision (Answers Green)</span>
         <span class="btn-open-menu-link" id="openMenuLink">⚙️ Menu &amp; Filters</span>
       </div>
     </div>
@@ -1307,6 +1422,22 @@
     </div>
 
     <div class="drawer-body">
+      <!-- Section 0: Revision Mode Toggle -->
+      <div>
+        <div class="drawer-section-title">
+          <span>📖 Fast Revision Mode</span>
+        </div>
+        <div class="drawer-revision-card" id="drawerRevisionCard">
+          <div class="drawer-revision-text">
+            <div class="drawer-revision-name">
+              <span>Pre-highlight Answers</span>
+            </div>
+            <div class="drawer-revision-desc">Shows all correct options in green. Works with Calc, Theory, Topics &amp; all filters.</div>
+          </div>
+          <button class="drawer-revision-toggle-btn" id="drawerRevisionToggleBtn">Turn ON</button>
+        </div>
+      </div>
+
       <!-- Section 1: Study Modes -->
       <div>
         <div class="drawer-section-title">
@@ -1495,6 +1626,7 @@
       viewType: localStorage.getItem('dv_view_type') || 'list',
       filter: 'all',
       searchQuery: '',
+      isRevisionMode: localStorage.getItem('dv_revision_mode') === 'true',
       theme: localStorage.getItem('dv_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
       userAnswers: JSON.parse(localStorage.getItem('dv_answers') || '{}'),
       revealedAnswers: new Set(JSON.parse(localStorage.getItem('dv_reveals') || '[]')),
@@ -1521,6 +1653,10 @@
     const openMenuLink = document.getElementById('openMenuLink');
     const activeModeSummary = document.getElementById('activeModeSummary');
     const activeFilterSummary = document.getElementById('activeFilterSummary');
+    const activeRevisionSummary = document.getElementById('activeRevisionSummary');
+    const revisionToggleBtn = document.getElementById('revisionToggleBtn');
+    const drawerRevisionToggleBtn = document.getElementById('drawerRevisionToggleBtn');
+    const drawerRevisionCard = document.getElementById('drawerRevisionCard');
     const drawerTopicSection = document.getElementById('drawerTopicSection');
     const topicChipsGrid = document.getElementById('topicChipsGrid');
     const topicSelectedCountBadge = document.getElementById('topicSelectedCountBadge');
@@ -1835,9 +1971,10 @@
       card.className = 'mcq-card';
       card.id = `mcq-card-${q.id}`;
 
+      const isRevision = !!state.isRevisionMode;
       const userAns = state.userAnswers[q.id];
-      const isAnswered = !!userAns;
-      const isRevealed = state.revealedAnswers.has(q.id) || isAnswered;
+      const isAnswered = !isRevision && !!userAns;
+      const isRevealed = isRevision || state.revealedAnswers.has(q.id) || isAnswered;
       const isCorrect = userAns === q.answer;
 
       if (isAnswered) {
@@ -1867,7 +2004,13 @@
       const badgesDiv = document.createElement('div');
       badgesDiv.className = 'card-badges';
 
-      if (isAnswered || isRevealed) {
+      if (isRevision) {
+        const keyPill = document.createElement('span');
+        keyPill.className = 'revision-key-pill';
+        keyPill.textContent = `Ans: ${q.answer}`;
+        keyPill.title = `Correct option is ${q.answer}`;
+        badgesDiv.appendChild(keyPill);
+      } else if (isAnswered || isRevealed) {
         const retryBtn = document.createElement('button');
         retryBtn.className = 'btn-filter-pill';
         retryBtn.style.padding = '0.15rem 0.5rem';
@@ -1937,7 +2080,14 @@
         optBtn.appendChild(letter);
         optBtn.appendChild(textSpan);
 
-        if (isRevealed) {
+        if (isRevision) {
+          if (key === q.answer) {
+            optBtn.classList.add('selected-correct');
+          } else {
+            optBtn.classList.add('dimmed');
+          }
+          optBtn.style.cursor = 'default';
+        } else if (isRevealed) {
           if (key === userAns && isCorrect) {
             optBtn.classList.add('selected-correct');
           } else if (key === userAns && !isCorrect) {
@@ -1961,7 +2111,12 @@
         const footer = document.createElement('div');
         footer.className = 'card-footer';
 
-        if (isAnswered) {
+        if (isRevision) {
+          const msg = document.createElement('div');
+          msg.className = 'feedback-message correct';
+          msg.innerHTML = `<span>✅ Correct Answer: <strong>Option ${q.answer}</strong> — ${escapeHtml(q.options[q.answer])}</span>`;
+          footer.appendChild(msg);
+        } else if (isAnswered) {
           const msg = document.createElement('div');
           msg.className = `feedback-message ${isCorrect ? 'correct' : 'wrong'}`;
           if (isCorrect) {
@@ -2354,11 +2509,45 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // Fast Revision Mode Handlers
+    function updateRevisionUI() {
+      const active = !!state.isRevisionMode;
+      if (revisionToggleBtn) {
+        revisionToggleBtn.classList.toggle('active', active);
+        const textSpan = revisionToggleBtn.querySelector('.rev-pill-text');
+        if (textSpan) textSpan.textContent = active ? 'Revision ON' : 'Revision';
+        revisionToggleBtn.title = active ? 'Revision Mode is ON: Click to switch to Practice Quiz Mode' : 'Click to turn ON Fast Revision Mode (All answers pre-highlighted in green)';
+      }
+
+      if (drawerRevisionCard) {
+        drawerRevisionCard.classList.toggle('active', active);
+      }
+      if (drawerRevisionToggleBtn) {
+        drawerRevisionToggleBtn.textContent = active ? 'Turn OFF' : 'Turn ON';
+      }
+
+      if (activeRevisionSummary) {
+        activeRevisionSummary.style.display = active ? 'inline-flex' : 'none';
+      }
+    }
+
+    function toggleRevisionMode() {
+      state.isRevisionMode = !state.isRevisionMode;
+      localStorage.setItem('dv_revision_mode', state.isRevisionMode);
+      updateRevisionUI();
+      renderActiveView();
+      showToast(state.isRevisionMode ? '📖 Revision Mode ON: All answers pre-highlighted in green' : '🎯 Practice Mode ON: Questions interactive');
+    }
+
+    if (revisionToggleBtn) revisionToggleBtn.addEventListener('click', toggleRevisionMode);
+    if (drawerRevisionToggleBtn) drawerRevisionToggleBtn.addEventListener('click', toggleRevisionMode);
+
     // Initialization
     if (state.viewType === 'focus') {
       document.getElementById('viewListTab').classList.remove('active');
       document.getElementById('viewFocusTab').classList.add('active');
     }
+    updateRevisionUI();
     setStudyMode(state.studyMode);
     updateStats();
   </script>
