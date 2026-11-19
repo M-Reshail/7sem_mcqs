@@ -105,7 +105,10 @@
 
     /* Sleek Clean App Bar */
     .app-header {
+      position: -webkit-sticky;
       position: sticky;
+      top: 0;
+      z-index: 200;
       top: 0;
       z-index: 60;
       background: var(--bg-surface);
@@ -1407,7 +1410,7 @@
     /* Responsive Adjustments */
     @media (max-width: 600px) {
       html, body {
-        overflow-x: hidden;
+        overflow-x: clip;
         max-width: 100%;
       }
       body {
@@ -1512,6 +1515,26 @@
       }
     }
   
+  
+    /* Direct Solution Text (No separate box, clean flow) */
+    .direct-solution-text {
+      margin-top: 0.45rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      word-break: break-word;
+      padding-left: 0.2rem;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+    .btn-header-icon {
+      flex-shrink: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -1531,13 +1554,7 @@
         <div class="header-brand-dropdown-wrapper" id="subjectDropdownWrap">
           <button class="header-brand-btn" id="subjectDropdownBtn" aria-haspopup="true" aria-expanded="false" title="Click to switch subject">
             <div class="brand-logo" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);">ANN</div>
-            <div class="brand-title-wrap">
-              <div class="brand-title-row">
-                <h1>ANN MCQ Bank</h1>
-                <span class="dropdown-chevron">▾</span>
-              </div>
-              <p>200 Questions &bull; Clean View</p>
-            </div>
+            <span class="dropdown-chevron" style="font-size:0.85rem; color:var(--text-secondary); margin-left:2px;">▾</span>
           </button>
 
           <!-- Dropdown Menu -->
@@ -1782,6 +1799,11 @@
             <span>📑</span> <span>Open Navigator Grid (Q1–Q200)</span>
           </button>
 
+          <!-- Theme Toggle in Menu -->
+          <button class="drawer-action-btn" id="drawerThemeBtn">
+            <span id="drawerThemeIcon">🌙</span> <span id="drawerThemeText">Switch Theme (Dark / Light)</span>
+          </button>
+
           <!-- Reset Scores -->
           <button class="drawer-action-btn danger" id="resetProgressBtn">
             <span>↺</span> <span>Reset All Answers &amp; Scores</span>
@@ -1962,7 +1984,9 @@
       state.theme = theme;
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('ann_theme', theme);
-      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      const drawerIcon = document.getElementById('drawerThemeIcon');
+      if (drawerIcon) drawerIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
     }
     applyTheme(state.theme);
 
@@ -1970,6 +1994,14 @@
       applyTheme(state.theme === 'dark' ? 'light' : 'dark');
       showToast(state.theme === 'dark' ? 'Dark theme enabled' : 'Light theme enabled');
     });
+
+    const drawerThemeBtn = document.getElementById('drawerThemeBtn');
+    if (drawerThemeBtn) {
+      drawerThemeBtn.addEventListener('click', () => {
+        applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+        showToast(state.theme === 'dark' ? 'Dark theme enabled' : 'Light theme enabled');
+      });
+    }
 
     // Drawer Open/Close
     function openDrawer() {
@@ -2269,11 +2301,7 @@
         optBtn.appendChild(textSpan);
 
         if (isRevision) {
-          if (key === q.answer) {
-            optBtn.classList.add('selected-correct');
-          } else {
-            optBtn.classList.add('dimmed');
-          }
+          // Do not highlight the option button in revision mode as requested
           optBtn.style.cursor = 'default';
         } else if (isRevealed) {
           if (key === userAns && isCorrect) {
@@ -2294,7 +2322,7 @@
 
       card.appendChild(optionsContainer);
 
-      // Card Footer & Explanations
+      // Card Footer & Explanations (Clean, without separate containers or topic/solution labels)
       if (isRevealed) {
         const footer = document.createElement('div');
         footer.className = 'card-footer';
@@ -2302,68 +2330,45 @@
         if (isRevision) {
           const msg = document.createElement('div');
           msg.className = 'feedback-message correct';
-          msg.innerHTML = `<span>✅ Correct Answer: <strong>Option ${q.answer}</strong> — ${escapeHtml(q.options[q.answer])}</span>`;
+          msg.innerHTML = `<span>Correct Answer: <strong>Option ${q.answer}</strong></span>`;
           footer.appendChild(msg);
+
+          // In numerical solution, show solution just below it without separate container or labels
+          if (q.type === 'calculation' && q.explanation) {
+            const sol = document.createElement('div');
+            sol.className = 'direct-solution-text';
+            sol.textContent = q.explanation;
+            footer.appendChild(sol);
+          }
         } else if (isAnswered) {
           const msg = document.createElement('div');
           msg.className = `feedback-message ${isCorrect ? 'correct' : 'wrong'}`;
           if (isCorrect) {
-            msg.innerHTML = '<span>🎉 Great job! Correct option!</span>';
+            msg.innerHTML = `<span>🎉 Correct! Option ${q.answer}</span>`;
           } else {
-            msg.innerHTML = `<span>❌ Incorrect. The correct answer is <strong>Option ${q.answer}</strong>: ${escapeHtml(q.options[q.answer])}</span>`;
+            msg.innerHTML = `<span>❌ Incorrect. Correct Answer: <strong>Option ${q.answer}</strong></span>`;
           }
           footer.appendChild(msg);
+
+          if (q.explanation) {
+            const sol = document.createElement('div');
+            sol.className = 'direct-solution-text';
+            sol.textContent = q.explanation;
+            footer.appendChild(sol);
+          }
         } else {
+          // Revealed via Show Answer
           const msg = document.createElement('div');
           msg.className = 'feedback-message';
-          msg.innerHTML = `<span>The correct answer is <strong>Option ${q.answer}</strong>: ${escapeHtml(q.options[q.answer])}</span>`;
+          msg.innerHTML = `<span>Correct Answer: <strong>Option ${q.answer}</strong></span>`;
           footer.appendChild(msg);
-        }
 
-        if (q.explanation) {
-          const calcPanel = document.createElement('div');
-          calcPanel.className = 'calc-explanation-panel';
-
-          const calcTitle = document.createElement('div');
-          calcTitle.className = 'calc-explanation-title';
-          if (q.type === 'calculation') {
-            calcTitle.innerHTML = '<span>📐 Numerical Solution &amp; Steps</span>';
-          } else {
-            calcTitle.style.color = 'var(--primary)';
-            calcTitle.innerHTML = '<span>💡 Conceptual Explanation</span>';
+          if (q.explanation) {
+            const sol = document.createElement('div');
+            sol.className = 'direct-solution-text';
+            sol.textContent = q.explanation;
+            footer.appendChild(sol);
           }
-          calcPanel.appendChild(calcTitle);
-
-          // Line 1: Topic
-          const line1 = document.createElement('div');
-          line1.className = 'calc-line';
-          const label1 = document.createElement('span');
-          label1.className = 'calc-line-label';
-          label1.textContent = 'Topic:';
-          const val1 = document.createElement('span');
-          val1.className = 'calc-line-value';
-          val1.textContent = q.topic;
-          line1.appendChild(label1);
-          line1.appendChild(val1);
-          calcPanel.appendChild(line1);
-
-          // Line 2: Solution / Explanation
-          const line2 = document.createElement('div');
-          line2.className = 'calc-line';
-          const label2 = document.createElement('span');
-          label2.className = 'calc-line-label';
-          label2.textContent = q.type === 'calculation' ? 'Solution:' : 'Key Concept:';
-          const val2 = document.createElement('span');
-          val2.className = 'calc-line-value';
-          if (q.type !== 'calculation') {
-            val2.style.fontFamily = 'inherit';
-          }
-          val2.textContent = q.explanation;
-          line2.appendChild(label2);
-          line2.appendChild(val2);
-          calcPanel.appendChild(line2);
-
-          footer.appendChild(calcPanel);
         }
 
         card.appendChild(footer);

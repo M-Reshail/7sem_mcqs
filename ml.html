@@ -104,7 +104,10 @@
 
     /* Sleek Clean App Bar */
     .app-header {
+      position: -webkit-sticky;
       position: sticky;
+      top: 0;
+      z-index: 200;
       top: 0;
       z-index: 60;
       background: var(--bg-surface);
@@ -1257,7 +1260,7 @@
     /* Responsive Adjustments */
     @media (max-width: 600px) {
       html, body {
-        overflow-x: hidden;
+        overflow-x: clip;
         max-width: 100%;
       }
       body {
@@ -1516,8 +1519,37 @@
       background: var(--primary);
       color: #fff;
     }
+  
+    /* Direct Solution Text (No separate box, clean flow) */
+    .direct-solution-text {
+      margin-top: 0.45rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      word-break: break-word;
+      padding-left: 0.2rem;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+    .btn-header-icon {
+      flex-shrink: 0;
+    }
+
   </style>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/insights/script.js">
+    const drawerThemeBtn = document.getElementById('drawerThemeBtn');
+    if (drawerThemeBtn) {
+      drawerThemeBtn.addEventListener('click', () => {
+        applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+        showToast(state.theme === 'dark' ? 'Dark theme enabled' : 'Light theme enabled');
+      });
+    }
+
+  </script>
 </head>
 <body>
 
@@ -1536,13 +1568,7 @@
         <div class="header-brand-dropdown-wrapper" id="subjectDropdownWrap">
           <button class="header-brand-btn" id="subjectDropdownBtn" aria-haspopup="true" aria-expanded="false" title="Click to switch subject">
             <div class="brand-logo" style="background: linear-gradient(135deg, #dc2626, #991b1b);">ML</div>
-            <div class="brand-title-wrap">
-              <div class="brand-title-row">
-                <h1>ML MCQ Bank</h1>
-                <span class="dropdown-chevron">▾</span>
-              </div>
-              <p>200 Questions &bull; 1 Lecture</p>
-            </div>
+            <span class="dropdown-chevron" style="font-size:0.85rem; color:var(--text-secondary); margin-left:2px;">▾</span>
           </button>
 
           <!-- Dropdown Menu -->
@@ -1722,6 +1748,11 @@
           <!-- Question Grid Jump -->
           <button class="drawer-action-btn" id="drawerGridBtn">
             <span>📑</span> <span>Open Navigator Grid (Q1–Q200)</span>
+          </button>
+
+          <!-- Theme Toggle in Menu -->
+          <button class="drawer-action-btn" id="drawerThemeBtn">
+            <span id="drawerThemeIcon">🌙</span> <span id="drawerThemeText">Switch Theme (Dark / Light)</span>
           </button>
 
           <!-- Reset Scores -->
@@ -2175,11 +2206,7 @@
         optBtn.appendChild(textSpan);
 
         if (isRevision) {
-          if (key === q.answer) {
-            optBtn.classList.add('selected-correct');
-          } else {
-            optBtn.classList.add('dimmed');
-          }
+          // Do not highlight the option button in revision mode as requested
           optBtn.style.cursor = 'default';
         } else if (isRevealed) {
           if (key === userAns && isCorrect) {
@@ -2208,22 +2235,43 @@
         if (isRevision) {
           const msg = document.createElement('div');
           msg.className = 'feedback-message correct';
-          msg.innerHTML = `<span>✅ Correct Answer: <strong>Option ${q.answer}</strong> — ${escapeHtml(q.options[q.answer])}</span>`;
+          msg.innerHTML = `<span>Correct Answer: <strong>Option ${q.answer}</strong></span>`;
           footer.appendChild(msg);
+
+          if (q.type === 'calculation' && (q.calculation || q.explanation)) {
+            const sol = document.createElement('div');
+            sol.className = 'direct-solution-text';
+            sol.textContent = q.calculation || q.explanation;
+            footer.appendChild(sol);
+          }
         } else if (isAnswered) {
           const msg = document.createElement('div');
           msg.className = `feedback-message ${isCorrect ? 'correct' : 'wrong'}`;
           if (isCorrect) {
-            msg.innerHTML = '<span>🎉 Great job! Correct option!</span>';
+            msg.innerHTML = `<span>🎉 Correct! Option ${q.answer}</span>`;
           } else {
-            msg.innerHTML = `<span>❌ Incorrect. The correct answer is <strong>Option ${q.answer}</strong>: ${escapeHtml(q.options[q.answer])}</span>`;
+            msg.innerHTML = `<span>❌ Incorrect. Correct Answer: <strong>Option ${q.answer}</strong></span>`;
           }
           footer.appendChild(msg);
+
+          if (q.calculation || q.explanation) {
+            const sol = document.createElement('div');
+            sol.className = 'direct-solution-text';
+            sol.textContent = q.calculation || q.explanation;
+            footer.appendChild(sol);
+          }
         } else {
           const msg = document.createElement('div');
           msg.className = 'feedback-message';
-          msg.innerHTML = `<span>The correct answer is <strong>Option ${q.answer}</strong>: ${escapeHtml(q.options[q.answer])}</span>`;
+          msg.innerHTML = `<span>Correct Answer: <strong>Option ${q.answer}</strong></span>`;
           footer.appendChild(msg);
+
+          if (q.calculation || q.explanation) {
+            const sol = document.createElement('div');
+            sol.className = 'direct-solution-text';
+            sol.textContent = q.calculation || q.explanation;
+            footer.appendChild(sol);
+          }
         }
 
         card.appendChild(footer);
@@ -2545,6 +2593,15 @@
     updateRevisionUI();
     updateStats();
     renderActiveView();
+  
+    const drawerThemeBtn = document.getElementById('drawerThemeBtn');
+    if (drawerThemeBtn) {
+      drawerThemeBtn.addEventListener('click', () => {
+        applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+        showToast(state.theme === 'dark' ? 'Dark theme enabled' : 'Light theme enabled');
+      });
+    }
+
   </script>
 </body>
 </html>
