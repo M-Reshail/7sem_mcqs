@@ -1263,7 +1263,7 @@ def generate_page(config):
       <div class="filter-summary-inner">
         <span class="active-mode-tag" id="activeModeSummary">{config['subject_full']} ({total_q})</span>
         <span class="active-filter-tag" id="activeFilterSummary">All</span>
-        <span class="active-revision-tag" id="activeRevisionSummary" style="display: none;">👁️ Answers Revealed</span>
+        <span class="active-revision-tag" id="activeRevisionSummary" style="display: none;">Answers Revealed</span>
         <span class="btn-open-menu-link" id="openMenuLink">⚙️ Menu &amp; Filters</span>
       </div>
     </div>
@@ -1300,7 +1300,7 @@ def generate_page(config):
           <button class="drawer-segmented-btn" data-view="focus" id="viewFocusTab">Focus Single</button>
         </div>
         <button class="drawer-action-btn" id="revealAnswersBtn" style="margin-top: 0.6rem;">
-          <span id="revealAnswersIcon">👁️</span> <span id="revealAnswersText">Reveal Answers</span>
+          <span id="revealAnswersText">Reveal Answers</span>
         </button>
       </div>
 
