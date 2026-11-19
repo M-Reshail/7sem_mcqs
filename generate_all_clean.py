@@ -44,9 +44,34 @@ nlp_topics = {
     "L8": "L8 · TF-IDF Feature Extraction"
 }
 
+with open('ML/topicwise_mcqs.json', encoding='utf-8') as f:
+    ml_tw_data = json.load(f)
+
 with open('ML/ml_mcqs.json', encoding='utf-8') as f:
     ml_mcqs = json.load(f)
-ml_topics = {"ML": "Machine Learning"}
+
+ml_topics = {}
+ml_topic_info = {}
+ml_qid_to_topic = {}
+
+for t in ml_tw_data['topics']:
+    num = t['topicNumber']
+    code = f"T{num:02d}"
+    title = t['title']
+    ml_topics[code] = f"{code} · {title}"
+    ml_topic_info[code] = {
+        'num': num,
+        'title': title,
+        'info': t['info'],
+        'count': t['questionCount']
+    }
+    for qid in t['questionIds']:
+        ml_qid_to_topic[qid] = code
+
+for q in ml_mcqs:
+    code = ml_qid_to_topic.get(q['id'], 'T01')
+    q['topicCode'] = code
+    q['topic'] = ml_topics[code]
 
 # Base CSS template
 BASE_CSS = '''
@@ -706,6 +731,52 @@ BASE_CSS = '''
       box-shadow: var(--shadow-md);
       border-color: var(--border-subtle);
     }
+
+    /* Topic-wise Group Header */
+    .topic-group-header {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 5px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.25rem;
+      margin-top: 1.4rem;
+      margin-bottom: 0.85rem;
+      box-shadow: var(--shadow-sm);
+      animation: fadeIn 0.25s ease;
+    }
+    .topic-group-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background: var(--primary-light);
+      color: var(--primary-text);
+      margin-bottom: 0.4rem;
+    }
+    .topic-group-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 0.4rem 0;
+    }
+    .topic-group-info {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    [data-theme="dark"] .topic-group-header {
+      background: var(--bg-surface);
+      border-color: var(--border-color);
+      border-left-color: var(--primary);
+    }
+    [data-theme="dark"] .topic-group-badge {
+      background: var(--dark-primary-light);
+      color: var(--dark-primary-text);
+    }
     .mcq-card.status-correct {
       border-left: 5px solid var(--success);
     }
@@ -1107,6 +1178,8 @@ def generate_page(config):
     color = config['color']
     icon_html = config['icon_html']
     topics_json_str = json.dumps(config['topics'], ensure_ascii=False)
+    topic_info_json_str = json.dumps(config.get('topic_info', {}), ensure_ascii=False)
+    has_topic_wise_toggle_str = "true" if config.get('has_topic_wise_toggle', False) else "false"
     mcqs_json_str = json.dumps(config['mcqs'], ensure_ascii=False)
     total_q = len(config['mcqs'])
     storage_prefix = config['prefix']
@@ -1131,7 +1204,7 @@ def generate_page(config):
     subjects = [
         {"file": "./index.html", "code": "DV", "name": "Data Visualization", "icon": "📊", "meta": "300 Questions • 23 Topics"},
         {"file": "./nlp.html", "code": "NLP", "name": "Natural Language Processing", "icon": "🤖", "meta": "200 Questions • 8 Lectures"},
-        {"file": "./ml.html", "code": "ML", "name": "Machine Learning", "icon": "🧠", "meta": "200 Questions • 1 Lecture"},
+        {"file": "./ml.html", "code": "ML", "name": "Machine Learning", "icon": "🧠", "meta": "200 Questions • 23 Topics"},
         {"file": "./ann.html", "code": "ANN", "name": "Artificial Neural Networks", "icon": "🔬", "meta": "200 Questions • 20 Topics"},
     ]
 
@@ -1159,9 +1232,11 @@ def generate_page(config):
           </a>\n'''
 
     # Topic Section in Drawer
+    has_topic_wise_toggle = config.get('has_topic_wise_toggle', False)
+    topic_section_style = ' style="display: none;"' if has_topic_wise_toggle else ''
     if has_topics:
         topic_section_html = f'''      <!-- Section: Topic Filter -->
-      <div id="drawerTopicSection">
+      <div id="drawerTopicSection"{topic_section_style}>
         <div class="drawer-section-title">
           <span>🏷️ Filter by Topic ({topic_count} Topics)</span>
           <span id="topicSelectedCountBadge" style="font-size:0.72rem; color:var(--text-secondary);">({topic_count}/{topic_count})</span>
@@ -1178,6 +1253,10 @@ def generate_page(config):
       </div>'''
     else:
         topic_section_html = ''
+
+    topic_wise_btn_html = f'''        <button class="drawer-action-btn" id="topicWiseToggleBtn" style="margin-top: 0.45rem;">
+          <span id="topicWiseIcon">📚</span> <span id="topicWiseText">Topic-wise MCQs</span>
+        </button>''' if has_topic_wise_toggle else ""
 
     # Filter pills in Drawer
     if code == 'DV':
@@ -1314,6 +1393,7 @@ def generate_page(config):
         <button class="drawer-action-btn" id="revealAnswersBtn" style="margin-top: 0.6rem;">
           <span id="revealAnswersText">Reveal Answers</span>
         </button>
+{topic_wise_btn_html}
       </div>
 
 {topic_section_html}
@@ -1391,6 +1471,8 @@ def generate_page(config):
   <script>
     // Data
     const TOPICS = {topics_json_str};
+    const TOPIC_INFO = {topic_info_json_str};
+    const HAS_TOPIC_WISE_TOGGLE = {has_topic_wise_toggle_str};
     const MCQS = {mcqs_json_str};
 
     const storagePrefix = '{storage_prefix}';
@@ -1400,6 +1482,7 @@ def generate_page(config):
       viewType: localStorage.getItem(storagePrefix + 'view_type') || 'list',
       filter: 'all',
       isRevisionMode: localStorage.getItem(storagePrefix + 'revision_mode') === 'true',
+      isTopicWise: localStorage.getItem(storagePrefix + 'topic_wise') === 'true',
       theme: localStorage.getItem(storagePrefix + 'theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
       userAnswers: JSON.parse(localStorage.getItem(storagePrefix + 'answers') || '{{}}'),
       revealedAnswers: new Set(JSON.parse(localStorage.getItem(storagePrefix + 'reveals') || '[]')),
@@ -1438,6 +1521,8 @@ def generate_page(config):
     const revisionToggleBtn = document.getElementById('revisionToggleBtn');
     const revealAnswersBtn = document.getElementById('revealAnswersBtn');
     const revealAnswersText = document.getElementById('revealAnswersText');
+    const topicWiseToggleBtn = document.getElementById('topicWiseToggleBtn');
+    const drawerTopicSection = document.getElementById('drawerTopicSection');
     const drawerThemeBtn = document.getElementById('drawerThemeBtn');
 
     // Subject Dropdown
@@ -1577,7 +1662,11 @@ def generate_page(config):
       const totalTopics = Object.keys(TOPICS).length;
       let modeText = '{config['subject_full']} ({total_q})';
       if (totalTopics > 1) {{
-        modeText = `${{topicCount}}/${{totalTopics}} Topics · {config['code']}`;
+        if (HAS_TOPIC_WISE_TOGGLE) {{
+          modeText = state.isTopicWise ? `📚 Topic-wise (${{topicCount}}/${{totalTopics}} Topics)` : '{config['subject_full']} ({total_q})';
+        }} else {{
+          modeText = `${{topicCount}}/${{totalTopics}} Topics · {config['code']}`;
+        }}
       }}
       if (state.isShuffled) {{
         modeText = '🔀 Shuffled · ' + modeText;
@@ -1604,7 +1693,7 @@ def generate_page(config):
     // Filtering Pool
     function getBasePoolMCQs() {{
       let pool = MCQS;
-      if (state.selectedTopics && state.selectedTopics.size > 0) {{
+      if (state.selectedTopics && state.selectedTopics.size > 0 && (!HAS_TOPIC_WISE_TOGGLE || state.isTopicWise)) {{
         pool = pool.filter(m => state.selectedTopics.has(m.topicCode));
       }}
       if (state.filter === 'calc') {{
@@ -1737,6 +1826,32 @@ def generate_page(config):
 
     if (revealAnswersBtn) revealAnswersBtn.addEventListener('click', toggleRevealAnswers);
     if (revisionToggleBtn) revisionToggleBtn.addEventListener('click', toggleRevealAnswers);
+
+    // Topic-wise View Handler
+    function updateTopicWiseUI() {{
+      if (!HAS_TOPIC_WISE_TOGGLE) return;
+      if (topicWiseToggleBtn) {{
+        topicWiseToggleBtn.classList.toggle('active', !!state.isTopicWise);
+        const textSpan = document.getElementById('topicWiseText');
+        if (textSpan) {{
+          textSpan.textContent = state.isTopicWise ? 'Topic-wise MCQs (Active)' : 'Topic-wise MCQs';
+        }}
+      }}
+      if (drawerTopicSection) {{
+        drawerTopicSection.style.display = state.isTopicWise ? 'block' : 'none';
+      }}
+    }}
+
+    function toggleTopicWise() {{
+      state.isTopicWise = !state.isTopicWise;
+      localStorage.setItem(storagePrefix + 'topic_wise', state.isTopicWise ? 'true' : 'false');
+      updateTopicWiseUI();
+      state.focusIndex = 0;
+      renderActiveView();
+      showToast(state.isTopicWise ? 'Topic-wise view enabled (23 Topics)' : 'Normal view restored');
+    }}
+
+    if (topicWiseToggleBtn) topicWiseToggleBtn.addEventListener('click', toggleTopicWise);
 
     // Card Generation
     function createMCQCard(q) {{
@@ -1958,9 +2073,52 @@ def generate_page(config):
     function renderList(items) {{
       mcqListEl.innerHTML = '';
       const fragment = document.createDocumentFragment();
-      items.forEach(q => {{
-        fragment.appendChild(createMCQCard(q));
-      }});
+
+      if (state.isTopicWise && HAS_TOPIC_WISE_TOGGLE && Object.keys(TOPIC_INFO).length > 0) {{
+        // Group items by topic
+        const grouped = {{}};
+        items.forEach(q => {{
+          const code = q.topicCode || 'OTHER';
+          if (!grouped[code]) grouped[code] = [];
+          grouped[code].push(q);
+        }});
+
+        // Sort by topic number
+        const sortedCodes = Object.keys(grouped).sort((a, b) => {{
+          const na = (TOPIC_INFO[a] && TOPIC_INFO[a].num) || 999;
+          const nb = (TOPIC_INFO[b] && TOPIC_INFO[b].num) || 999;
+          return na - nb;
+        }});
+
+        sortedCodes.forEach(code => {{
+          const tInfo = TOPIC_INFO[code];
+          const tNum = tInfo ? tInfo.num : code;
+          const tTitle = tInfo ? tInfo.title : (TOPICS[code] || code);
+          const tDesc = tInfo ? tInfo.info : '';
+          const qCount = grouped[code].length;
+
+          const groupHeader = document.createElement('div');
+          groupHeader.className = 'topic-group-header';
+          groupHeader.id = `topic-group-${{code}}`;
+          groupHeader.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
+              <span class="topic-group-badge">Topic ${{tNum}} · ${{qCount}} Questions</span>
+            </div>
+            <h3 class="topic-group-title">${{tTitle}}</h3>
+            ${{tDesc ? `<p class="topic-group-info">${{tDesc}}</p>` : ''}}
+          `;
+          fragment.appendChild(groupHeader);
+
+          grouped[code].forEach(q => {{
+            fragment.appendChild(createMCQCard(q));
+          }});
+        }});
+      }} else {{
+        items.forEach(q => {{
+          fragment.appendChild(createMCQCard(q));
+        }});
+      }}
+
       mcqListEl.appendChild(fragment);
     }}
 
@@ -2246,6 +2404,7 @@ def generate_page(config):
     }}
     buildTopicSelector();
     updateRevealUI();
+    updateTopicWiseUI();
     updateStats();
     renderActiveView();
   </script>
@@ -2369,9 +2528,11 @@ ml_config = {
     "dark_theory_bg": "#431407",
     "dark_theory_text": "#fdba74",
     "topics": ml_topics,
+    "topic_info": ml_topic_info,
     "mcqs": ml_mcqs,
     "prefix": "ml_",
-    "has_calc": False
+    "has_calc": False,
+    "has_topic_wise_toggle": True
 }
 
 # Generate all 4 pages
