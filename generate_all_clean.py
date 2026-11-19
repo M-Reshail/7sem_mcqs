@@ -480,7 +480,7 @@ BASE_CSS = '''
     }
 
     .drawer-header {
-      padding: 1rem 1.25rem;
+      padding: 0.85rem 1.25rem;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
@@ -488,13 +488,25 @@ BASE_CSS = '''
       background: var(--bg-surface);
       flex-shrink: 0;
     }
-    .drawer-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      display: flex;
+    .drawer-theme-top-btn {
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      padding: 0.42rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      user-select: none;
+    }
+    .drawer-theme-top-btn:hover {
+      background: var(--bg-surface);
+      border-color: var(--primary);
+      color: var(--primary);
     }
     .drawer-close-btn {
       width: 34px;
@@ -1274,9 +1286,9 @@ def generate_page(config):
 
   <aside class="side-drawer" id="sideDrawer" aria-label="Menu and filters">
     <div class="drawer-header">
-      <div class="drawer-title">
-        <span>⚙️ Menu &amp; Study Options</span>
-      </div>
+      <button class="drawer-theme-top-btn" id="drawerThemeBtn" title="Switch Theme (Dark / Light)">
+        <span id="drawerThemeIcon">🌙</span> <span id="drawerThemeText">Dark Mode</span>
+      </button>
       <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
     </div>
 
@@ -1327,9 +1339,6 @@ def generate_page(config):
           </button>
           <button class="drawer-action-btn" id="drawerGridBtn">
             <span>📑</span> <span>Open Navigator Grid (Q1–Q{total_q})</span>
-          </button>
-          <button class="drawer-action-btn" id="drawerThemeBtn">
-            <span id="drawerThemeIcon">🌙</span> <span id="drawerThemeText">Switch Theme (Dark / Light)</span>
           </button>
           <button class="drawer-action-btn danger" id="resetProgressBtn">
             <span>↺</span> <span>Reset All Answers &amp; Scores</span>
@@ -1502,7 +1511,7 @@ def generate_page(config):
       const drawerIcon = document.getElementById('drawerThemeIcon');
       if (drawerIcon) drawerIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
       const drawerText = document.getElementById('drawerThemeText');
-      if (drawerText) drawerText.textContent = theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+      if (drawerText) drawerText.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
     }}
     applyTheme(state.theme);
 
