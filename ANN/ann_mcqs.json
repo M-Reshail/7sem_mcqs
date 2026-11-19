@@ -4,7 +4,7 @@
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "theory",
-    "question": "Which statement accurately explains why Deep Learning is considered a subset of\nMachine Learning?",
+    "question": "Which statement accurately explains why Deep Learning is considered a subset of Machine Learning?",
     "options": {
       "A": "Deep Learning does not require data, whereas all other Machine Learning algorithms require labeled datasets.",
       "B": "Deep Learning uses multi-layered neural networks to learn patterns from data, which is a specific approach within the broader ML paradigm.",
@@ -12,14 +12,14 @@
       "D": "Machine Learning is only used for robotics, while Deep Learning is used for database indexing."
     },
     "answer": "B",
-    "explanation": "Deep Learning is a specialized branch of Machine Learning that learns representations through\nneural networks with multiple hidden layers."
+    "explanation": "Deep Learning is a specialized branch of Machine Learning that learns representations through neural networks with multiple hidden layers."
   },
   {
     "id": 2,
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "theory",
-    "question": "In a traditional Machine Learning workflow for image classification, who designs the\nvisual features (such as edges or corners)?",
+    "question": "In a traditional Machine Learning workflow for image classification, who designs the visual features (such as edges or corners)?",
     "options": {
       "A": "The loss function automatically creates them during backpropagation.",
       "B": "The GPU hardware invents them without software instructions.",
@@ -27,14 +27,14 @@
       "D": "Human domain experts manually engineer the feature extraction algorithms."
     },
     "answer": "D",
-    "explanation": "In classical ML, human engineers manually design feature extractors (like SIFT or HOG) before\npassing features to a classifier."
+    "explanation": "In classical ML, human engineers manually design feature extractors (like SIFT or HOG) before passing features to a classifier."
   },
   {
     "id": 3,
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "theory",
-    "question": "What is the main advantage of automatic representation learning over manual feature\nengineering?",
+    "question": "What is the main advantage of automatic representation learning over manual feature engineering?",
     "options": {
       "A": "The network discovers task-optimal features directly from raw data without being limited by human feature-design assumptions.",
       "B": "It reduces every neural network to a single linear equation.",
@@ -42,14 +42,14 @@
       "D": "It eliminates the need for any training data."
     },
     "answer": "A",
-    "explanation": "Automatic representation learning optimizes internal feature detectors directly against the task\nobjective, often uncovering patterns humans miss."
+    "explanation": "Automatic representation learning optimizes internal feature detectors directly against the task objective, often uncovering patterns humans miss."
   },
   {
     "id": 4,
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "theory",
-    "question": "Which task is better suited for traditional rule-based programming than Deep\nLearning?",
+    "question": "Which task is better suited for traditional rule-based programming than Deep Learning?",
     "options": {
       "A": "Validating whether a user-entered string matches a fixed 10-digit account ID format.",
       "B": "Detecting pedestrians in real-time dashcam video.",
@@ -57,14 +57,14 @@
       "D": "Transcribing noisy human speech across multiple accents."
     },
     "answer": "A",
-    "explanation": "Checking a strict, deterministic string format follows an exact rule with zero ambiguity, making\nrule-based code ideal."
+    "explanation": "Checking a strict, deterministic string format follows an exact rule with zero ambiguity, making rule-based code ideal."
   },
   {
     "id": 5,
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "theory",
-    "question": "How do early hidden layers differ from deeper hidden layers in a Deep Learning vision\nmodel?",
+    "question": "How do early hidden layers differ from deeper hidden layers in a Deep Learning vision model?",
     "options": {
       "A": "Early layers output final class probabilities, while deeper layers read raw pixels.",
       "B": "Early layers are trained on the test set, while deeper layers are trained on the training set.",
@@ -72,7 +72,7 @@
       "D": "Early layers detect simple edges and textures, while deeper layers combine them into complex object parts and shapes."
     },
     "answer": "D",
-    "explanation": "Deep architectures build a hierarchy of features, progressing from low-level local edges in early\nlayers to high-level semantic structures in deeper layers."
+    "explanation": "Deep architectures build a hierarchy of features, progressing from low-level local edges in early layers to high-level semantic structures in deeper layers."
   },
   {
     "id": 6,
@@ -87,14 +87,14 @@
       "D": "Deep neural networks cannot compile unless a dataset exceeds one terabyte."
     },
     "answer": "B",
-    "explanation": "High-capacity deep networks contain many weights; large, diverse datasets supply enough\nsupervision for those weights to learn generalizable patterns."
+    "explanation": "High-capacity deep networks contain many weights; large, diverse datasets supply enough supervision for those weights to learn generalizable patterns."
   },
   {
     "id": 7,
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "theory",
-    "question": "What inputs are fed into a Machine Learning algorithm during training to produce a\nlearned model?",
+    "question": "What inputs are fed into a Machine Learning algorithm during training to produce a learned model?",
     "options": {
       "A": "Handcrafted Rules + Random Noise",
       "B": "Test Predictions + Hardcoded If-Else Statements",
@@ -102,14 +102,14 @@
       "D": "Input Data + Known Ground-Truth Answers"
     },
     "answer": "D",
-    "explanation": "Machine Learning takes pairs of input data and known answers during training and outputs the\nlearned rules (model parameters)."
+    "explanation": "Machine Learning takes pairs of input data and known answers during training and outputs the learned rules (model parameters)."
   },
   {
     "id": 8,
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "theory",
-    "question": "Which of the following models is a Deep Learning architecture rather than a classical\nshallow ML model?",
+    "question": "Which of the following models is a Deep Learning architecture rather than a classical shallow ML model?",
     "options": {
       "A": "A single-split Decision Stump",
       "B": "A rule-based if-else lookup table",
@@ -117,14 +117,14 @@
       "D": "A 5-layer Multilayer Perceptron (MLP)"
     },
     "answer": "D",
-    "explanation": "A 5-layer Multilayer Perceptron contains multiple hidden layers and learns hierarchical\nrepresentations, classifying it as a Deep Learning model."
+    "explanation": "A 5-layer Multilayer Perceptron contains multiple hidden layers and learns hierarchical representations, classifying it as a Deep Learning model."
   },
   {
     "id": 9,
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "calculation",
-    "question": "An RGB color image has dimensions 28 x 28 pixels with 3 color channels (Red, Green,\nBlue). How many total input values represent this image?",
+    "question": "An RGB color image has dimensions 28 x 28 pixels with 3 color channels (Red, Green, Blue). How many total input values represent this image?",
     "options": {
       "A": "84 values",
       "B": "1,568 values",
@@ -139,7 +139,7 @@
     "topicCode": "T01",
     "topic": "T01 · AI vs. ML vs. DL",
     "type": "calculation",
-    "question": "A neural network architecture consists of an input layer, 4 hidden layers, and an\noutput layer. How many total parameterized layer transitions (L) does this network have?",
+    "question": "A neural network architecture consists of an input layer, 4 hidden layers, and an output layer. How many total parameterized layer transitions (L) does this network have?",
     "options": {
       "A": "6 transitions",
       "B": "5 transitions",
@@ -147,14 +147,14 @@
       "D": "3 transitions"
     },
     "answer": "B",
-    "explanation": "There are 4 transitions from input through the 4 hidden layers plus 1 transition from the final\nhidden layer to the output layer, totaling 5 parameterized transitions."
+    "explanation": "There are 4 transitions from input through the 4 hidden layers plus 1 transition from the final hidden layer to the output layer, totaling 5 parameterized transitions."
   },
   {
     "id": 11,
     "topicCode": "T02",
     "topic": "T02 · Applications of Deep Learning",
     "type": "theory",
-    "question": "Which application relies on Computer Vision rather than Natural Language\nProcessing?",
+    "question": "Which application relies on Computer Vision rather than Natural Language Processing?",
     "options": {
       "A": "Detecting traffic signs and lane lines from a car's front camera.",
       "B": "Translating an English article into Spanish.",
@@ -162,7 +162,7 @@
       "D": "Generating voice audio from a written e-book."
     },
     "answer": "A",
-    "explanation": "Detecting traffic signs and lane markings processes visual camera frames, which is a Computer\nVision task."
+    "explanation": "Detecting traffic signs and lane markings processes visual camera frames, which is a Computer Vision task."
   },
   {
     "id": 12,
@@ -177,14 +177,14 @@
       "D": "Identifying both the class labels and bounding-box locations of multiple objects within an image."
     },
     "answer": "D",
-    "explanation": "Object detection goes beyond whole-image classification by localizing each detected object with\nbounding coordinates and class labels."
+    "explanation": "Object detection goes beyond whole-image classification by localizing each detected object with bounding coordinates and class labels."
   },
   {
     "id": 13,
     "topicCode": "T02",
     "topic": "T02 · Applications of Deep Learning",
     "type": "theory",
-    "question": "Which Deep Learning task converts a user's spoken question into text so a virtual\nassistant can process it?",
+    "question": "Which Deep Learning task converts a user's spoken question into text so a virtual assistant can process it?",
     "options": {
       "A": "Protein Folding Prediction",
       "B": "Semantic Image Segmentation",
@@ -207,7 +207,7 @@
       "D": "By physically operating surgical instruments without human oversight."
     },
     "answer": "B",
-    "explanation": "Deep Learning models serve as diagnostic decision-support tools that flag potential abnormalities\nin medical images."
+    "explanation": "Deep Learning models serve as diagnostic decision-support tools that flag potential abnormalities in medical images."
   },
   {
     "id": 15,
@@ -222,7 +222,7 @@
       "D": "Audio files contain only binary zeros."
     },
     "answer": "B",
-    "explanation": "Acoustic variability across speakers, accents, and ambient environments prevents manual rule\nwriting from achieving reliable transcription."
+    "explanation": "Acoustic variability across speakers, accents, and ambient environments prevents manual rule writing from achieving reliable transcription."
   },
   {
     "id": 16,
@@ -259,7 +259,7 @@
     "topicCode": "T02",
     "topic": "T02 · Applications of Deep Learning",
     "type": "theory",
-    "question": "In scientific computing, what input does a protein structure prediction model use to\ninfer 3D molecular shape?",
+    "question": "In scientific computing, what input does a protein structure prediction model use to infer 3D molecular shape?",
     "options": {
       "A": "A 1D sequence of amino acids.",
       "B": "An audio recording of a chemistry lecture.",
@@ -267,14 +267,14 @@
       "D": "A list of customer credit scores."
     },
     "answer": "A",
-    "explanation": "Deep protein folding models take the linear 1D sequence of amino acids and predict the 3D spatial\ncoordinates of the folded protein."
+    "explanation": "Deep protein folding models take the linear 1D sequence of amino acids and predict the 3D spatial coordinates of the folded protein."
   },
   {
     "id": 19,
     "topicCode": "T02",
     "topic": "T02 · Applications of Deep Learning",
     "type": "calculation",
-    "question": "A multi-camera autonomous driving system uses 4 RGB cameras, each capturing 100 x\n100 pixel images (3 channels per pixel). How many total input numbers are generated across all 4\ncameras in a single time step?",
+    "question": "A multi-camera autonomous driving system uses 4 RGB cameras, each capturing 100 x 100 pixel images (3 channels per pixel). How many total input numbers are generated across all 4 cameras in a single time step?",
     "options": {
       "A": "12,000 numbers",
       "B": "120,000 numbers",
@@ -282,14 +282,14 @@
       "D": "30,000 numbers"
     },
     "answer": "B",
-    "explanation": "Each RGB camera produces 100 x 100 x 3 = 30,000 numbers. Across 4 cameras, total inputs = 4 x\n30,000 = 120,000 numbers."
+    "explanation": "Each RGB camera produces 100 x 100 x 3 = 30,000 numbers. Across 4 cameras, total inputs = 4 x 30,000 = 120,000 numbers."
   },
   {
     "id": 20,
     "topicCode": "T02",
     "topic": "T02 · Applications of Deep Learning",
     "type": "calculation",
-    "question": "A real-time voice assistant takes 12 milliseconds for audio preprocessing, 28\nmilliseconds for neural network inference, and 10 milliseconds for text postprocessing. What is the\ntotal end-to-end latency?",
+    "question": "A real-time voice assistant takes 12 milliseconds for audio preprocessing, 28 milliseconds for neural network inference, and 10 milliseconds for text postprocessing. What is the total end-to-end latency?",
     "options": {
       "A": "40 milliseconds",
       "B": "50 milliseconds",
@@ -312,14 +312,14 @@
       "D": "Final Test Set Evaluation"
     },
     "answer": "B",
-    "explanation": "Once data are split into disjoint subsets, features are cleaned, normalized, and augmented before\nfeeding them into the network."
+    "explanation": "Once data are split into disjoint subsets, features are cleaned, normalized, and augmented before feeding them into the network."
   },
   {
     "id": 22,
     "topicCode": "T03",
     "topic": "T03 · Deep Learning Pipeline",
     "type": "theory",
-    "question": "What happens if an engineer tunes network depth and dropout rate using the Test Set\ninstead of the Validation Set?",
+    "question": "What happens if an engineer tunes network depth and dropout rate using the Test Set instead of the Validation Set?",
     "options": {
       "A": "The model converges in half as many epochs.",
       "B": "Batch normalization stops updating its running mean.",
@@ -327,14 +327,14 @@
       "D": "Test set information leaks into model design, making the final reported test accuracy unreliable."
     },
     "answer": "D",
-    "explanation": "Using test scores to guide design choices compromises the independence of the test set, causing\noptimistic bias."
+    "explanation": "Using test scores to guide design choices compromises the independence of the test set, causing optimistic bias."
   },
   {
     "id": 23,
     "topicCode": "T03",
     "topic": "T03 · Deep Learning Pipeline",
     "type": "theory",
-    "question": "Why is Z-score standardization applied using the training set's mean and standard\ndeviation rather than the test set's statistics?",
+    "question": "Why is Z-score standardization applied using the training set's mean and standard deviation rather than the test set's statistics?",
     "options": {
       "A": "Because test sets do not contain numerical values.",
       "B": "Because Z-score standardization only works on binary labels.",
@@ -342,14 +342,14 @@
       "D": "To ensure consistent feature scaling and prevent information from the unseen test distribution from leaking into training."
     },
     "answer": "D",
-    "explanation": "Applying the training set's fitted scaler to validation and test inputs maintains a consistent\ntransformation without data leakage."
+    "explanation": "Applying the training set's fitted scaler to validation and test inputs maintains a consistent transformation without data leakage."
   },
   {
     "id": 24,
     "topicCode": "T03",
     "topic": "T03 · Deep Learning Pipeline",
     "type": "theory",
-    "question": "Which transformation is a valid label-preserving data augmentation for classifying\nphotographs of cats and dogs?",
+    "question": "Which transformation is a valid label-preserving data augmentation for classifying photographs of cats and dogs?",
     "options": {
       "A": "Swapping 'Cat' labels with 'Dog' labels randomly.",
       "B": "Horizontal flipping and slight random cropping.",
@@ -357,7 +357,7 @@
       "D": "Replacing every pixel with random uniform noise."
     },
     "answer": "B",
-    "explanation": "A horizontally flipped or slightly cropped photo of a dog is still a dog, making these transforms\neffective label-preserving augmentations."
+    "explanation": "A horizontally flipped or slightly cropped photo of a dog is still a dog, making these transforms effective label-preserving augmentations."
   },
   {
     "id": 25,
@@ -372,14 +372,14 @@
       "D": "To compute weight gradients for backpropagation."
     },
     "answer": "C",
-    "explanation": "The validation set provides an ongoing check on out-of-sample performance without touching the\nfinal test holdout."
+    "explanation": "The validation set provides an ongoing check on out-of-sample performance without touching the final test holdout."
   },
   {
     "id": 26,
     "topicCode": "T03",
     "topic": "T03 · Deep Learning Pipeline",
     "type": "theory",
-    "question": "In Stage 4 of the Deep Learning pipeline, which loss function pairs with a multi-class\nclassification problem?",
+    "question": "In Stage 4 of the Deep Learning pipeline, which loss function pairs with a multi-class classification problem?",
     "options": {
       "A": "Root Mean Squared Error (RMSE)",
       "B": "Mean Squared Error (MSE)",
@@ -387,7 +387,7 @@
       "D": "Mean Absolute Error (MAE)"
     },
     "answer": "C",
-    "explanation": "Categorical Cross-Entropy measures the discrepancy between one-hot true class labels and\npredicted Softmax probabilities."
+    "explanation": "Categorical Cross-Entropy measures the discrepancy between one-hot true class labels and predicted Softmax probabilities."
   },
   {
     "id": 27,
@@ -402,7 +402,7 @@
       "D": "Backward pass (gradient calculation and weight updates)"
     },
     "answer": "D",
-    "explanation": "During inference, model weights are frozen; only preprocessing and forward propagation are\nexecuted to generate predictions."
+    "explanation": "During inference, model weights are frozen; only preprocessing and forward propagation are executed to generate predictions."
   },
   {
     "id": 28,
@@ -417,14 +417,14 @@
       "D": "Deleting all neurons whose activation is zero."
     },
     "answer": "B",
-    "explanation": "One-hot encoding turns discrete class indices (e.g., class 2 of 4) into binary vectors like [0, 1, 0, 0] for\nloss calculation."
+    "explanation": "One-hot encoding turns discrete class indices (e.g., class 2 of 4) into binary vectors like [0, 1, 0, 0] for loss calculation."
   },
   {
     "id": 29,
     "topicCode": "T03",
     "topic": "T03 · Deep Learning Pipeline",
     "type": "calculation",
-    "question": "A dataset of 5,000 samples is split into 80% Training, 10% Validation, and 10% Test sets.\nHow many samples are in the Validation set?",
+    "question": "A dataset of 5,000 samples is split into 80% Training, 10% Validation, and 10% Test sets. How many samples are in the Validation set?",
     "options": {
       "A": "1,000 samples",
       "B": "500 samples",
@@ -439,7 +439,7 @@
     "topicCode": "T03",
     "topic": "T03 · Deep Learning Pipeline",
     "type": "calculation",
-    "question": "Using Z-score normalization z = (x - mu) / sigma where training mean mu = 120 and\nstandard deviation sigma = 20, what is the normalized value for x = 90?",
+    "question": "Using Z-score normalization z = (x - mu) / sigma where training mean mu = 120 and standard deviation sigma = 20, what is the normalized value for x = 90?",
     "options": {
       "A": "0.75",
       "B": "1.5",
@@ -454,7 +454,7 @@
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "theory",
-    "question": "Which biological neuron structure is analogous to the input vector x = [x1, x2, ..., x_d]\nin an artificial neuron?",
+    "question": "Which biological neuron structure is analogous to the input vector x = [x1, x2, ..., x_d] in an artificial neuron?",
     "options": {
       "A": "Myelin sheath",
       "B": "Axon hillock",
@@ -462,14 +462,14 @@
       "D": "Synaptic vesicles"
     },
     "answer": "C",
-    "explanation": "Dendrites receive incoming signals from upstream sources, matching the input features xi entering\nan artificial node."
+    "explanation": "Dendrites receive incoming signals from upstream sources, matching the input features xi entering an artificial node."
   },
   {
     "id": 32,
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "theory",
-    "question": "In the biological neuron analogy, what does a negative synaptic weight (wi < 0)\nrepresent?",
+    "question": "In the biological neuron analogy, what does a negative synaptic weight (wi < 0) represent?",
     "options": {
       "A": "A learning rate equal to zero.",
       "B": "An inhibitory connection that reduces the neuron's tendency to fire.",
@@ -477,14 +477,14 @@
       "D": "An excitatory connection that always triggers an immediate spike."
     },
     "answer": "B",
-    "explanation": "Negative weights represent inhibitory synapses that subtract from the integrated potential, making\nactivation harder."
+    "explanation": "Negative weights represent inhibitory synapses that subtract from the integrated potential, making activation harder."
   },
   {
     "id": 33,
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "theory",
-    "question": "Which biological structure corresponds to the linear aggregation operation z =\nsum(wi xi) + b?",
+    "question": "Which biological structure corresponds to the linear aggregation operation z = sum(wi xi) + b?",
     "options": {
       "A": "The soma (cell body)",
       "B": "The sensory receptor",
@@ -492,14 +492,14 @@
       "D": "The spinal cord"
     },
     "answer": "A",
-    "explanation": "The soma sums incoming excitatory and inhibitory potentials, analogous to computing the pre-\nactivation sum z."
+    "explanation": "The soma sums incoming excitatory and inhibitory potentials, analogous to computing the pre- activation sum z."
   },
   {
     "id": 34,
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "theory",
-    "question": "What happens in a biological neuron when incoming signals fail to reach the firing\nthreshold?",
+    "question": "What happens in a biological neuron when incoming signals fail to reach the firing threshold?",
     "options": {
       "A": "The threshold automatically drops to negative infinity.",
       "B": "The neuron permanently deletes its dendrites.",
@@ -514,7 +514,7 @@
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "theory",
-    "question": "How is information encoded in biological neural communication compared to\nartificial neurons?",
+    "question": "How is information encoded in biological neural communication compared to artificial neurons?",
     "options": {
       "A": "Biological neurons use the timing and firing rate of electrical spikes, whereas artificial neurons pass continuous or binary scalar numbers.",
       "B": "Both use identical chemical diffusion inside silicon chips.",
@@ -522,14 +522,14 @@
       "D": "Biological neurons pass floating-point matrices, whereas artificial neurons use chemical neurotransmitters."
     },
     "answer": "A",
-    "explanation": "Biological systems encode signals via spike trains over time, while artificial neurons compute static\nnumerical outputs."
+    "explanation": "Biological systems encode signals via spike trains over time, while artificial neurons compute static numerical outputs."
   },
   {
     "id": 36,
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "theory",
-    "question": "Which biological concept corresponds to updating weights during neural network\ntraining?",
+    "question": "Which biological concept corresponds to updating weights during neural network training?",
     "options": {
       "A": "Synaptic plasticity (strengthening or weakening synaptic connections)",
       "B": "Bone ossification",
@@ -537,7 +537,7 @@
       "D": "Cell division"
     },
     "answer": "A",
-    "explanation": "Synaptic plasticity adjusts the strength of connections between neurons based on activity, inspiring\nweight adaptation."
+    "explanation": "Synaptic plasticity adjusts the strength of connections between neurons based on activity, inspiring weight adaptation."
   },
   {
     "id": 37,
@@ -574,7 +574,7 @@
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "calculation",
-    "question": "A biological neuron fires at a steady rate of 80 Hz. What is the time interval (period) in\nmilliseconds between consecutive spikes?",
+    "question": "A biological neuron fires at a steady rate of 80 Hz. What is the time interval (period) in milliseconds between consecutive spikes?",
     "options": {
       "A": "80.0 milliseconds",
       "B": "12.5 milliseconds",
@@ -589,7 +589,7 @@
     "topicCode": "T04",
     "topic": "T04 · Biological Neuron",
     "type": "calculation",
-    "question": "A neuron has threshold theta = 0.90. Three inputs contribute +0.45, +0.60, and -0.10 to\nthe soma. What is the net potential, and does the neuron fire?",
+    "question": "A neuron has threshold theta = 0.90. Three inputs contribute +0.45, +0.60, and -0.10 to the soma. What is the net potential, and does the neuron fire?",
     "options": {
       "A": "Net potential = 1.15; it FIRES.",
       "B": "Net potential = 0.95; it FIRES (0.95 ≥ 0.90).",
@@ -604,7 +604,7 @@
     "topicCode": "T05",
     "topic": "T05 · Artificial Neuron",
     "type": "theory",
-    "question": "Which equation correctly expresses the pre-activation z of an artificial neuron with\nthree inputs?",
+    "question": "Which equation correctly expresses the pre-activation z of an artificial neuron with three inputs?",
     "options": {
       "A": "z = (w1 + x1)(w2 + x2)(w3 + x3)",
       "B": "z = b / (w1 x1 + w2 x2 + w3 x3)",
@@ -612,7 +612,7 @@
       "D": "z = x1 + x2 + x3 - b"
     },
     "answer": "C",
-    "explanation": "Pre-activation is the weighted sum of all inputs plus the bias term: z = sumi=1\n3 wi xi + b."
+    "explanation": "Pre-activation is the weighted sum of all inputs plus the bias term: z = sumi=1 3 wi xi + b."
   },
   {
     "id": 42,
@@ -634,7 +634,7 @@
     "topicCode": "T05",
     "topic": "T05 · Artificial Neuron",
     "type": "theory",
-    "question": "If a neuron's weights are all set to zero (w = [0, 0, 0]) and its bias is b = -2, what will its\npre-activation z be for any input vector x?",
+    "question": "If a neuron's weights are all set to zero (w = [0, 0, 0]) and its bias is b = -2, what will its pre-activation z be for any input vector x?",
     "options": {
       "A": "z depends on x1",
       "B": "z = +2",
@@ -679,7 +679,7 @@
     "topicCode": "T05",
     "topic": "T05 · Artificial Neuron",
     "type": "theory",
-    "question": "Which symbol conventionally denotes the post-activation output of an artificial\nneuron?",
+    "question": "Which symbol conventionally denotes the post-activation output of an artificial neuron?",
     "options": {
       "A": "eta",
       "B": "B",
@@ -694,7 +694,7 @@
     "topicCode": "T05",
     "topic": "T05 · Artificial Neuron",
     "type": "theory",
-    "question": "How does increasing the bias b from -1.0 to +2.0 affect an artificial neuron's pre-\nactivation z?",
+    "question": "How does increasing the bias b from -1.0 to +2.0 affect an artificial neuron's pre- activation z?",
     "options": {
       "A": "It reverses the signs of all weights.",
       "B": "It decreases z by 3.0 for every input sample.",
@@ -709,7 +709,7 @@
     "topicCode": "T05",
     "topic": "T05 · Artificial Neuron",
     "type": "theory",
-    "question": "What is the relationship between d (number of inputs) and the weight vector w of a\nsingle neuron?",
+    "question": "What is the relationship between d (number of inputs) and the weight vector w of a single neuron?",
     "options": {
       "A": "w has the exact same dimension d as the input vector x.",
       "B": "w has dimension d2.",
@@ -724,7 +724,7 @@
     "topicCode": "T05",
     "topic": "T05 · Artificial Neuron",
     "type": "calculation",
-    "question": "An artificial neuron has inputs x = [1.0, 2.0, -2.0], weights w = [3.0, -1.0, 0.5], and bias b =\n-0.5. Calculate the pre-activation z.",
+    "question": "An artificial neuron has inputs x = [1.0, 2.0, -2.0], weights w = [3.0, -1.0, 0.5], and bias b = -0.5. Calculate the pre-activation z.",
     "options": {
       "A": "0.5",
       "B": "1.5",
@@ -739,7 +739,7 @@
     "topicCode": "T05",
     "topic": "T05 · Artificial Neuron",
     "type": "calculation",
-    "question": "An artificial neuron computes z = -1.8 and uses a step activation function that outputs\n1 if z ≥ 0 and 0 if z < 0. What is its output a?",
+    "question": "An artificial neuron computes z = -1.8 and uses a step activation function that outputs 1 if z ≥ 0 and 0 if z < 0. What is its output a?",
     "options": {
       "A": "0",
       "B": "1",
@@ -754,7 +754,7 @@
     "topicCode": "T06",
     "topic": "T06 · Perceptron",
     "type": "theory",
-    "question": "If a perceptron's weighted sum evaluates to exactly z = 0.0, what is its predicted\noutput under the standard convention?",
+    "question": "If a perceptron's weighted sum evaluates to exactly z = 0.0, what is its predicted output under the standard convention?",
     "options": {
       "A": "y_hat = 0 (since z must be strictly positive)",
       "B": "y_hat = 0.5",
@@ -769,7 +769,7 @@
     "topicCode": "T06",
     "topic": "T06 · Perceptron",
     "type": "theory",
-    "question": "What inequality does the truth table row (x1 = 1, x2 = 0, target y = 1) impose on a two-\ninput perceptron?",
+    "question": "What inequality does the truth table row (x1 = 1, x2 = 0, target y = 1) impose on a two- input perceptron?",
     "options": {
       "A": "w1 + b ≥ 0",
       "B": "b ≥ 0",
@@ -792,14 +792,14 @@
       "D": "When all weights become equal to zero."
     },
     "answer": "C",
-    "explanation": "When every training example produces y - y_hat = 0 across an entire epoch, no further weight\nupdates occur and training has converged."
+    "explanation": "When every training example produces y - y_hat = 0 across an entire epoch, no further weight updates occur and training has converged."
   },
   {
     "id": 54,
     "topicCode": "T06",
     "topic": "T06 · Perceptron",
     "type": "theory",
-    "question": "If input x2 = 0 during a misclassified training step, what happens to weight w2 in the\nperceptron update rule?",
+    "question": "If input x2 = 0 during a misclassified training step, what happens to weight w2 in the perceptron update rule?",
     "options": {
       "A": "w2 remains unchanged because delta_w2 = eta(y - y_hat)(0) = 0.",
       "B": "w2 increases by eta.",
@@ -807,7 +807,7 @@
       "D": "w2 is reset to zero."
     },
     "answer": "A",
-    "explanation": "Because the weight update is proportional to the input feature xi, a zero input feature produces\nzero change in its corresponding weight."
+    "explanation": "Because the weight update is proportional to the input feature xi, a zero input feature produces zero change in its corresponding weight."
   },
   {
     "id": 55,
@@ -822,14 +822,14 @@
       "D": "A 3D sphere"
     },
     "answer": "A",
-    "explanation": "In d dimensions, wT x + b = 0 defines a (d - 1)-dimensional hyperplane, which is a 2D flat plane in\n3D space."
+    "explanation": "In d dimensions, wT x + b = 0 defines a (d - 1)-dimensional hyperplane, which is a 2D flat plane in 3D space."
   },
   {
     "id": 56,
     "topicCode": "T06",
     "topic": "T06 · Perceptron",
     "type": "theory",
-    "question": "Why does scaling all perceptron parameters (w1, w2, b) by 3 leave its classification\ndecisions unchanged?",
+    "question": "Why does scaling all perceptron parameters (w1, w2, b) by 3 leave its classification decisions unchanged?",
     "options": {
       "A": "The step function ignores weights greater than 1.",
       "B": "Multiplying by 3 converts the perceptron into an MLP.",
@@ -844,7 +844,7 @@
     "topicCode": "T06",
     "topic": "T06 · Perceptron",
     "type": "theory",
-    "question": "What happens if the perceptron learning algorithm is run on a dataset that is NOT\nlinearly separable (such as XOR)?",
+    "question": "What happens if the perceptron learning algorithm is run on a dataset that is NOT linearly separable (such as XOR)?",
     "options": {
       "A": "It never converges and continues updating weights indefinitely without reaching zero errors.",
       "B": "It converges in 2 epochs.",
@@ -852,7 +852,7 @@
       "D": "It sets the learning rate to zero."
     },
     "answer": "A",
-    "explanation": "Because no linear hyperplane can separate all samples without error, at least one sample always\ntriggers an update in every epoch."
+    "explanation": "Because no linear hyperplane can separate all samples without error, at least one sample always triggers an update in every epoch."
   },
   {
     "id": 58,
@@ -867,14 +867,14 @@
       "D": "Both XOR and XNOR"
     },
     "answer": "C",
-    "explanation": "NAND (like AND and OR) has only one output class corner (1,1 → 0) and is linearly separable; XOR\nand XNOR are linearly inseparable."
+    "explanation": "NAND (like AND and OR) has only one output class corner (1,1 → 0) and is linearly separable; XOR and XNOR are linearly inseparable."
   },
   {
     "id": 59,
     "topicCode": "T06",
     "topic": "T06 · Perceptron",
     "type": "calculation",
-    "question": "A perceptron has w1 = 2.0, w2 = 2.0, and b = -1.0. For input (x1 = 0, x2 = 1), what are z\nand y_hat?",
+    "question": "A perceptron has w1 = 2.0, w2 = 2.0, and b = -1.0. For input (x1 = 0, x2 = 1), what are z and y_hat?",
     "options": {
       "A": "z = +3.0, y_hat = 1",
       "B": "z = -1.0, y_hat = 0",
@@ -889,7 +889,7 @@
     "topicCode": "T06",
     "topic": "T06 · Perceptron",
     "type": "calculation",
-    "question": "A perceptron has w1 = 1.0, w2 = 1.0, b = 0.0, and eta = 0.5. For input (x1 = 0, x2 = 1) with\ntarget y = 0, it predicts y_hat = 1. What are the updated (w1, w2, b)?",
+    "question": "A perceptron has w1 = 1.0, w2 = 1.0, b = 0.0, and eta = 0.5. For input (x1 = 0, x2 = 1) with target y = 0, it predicts y_hat = 1. What are the updated (w1, w2, b)?",
     "options": {
       "A": "w1 = 0.5, w2 = 0.5, b = -0.5",
       "B": "w1 = 1.0, w2 = 0.5, b = 0.0",
@@ -904,7 +904,7 @@
     "topicCode": "T07",
     "topic": "T07 · Activation Functions",
     "type": "theory",
-    "question": "What is the exact value of the Sigmoid function sigma(z) and its derivative sigma'(z)\nwhen z = 0?",
+    "question": "What is the exact value of the Sigmoid function sigma(z) and its derivative sigma'(z) when z = 0?",
     "options": {
       "A": "sigma(0) = 0.5 and sigma'(0) = 0.25",
       "B": "sigma(0) = 0.5 and sigma'(0) = 0.5",
@@ -964,7 +964,7 @@
     "topicCode": "T07",
     "topic": "T07 · Activation Functions",
     "type": "theory",
-    "question": "What happens if you build a 10-layer neural network using only linear activation\nfunctions f(z) = z?",
+    "question": "What happens if you build a 10-layer neural network using only linear activation functions f(z) = z?",
     "options": {
       "A": "Its gradients always explode to infinity.",
       "B": "It automatically solves XOR.",
@@ -972,7 +972,7 @@
       "D": "It has the exact same expressive power as a single-layer linear model."
     },
     "answer": "D",
-    "explanation": "Composing linear functions produces another linear function, so depth adds zero non-linear\ncapacity."
+    "explanation": "Composing linear functions produces another linear function, so depth adds zero non-linear capacity."
   },
   {
     "id": 66,
@@ -987,14 +987,14 @@
       "D": "It outputs exact 0 for all negative pre-activations (z ≤ 0), turning off inactive neurons."
     },
     "answer": "D",
-    "explanation": "Setting all negative pre-activations to zero means only a subset of neurons fire for any given input,\ncreating sparse activations."
+    "explanation": "Setting all negative pre-activations to zero means only a subset of neurons fire for any given input, creating sparse activations."
   },
   {
     "id": 67,
     "topicCode": "T07",
     "topic": "T07 · Activation Functions",
     "type": "theory",
-    "question": "Why is Tanh generally preferred over Sigmoid when choosing between the two for\nhidden layers?",
+    "question": "Why is Tanh generally preferred over Sigmoid when choosing between the two for hidden layers?",
     "options": {
       "A": "Tanh never saturates.",
       "B": "Tanh outputs are zero-centered (mean near 0) and have a larger peak gradient (1.0 vs. 0.25).",
@@ -1002,14 +1002,14 @@
       "D": "Tanh outputs probabilities summing to 1."
     },
     "answer": "B",
-    "explanation": "Zero-centered activations prevent systematic sign bias in weight gradients, improving convergence\nover Sigmoid."
+    "explanation": "Zero-centered activations prevent systematic sign bias in weight gradients, improving convergence over Sigmoid."
   },
   {
     "id": 68,
     "topicCode": "T07",
     "topic": "T07 · Activation Functions",
     "type": "theory",
-    "question": "In a multi-class problem with 5 mutually exclusive classes, why is Softmax preferred\nover 5 independent Sigmoid outputs?",
+    "question": "In a multi-class problem with 5 mutually exclusive classes, why is Softmax preferred over 5 independent Sigmoid outputs?",
     "options": {
       "A": "Softmax uses fewer output neurons than Sigmoid.",
       "B": "Sigmoid cannot output values between 0 and 1.",
@@ -1017,14 +1017,14 @@
       "D": "Softmax enforces mutual exclusivity so the 5 probabilities sum to 1.0, whereas independent sigmoids could sum to any number between 0 and 5."
     },
     "answer": "D",
-    "explanation": "Softmax couples all class logits in its denominator so increasing one class's probability decreases\nthe others, ensuring a valid probability distribution."
+    "explanation": "Softmax couples all class logits in its denominator so increasing one class's probability decreases the others, ensuring a valid probability distribution."
   },
   {
     "id": 69,
     "topicCode": "T07",
     "topic": "T07 · Activation Functions",
     "type": "calculation",
-    "question": "If a neuron using Tanh activation has output tanh(z) = 0.6, what is its derivative\ntanh'(z) = 1 - tanh2(z)?",
+    "question": "If a neuron using Tanh activation has output tanh(z) = 0.6, what is its derivative tanh'(z) = 1 - tanh2(z)?",
     "options": {
       "A": "0.40",
       "B": "0.24",
@@ -1047,14 +1047,14 @@
       "D": "ReLU = 1.0, Leaky ReLU = 1.0"
     },
     "answer": "A",
-    "explanation": "For positive z = 3.2 > 0, both ReLU(z) = max(0, 3.2) = 3.2 and Leaky ReLU(z) = max(0.01*3.2, 3.2) =\n3.2."
+    "explanation": "For positive z = 3.2 > 0, both ReLU(z) = max(0, 3.2) = 3.2 and Leaky ReLU(z) = max(0.01*3.2, 3.2) = 3.2."
   },
   {
     "id": 71,
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "theory",
-    "question": "Why does an MLP require at least one hidden layer with non-linear activations to\nsolve non-linearly separable problems?",
+    "question": "Why does an MLP require at least one hidden layer with non-linear activations to solve non-linearly separable problems?",
     "options": {
       "A": "Hidden layers eliminate the need for weights.",
       "B": "Hidden layers warp the input space into a higher-level representation where classes become linearly separable by the output layer.",
@@ -1062,14 +1062,14 @@
       "D": "Hidden layers remove the bias term."
     },
     "answer": "B",
-    "explanation": "Non-linear hidden units fold and transform the input space so a linear hyperplane in the final layer\ncan partition complex regions."
+    "explanation": "Non-linear hidden units fold and transform the input space so a linear hyperplane in the final layer can partition complex regions."
   },
   {
     "id": 72,
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "theory",
-    "question": "In the weight notation w32\n(1), which neuron is the sender and which is the receiver?",
+    "question": "In the weight notation w32 (1), which neuron is the sender and which is the receiver?",
     "options": {
       "A": "Sender: bias 3; Receiver: weight 2.",
       "B": "Sender: hidden neuron 3; Receiver: input neuron 2.",
@@ -1077,7 +1077,7 @@
       "D": "Sender: output neuron 1; Receiver: hidden neuron 2."
     },
     "answer": "C",
-    "explanation": "In wjk\n(l), j = 3 is the receiving neuron in layer l = 1, and k = 2 is the sending neuron in layer l - 1 = 0."
+    "explanation": "In wjk (l), j = 3 is the receiving neuron in layer l = 1, and k = 2 is the sending neuron in layer l - 1 = 0."
   },
   {
     "id": 73,
@@ -1114,7 +1114,7 @@
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "theory",
-    "question": "In the Boolean decomposition of XOR used to build a 2-2-1 MLP, which two logic gates\nare implemented by the two hidden neurons?",
+    "question": "In the Boolean decomposition of XOR used to build a 2-2-1 MLP, which two logic gates are implemented by the two hidden neurons?",
     "options": {
       "A": "AND and AND",
       "B": "NOT and NOT",
@@ -1129,7 +1129,7 @@
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "theory",
-    "question": "If an MLP is designed to classify MNIST handwritten digits (28 x 28 grayscale images\ninto digits 0–9), what are its input and output layer sizes?",
+    "question": "If an MLP is designed to classify MNIST handwritten digits (28 x 28 grayscale images into digits 0–9), what are its input and output layer sizes?",
     "options": {
       "A": "Input size = 28, Output size = 1",
       "B": "Input size = 10, Output size = 784",
@@ -1137,14 +1137,14 @@
       "D": "Input size = 784, Output size = 1"
     },
     "answer": "C",
-    "explanation": "Flattening a 28 x 28 image gives 784 input features, and classifying 10 digits requires 10 output\nneurons."
+    "explanation": "Flattening a 28 x 28 image gives 784 input features, and classifying 10 digits requires 10 output neurons."
   },
   {
     "id": 77,
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "theory",
-    "question": "What is the key architectural difference between a single-layer perceptron and a\nMultilayer Perceptron?",
+    "question": "What is the key architectural difference between a single-layer perceptron and a Multilayer Perceptron?",
     "options": {
       "A": "An MLP has no weights.",
       "B": "An MLP cannot be trained with gradient descent.",
@@ -1152,14 +1152,14 @@
       "D": "An MLP includes one or more hidden layers with non-linear activations between the input and output layers."
     },
     "answer": "D",
-    "explanation": "Adding hidden layers with non-linear activations enables MLPs to learn hierarchical non-linear\ndecision boundaries."
+    "explanation": "Adding hidden layers with non-linear activations enables MLPs to learn hierarchical non-linear decision boundaries."
   },
   {
     "id": 78,
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "theory",
-    "question": "How does increasing model capacity (more hidden layers and neurons) affect an\nMLP's risk of overfitting on a small dataset?",
+    "question": "How does increasing model capacity (more hidden layers and neurons) affect an MLP's risk of overfitting on a small dataset?",
     "options": {
       "A": "It completely eliminates overfitting.",
       "B": "It decreases the number of parameters.",
@@ -1167,14 +1167,14 @@
       "D": "It forces the model to underfit."
     },
     "answer": "C",
-    "explanation": "More parameters give higher expressive flexibility, which can memorize small datasets unless\nregularized."
+    "explanation": "More parameters give higher expressive flexibility, which can memorize small datasets unless regularized."
   },
   {
     "id": 79,
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "calculation",
-    "question": "Calculate the total number of learnable parameters (weights + biases) in an MLP with\narchitecture 6 → 10 → 4.",
+    "question": "Calculate the total number of learnable parameters (weights + biases) in an MLP with architecture 6 → 10 → 4.",
     "options": {
       "A": "100 parameters",
       "B": "110 parameters",
@@ -1189,7 +1189,7 @@
     "topicCode": "T08",
     "topic": "T08 · Multilayer Perceptron (MLP)",
     "type": "calculation",
-    "question": "An MLP has 784 input features, 1 hidden layer of 128 neurons, and 10 output neurons.\nHow many total learnable parameters does it contain?",
+    "question": "An MLP has 784 input features, 1 hidden layer of 128 neurons, and 10 output neurons. How many total learnable parameters does it contain?",
     "options": {
       "A": "101,770 parameters",
       "B": "100,352 parameters",
@@ -1197,7 +1197,7 @@
       "D": "101,632 parameters"
     },
     "answer": "A",
-    "explanation": "Layer 1: (784 x 128) + 128 = 100,352 + 128 = 100,480. Layer 2: (128 x 10) + 10 = 1,290. Total = 100,480\n+ 1,290 = 101,770."
+    "explanation": "Layer 1: (784 x 128) + 128 = 100,352 + 128 = 100,480. Layer 2: (128 x 10) + 10 = 1,290. Total = 100,480 + 1,290 = 101,770."
   },
   {
     "id": 81,
@@ -1212,14 +1212,14 @@
       "D": "The loss gradient dL/dW(l)"
     },
     "answer": "B",
-    "explanation": "Each layer first computes the linear pre-activation z(l) before applying its non-linear activation\nfunction f(z(l))."
+    "explanation": "Each layer first computes the linear pre-activation z(l) before applying its non-linear activation function f(z(l))."
   },
   {
     "id": 82,
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "theory",
-    "question": "If a network has 5 input features and 8 neurons in the first hidden layer, what is the\ndimension of W(1) when rows represent receiving neurons?",
+    "question": "If a network has 5 input features and 8 neurons in the first hidden layer, what is the dimension of W(1) when rows represent receiving neurons?",
     "options": {
       "A": "8 x 8",
       "B": "5 x 8",
@@ -1234,7 +1234,7 @@
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "theory",
-    "question": "Why does forward propagation move sequentially from layer 1 to layer L rather than\ncomputing layer L first?",
+    "question": "Why does forward propagation move sequentially from layer 1 to layer L rather than computing layer L first?",
     "options": {
       "A": "Because each layer's pre-activation z(l) depends directly on the post-activation output a(l-1) of the preceding layer.",
       "B": "Because weights in layer L are stored at the end of the file.",
@@ -1257,14 +1257,14 @@
       "D": "The updated learning rate."
     },
     "answer": "C",
-    "explanation": "During training, forward propagation produces y_hat and compares it with target y via the loss\nfunction L."
+    "explanation": "During training, forward propagation produces y_hat and compares it with target y via the loss function L."
   },
   {
     "id": 85,
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "theory",
-    "question": "In a 2-3-2 MLP, how many pre-activation values (zj\n(1)) are computed in the hidden\nlayer for a single input sample?",
+    "question": "In a 2-3-2 MLP, how many pre-activation values (zj (1)) are computed in the hidden layer for a single input sample?",
     "options": {
       "A": "3 pre-activation values (one per hidden neuron)",
       "B": "2 pre-activation values",
@@ -1272,14 +1272,14 @@
       "D": "12 pre-activation values"
     },
     "answer": "A",
-    "explanation": "Each hidden neuron computes one scalar pre-activation zj\n(1), so 3 hidden neurons compute 3\nvalues."
+    "explanation": "Each hidden neuron computes one scalar pre-activation zj (1), so 3 hidden neurons compute 3 values."
   },
   {
     "id": 86,
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "theory",
-    "question": "What happens to forward propagation if input features are unnormalized and very\nlarge (e.g., 10,000)?",
+    "question": "What happens to forward propagation if input features are unnormalized and very large (e.g., 10,000)?",
     "options": {
       "A": "ReLU outputs become negative.",
       "B": "Pre-activations z become very large, potentially pushing Sigmoid/Tanh neurons into immediate saturation.",
@@ -1287,14 +1287,14 @@
       "D": "The number of parameters doubles."
     },
     "answer": "B",
-    "explanation": "Large unscaled inputs create large weighted sums, saturating squashing activations where\ngradients vanish."
+    "explanation": "Large unscaled inputs create large weighted sums, saturating squashing activations where gradients vanish."
   },
   {
     "id": 87,
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "theory",
-    "question": "When evaluating a trained model on a single new user query in production, is\nbackpropagation executed after forward propagation?",
+    "question": "When evaluating a trained model on a single new user query in production, is backpropagation executed after forward propagation?",
     "options": {
       "A": "No, backpropagation is only used during training; inference uses forward propagation only.",
       "B": "Yes, if the user query is longer than 10 words.",
@@ -1309,7 +1309,7 @@
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "theory",
-    "question": "In forward propagation, what is the mathematical difference between z1\n(1) and a1\n(1)?",
+    "question": "In forward propagation, what is the mathematical difference between z1 (1) and a1 (1)?",
     "options": {
       "A": "z1 (1) is a matrix; a1 (1) is a dataset.",
       "B": "They are always identical for every activation function.",
@@ -1317,14 +1317,14 @@
       "D": "z1 (1) is the target label; a1 (1) is the error."
     },
     "answer": "C",
-    "explanation": "z1\n(1) is the linear combination, while a1\n(1) is the result of applying the activation function f."
+    "explanation": "z1 (1) is the linear combination, while a1 (1) is the result of applying the activation function f."
   },
   {
     "id": 89,
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "calculation",
-    "question": "A 1-1-1 MLP has x = 3.0, w1 = -1.0, b1 = 2.0, w2 = 4.0, b2 = 1.0. Hidden activation is ReLU\nand output activation is linear f(z) = z. What is y_hat?",
+    "question": "A 1-1-1 MLP has x = 3.0, w1 = -1.0, b1 = 2.0, w2 = 4.0, b2 = 1.0. Hidden activation is ReLU and output activation is linear f(z) = z. What is y_hat?",
     "options": {
       "A": "0.0",
       "B": "-3.0",
@@ -1339,7 +1339,7 @@
     "topicCode": "T09",
     "topic": "T09 · Forward Propagation",
     "type": "calculation",
-    "question": "An output neuron receives hidden activations a(1) = [0.5, 0.8, 0.2] with weights [2.0,\n-1.0, 1.5] and bias b = 0.2. What is its pre-activation z(2)?",
+    "question": "An output neuron receives hidden activations a(1) = [0.5, 0.8, 0.2] with weights [2.0, -1.0, 1.5] and bias b = 0.2. What is its pre-activation z(2)?",
     "options": {
       "A": "1.2",
       "B": "0.5",
@@ -1354,7 +1354,7 @@
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "Which regression loss function preserves the exact physical units of the target\nvariable (e.g., meters or dollars)?",
+    "question": "Which regression loss function preserves the exact physical units of the target variable (e.g., meters or dollars)?",
     "options": {
       "A": "Binary Cross-Entropy",
       "B": "Mean Squared Error (MSE) only",
@@ -1369,7 +1369,7 @@
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "If a dataset contains several extreme measurement errors (outliers) in the target\nvariable, which regression loss is least affected?",
+    "question": "If a dataset contains several extreme measurement errors (outliers) in the target variable, which regression loss is least affected?",
     "options": {
       "A": "Cubed Error Loss",
       "B": "Exponential Error Loss",
@@ -1377,14 +1377,14 @@
       "D": "Mean Squared Error (MSE)"
     },
     "answer": "C",
-    "explanation": "MAE grows linearly rather than quadratically with residual size, limiting the pull of extreme\noutliers."
+    "explanation": "MAE grows linearly rather than quadratically with residual size, limiting the pull of extreme outliers."
   },
   {
     "id": 93,
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "In Binary Cross-Entropy loss L = -[y ln(y_hat) + (1 - y) ln(1 - y_hat)], which term\nremains active when the true target is y = 0?",
+    "question": "In Binary Cross-Entropy loss L = -[y ln(y_hat) + (1 - y) ln(1 - y_hat)], which term remains active when the true target is y = 0?",
     "options": {
       "A": "-ln(1 - y_hat)",
       "B": "y_hat2",
@@ -1399,7 +1399,7 @@
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "A 3-class classifier outputs Softmax probabilities [0.10, 0.80, 0.10] when the true class\nis Class 2 (one-hot [0, 1, 0]). Which expression equals the Categorical Cross-Entropy loss?",
+    "question": "A 3-class classifier outputs Softmax probabilities [0.10, 0.80, 0.10] when the true class is Class 2 (one-hot [0, 1, 0]). Which expression equals the Categorical Cross-Entropy loss?",
     "options": {
       "A": "1 - 0.80",
       "B": "-ln(0.10)",
@@ -1407,14 +1407,14 @@
       "D": "-ln(0.80)"
     },
     "answer": "D",
-    "explanation": "Categorical Cross-Entropy evaluates -ln(y_hatc) where y_hatc = 0.80 is the predicted probability of\nthe true class."
+    "explanation": "Categorical Cross-Entropy evaluates -ln(y_hatc) where y_hatc = 0.80 is the predicted probability of the true class."
   },
   {
     "id": 95,
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "Why is MSE differentiable everywhere, whereas MAE has a non-differentiable corner\nat y - y_hat = 0?",
+    "question": "Why is MSE differentiable everywhere, whereas MAE has a non-differentiable corner at y - y_hat = 0?",
     "options": {
       "A": "Because MSE only accepts integer inputs.",
       "B": "Because MAE divides by zero at every step.",
@@ -1422,14 +1422,14 @@
       "D": "Because (y - y_hat)2 is a smooth parabola, whereas |y - y_hat| forms a sharp V-shape at zero."
     },
     "answer": "D",
-    "explanation": "The quadratic curve has a continuous derivative 2(y_hat - y) everywhere, whereas |e| switches\nslope abruptly from -1 to +1 at e = 0."
+    "explanation": "The quadratic curve has a continuous derivative 2(y_hat - y) everywhere, whereas |e| switches slope abruptly from -1 to +1 at e = 0."
   },
   {
     "id": 96,
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "When training a neural network to predict continuous house prices, why would using\nBinary Cross-Entropy loss be inappropriate?",
+    "question": "When training a neural network to predict continuous house prices, why would using Binary Cross-Entropy loss be inappropriate?",
     "options": {
       "A": "Binary Cross-Entropy requires 10 output neurons.",
       "B": "Binary Cross-Entropy expects target labels y in {0, 1} and predicted probabilities in (0, 1), not unbounded continuous dollar amounts.",
@@ -1444,7 +1444,7 @@
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "What happens to Categorical Cross-Entropy loss as the predicted probability y_hatc\nfor the true class approaches 1.0?",
+    "question": "What happens to Categorical Cross-Entropy loss as the predicted probability y_hatc for the true class approaches 1.0?",
     "options": {
       "A": "The loss approaches 0.0 (since -ln(1.0) = 0).",
       "B": "The loss becomes undefined.",
@@ -1459,7 +1459,7 @@
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "theory",
-    "question": "Can a loss function ever be negative for MSE, MAE, or Cross-Entropy with valid\nprobability predictions?",
+    "question": "Can a loss function ever be negative for MSE, MAE, or Cross-Entropy with valid probability predictions?",
     "options": {
       "A": "Yes, when the learning rate is small.",
       "B": "Only when batch size is 1.",
@@ -1474,7 +1474,7 @@
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "calculation",
-    "question": "If the Mean Squared Error (MSE) of a regression model on test data is 64.0 (square\nmeters)2, what is the Root Mean Squared Error (RMSE)?",
+    "question": "If the Mean Squared Error (MSE) of a regression model on test data is 64.0 (square meters)2, what is the Root Mean Squared Error (RMSE)?",
     "options": {
       "A": "4.0 meters",
       "B": "8.0 meters",
@@ -1489,7 +1489,7 @@
     "topicCode": "T10",
     "topic": "T10 · Loss Functions",
     "type": "calculation",
-    "question": "A 3-class Softmax model predicts probabilities [0.20, 0.50, 0.30] for a sample whose\ntrue label is Class 2 ([0, 1, 0]). Given ln(0.50) = -0.693, what is the Categorical Cross-Entropy loss?",
+    "question": "A 3-class Softmax model predicts probabilities [0.20, 0.50, 0.30] for a sample whose true label is Class 2 ([0, 1, 0]). Given ln(0.50) = -0.693, what is the Categorical Cross-Entropy loss?",
     "options": {
       "A": "0.693",
       "B": "0.500",
@@ -1504,7 +1504,7 @@
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "theory",
-    "question": "Why does Gradient Descent multiply the gradient by a small learning rate eta (such\nas 0.01 or 0.1) instead of subtracting the raw gradient directly?",
+    "question": "Why does Gradient Descent multiply the gradient by a small learning rate eta (such as 0.01 or 0.1) instead of subtracting the raw gradient directly?",
     "options": {
       "A": "Because eta converts classification into regression.",
       "B": "Because multiplying by eta sets the bias to zero.",
@@ -1512,7 +1512,7 @@
       "D": "Because gradients are always larger than 1,000."
     },
     "answer": "C",
-    "explanation": "The derivative is a local linear approximation; scaling steps by eta keeps updates controlled and\nstable."
+    "explanation": "The derivative is a local linear approximation; scaling steps by eta keeps updates controlled and stable."
   },
   {
     "id": 102,
@@ -1527,14 +1527,14 @@
       "D": "bnew = 0"
     },
     "answer": "B",
-    "explanation": "Biases are updated just like weights by subtracting eta times their partial derivative: bnew = bold -\neta(dL/db)."
+    "explanation": "Biases are updated just like weights by subtracting eta times their partial derivative: bnew = bold - eta(dL/db)."
   },
   {
     "id": 103,
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "theory",
-    "question": "If a weight gradient dL/dw equals exactly 0 at a certain iteration, what happens to\nthat weight during the gradient descent step?",
+    "question": "If a weight gradient dL/dw equals exactly 0 at a certain iteration, what happens to that weight during the gradient descent step?",
     "options": {
       "A": "It remains unchanged (wnew = wold - eta * 0 = wold).",
       "B": "It doubles in value.",
@@ -1549,7 +1549,7 @@
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "theory",
-    "question": "In backpropagation, why do we evaluate gradients starting at the output layer and\nmoving backward toward the input layer?",
+    "question": "In backpropagation, why do we evaluate gradients starting at the output layer and moving backward toward the input layer?",
     "options": {
       "A": "Because each earlier layer's gradient reuses the downstream sensitivity dL/dz(l+1) already computed for the layer ahead of it.",
       "B": "Because forward propagation starts at the output layer.",
@@ -1557,14 +1557,14 @@
       "D": "Because biases only exist in the input layer."
     },
     "answer": "A",
-    "explanation": "Propagating sensitivities backward avoids redundant chain-rule multiplications, making gradient\ncomputation linear in network size."
+    "explanation": "Propagating sensitivities backward avoids redundant chain-rule multiplications, making gradient computation linear in network size."
   },
   {
     "id": 105,
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "theory",
-    "question": "What happens to the loss L after a single well-calibrated gradient descent update\nwith a small positive learning rate?",
+    "question": "What happens to the loss L after a single well-calibrated gradient descent update with a small positive learning rate?",
     "options": {
       "A": "The loss decreases (Lnew < Lold).",
       "B": "The loss stays identical.",
@@ -1572,7 +1572,7 @@
       "D": "The loss always increases."
     },
     "answer": "A",
-    "explanation": "Stepping opposite to a non-zero gradient with an appropriately small learning rate reduces the\nobjective value."
+    "explanation": "Stepping opposite to a non-zero gradient with an appropriately small learning rate reduces the objective value."
   },
   {
     "id": 106,
@@ -1594,7 +1594,7 @@
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "theory",
-    "question": "If input feature x2 = 0 for a given training example, what is the gradient dL/dw2 of\nthe weight connected to x2?",
+    "question": "If input feature x2 = 0 for a given training example, what is the gradient dL/dw2 of the weight connected to x2?",
     "options": {
       "A": "Undefined.",
       "B": "1, regardless of the loss.",
@@ -1609,7 +1609,7 @@
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "theory",
-    "question": "Why are neural network loss landscapes generally non-convex compared to simple\nlinear regression?",
+    "question": "Why are neural network loss landscapes generally non-convex compared to simple linear regression?",
     "options": {
       "A": "Because neural networks do not use loss functions.",
       "B": "Because datasets are always sorted.",
@@ -1624,7 +1624,7 @@
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "calculation",
-    "question": "A bias currently has value bold = 0.25, its gradient is dL/db = +0.50, and the learning\nrate is eta = 0.10. What is the updated bias bnew?",
+    "question": "A bias currently has value bold = 0.25, its gradient is dL/db = +0.50, and the learning rate is eta = 0.10. What is the updated bias bnew?",
     "options": {
       "A": "0.30",
       "B": "-0.25",
@@ -1639,7 +1639,7 @@
     "topicCode": "T11",
     "topic": "T11 · Gradient Descent",
     "type": "calculation",
-    "question": "In a 2-output MLP, hidden neuron h1 connects to output 1 with weight w11\n(2) = 0.5 and\nto output 2 with weight w21\n(2) = -0.4. If dL/dz1\n(2) = -0.2 and dL/dz2\n(2) = 0.3, what is dL/da1\n(1)?",
+    "question": "In a 2-output MLP, hidden neuron h1 connects to output 1 with weight w11 (2) = 0.5 and to output 2 with weight w21 (2) = -0.4. If dL/dz1 (2) = -0.2 and dL/dz2 (2) = 0.3, what is dL/da1 (1)?",
     "options": {
       "A": "+0.22",
       "B": "-0.10",
@@ -1647,7 +1647,7 @@
       "D": "+0.02"
     },
     "answer": "C",
-    "explanation": "dL/da1\n(1) = (-0.2)(0.5) + (0.3)(-0.4) = -0.10 - 0.12 = -0.22."
+    "explanation": "dL/da1 (1) = (-0.2)(0.5) + (0.3)(-0.4) = -0.10 - 0.12 = -0.22."
   },
   {
     "id": 111,
@@ -1662,7 +1662,7 @@
       "D": "Evaluating the held-out test set."
     },
     "answer": "C",
-    "explanation": "One iteration corresponds to a single forward/backward pass and weight update on one mini-\nbatch."
+    "explanation": "One iteration corresponds to a single forward/backward pass and weight update on one mini- batch."
   },
   {
     "id": 112,
@@ -1684,7 +1684,7 @@
     "topicCode": "T12",
     "topic": "T12 · Stochastic Gradient Descent (SGD)",
     "type": "theory",
-    "question": "Why does full Batch Gradient Descent produce a smooth, monotonic decrease in\ntraining loss (for a suitable learning rate) compared to SGD?",
+    "question": "Why does full Batch Gradient Descent produce a smooth, monotonic decrease in training loss (for a suitable learning rate) compared to SGD?",
     "options": {
       "A": "Because it computes the exact gradient of the full training objective at every step without sampling noise.",
       "B": "Because it never uses activation functions.",
@@ -1699,7 +1699,7 @@
     "topicCode": "T12",
     "topic": "T12 · Stochastic Gradient Descent (SGD)",
     "type": "theory",
-    "question": "What can happen if you train Mini-Batch SGD on a sorted dataset (e.g., all 'Cat'\nimages first, then all 'Dog' images) without shuffling?",
+    "question": "What can happen if you train Mini-Batch SGD on a sorted dataset (e.g., all 'Cat' images first, then all 'Dog' images) without shuffling?",
     "options": {
       "A": "All weights become equal to 1.",
       "B": "Dropout automatically turns off.",
@@ -1707,14 +1707,14 @@
       "D": "The model trains twice as fast with higher accuracy."
     },
     "answer": "C",
-    "explanation": "Unshuffled ordered batches bias parameter updates toward whichever class dominates the current\nbatch."
+    "explanation": "Unshuffled ordered batches bias parameter updates toward whichever class dominates the current batch."
   },
   {
     "id": 115,
     "topicCode": "T12",
     "topic": "T12 · Stochastic Gradient Descent (SGD)",
     "type": "theory",
-    "question": "In PyTorch, what does `DataLoader(dataset, batch_size=32, shuffle=True)`\naccomplish?",
+    "question": "In PyTorch, what does `DataLoader(dataset, batch_size=32, shuffle=True)` accomplish?",
     "options": {
       "A": "It converts all labels to zero.",
       "B": "It trains the neural network automatically without a training loop.",
@@ -1737,14 +1737,14 @@
       "D": "It resets weights to zero every 10 epochs."
     },
     "answer": "B",
-    "explanation": "Momentum maintains an exponentially decaying sum of prior gradients to smooth and accelerate\nconvergence."
+    "explanation": "Momentum maintains an exponentially decaying sum of prior gradients to smooth and accelerate convergence."
   },
   {
     "id": 117,
     "topicCode": "T12",
     "topic": "T12 · Stochastic Gradient Descent (SGD)",
     "type": "theory",
-    "question": "How does using a very small mini-batch size (e.g., B = 2) compare to a moderate\nbatch size (e.g., B = 64)?",
+    "question": "How does using a very small mini-batch size (e.g., B = 2) compare to a moderate batch size (e.g., B = 64)?",
     "options": {
       "A": "B = 2 performs fewer updates per epoch than B = 64.",
       "B": "B = 2 is identical to Batch Gradient Descent.",
@@ -1767,14 +1767,14 @@
       "D": "Momentum (first-moment gradient average) and adaptive per-parameter learning rate scaling (second- moment squared gradient average)."
     },
     "answer": "D",
-    "explanation": "Adam tracks both the mean and uncentered variance of gradients to adapt step sizes per\nparameter."
+    "explanation": "Adam tracks both the mean and uncentered variance of gradients to adapt step sizes per parameter."
   },
   {
     "id": 119,
     "topicCode": "T12",
     "topic": "T12 · Stochastic Gradient Descent (SGD)",
     "type": "calculation",
-    "question": "A training set has N = 3,200 samples and mini-batch size is B = 128. How many\niterations (mini-batches) make up 1 complete epoch?",
+    "question": "A training set has N = 3,200 samples and mini-batch size is B = 128. How many iterations (mini-batches) make up 1 complete epoch?",
     "options": {
       "A": "32 iterations",
       "B": "16 iterations",
@@ -1789,7 +1789,7 @@
     "topicCode": "T12",
     "topic": "T12 · Stochastic Gradient Descent (SGD)",
     "type": "calculation",
-    "question": "If a training run has 800 training samples, batch size B = 40, and runs for 10 epochs,\nhow many total gradient descent updates occur?",
+    "question": "If a training run has 800 training samples, batch size B = 40, and runs for 10 epochs, how many total gradient descent updates occur?",
     "options": {
       "A": "200 updates",
       "B": "20 updates",
@@ -1804,7 +1804,7 @@
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "Which layer in a 10-layer neural network suffers the most severe vanishing gradient\nattenuation?",
+    "question": "Which layer in a 10-layer neural network suffers the most severe vanishing gradient attenuation?",
     "options": {
       "A": "All layers receive identical gradient magnitudes",
       "B": "Layer 10 (the output layer)",
@@ -1812,14 +1812,14 @@
       "D": "Layer 1 (the hidden layer closest to the input)"
     },
     "answer": "D",
-    "explanation": "Gradients travel backward from Layer 10 to Layer 1, so Layer 1 undergoes the longest chain of\nmultiplicative decay."
+    "explanation": "Gradients travel backward from Layer 10 to Layer 1, so Layer 1 undergoes the longest chain of multiplicative decay."
   },
   {
     "id": 122,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "How do residual (skip) connections help combat vanishing gradients in very deep\nnetworks?",
+    "question": "How do residual (skip) connections help combat vanishing gradients in very deep networks?",
     "options": {
       "A": "They reduce the dataset to 10 samples.",
       "B": "They provide an identity shortcut path (derivative = 1) that allows gradients to flow directly to earlier layers without decaying through activations.",
@@ -1827,14 +1827,14 @@
       "D": "They delete all weights in the network."
     },
     "answer": "B",
-    "explanation": "Adding x + F(x) creates an additive gradient highway (+1) during backpropagation, preserving\ngradient flow across deep stacks."
+    "explanation": "Adding x + F(x) creates an additive gradient highway (+1) during backpropagation, preserving gradient flow across deep stacks."
   },
   {
     "id": 123,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "Which symptom indicates that a deep network is suffering from vanishing gradients\nrather than exploding gradients?",
+    "question": "Which symptom indicates that a deep network is suffering from vanishing gradients rather than exploding gradients?",
     "options": {
       "A": "The training loss stops decreasing early while weights in the first few layers remain nearly identical to their initial values.",
       "B": "The loss jumps to Infinity and NaN within two iterations.",
@@ -1842,14 +1842,14 @@
       "D": "The GPU runs out of disk space."
     },
     "answer": "A",
-    "explanation": "Vanishing gradients starve early layers of updates, causing training progress to stall smoothly\nrather than blowing up to NaN."
+    "explanation": "Vanishing gradients starve early layers of updates, causing training progress to stall smoothly rather than blowing up to NaN."
   },
   {
     "id": 124,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "Why does Tanh still suffer from vanishing gradients in deep networks even though\nits peak derivative at z = 0 is 1.0?",
+    "question": "Why does Tanh still suffer from vanishing gradients in deep networks even though its peak derivative at z = 0 is 1.0?",
     "options": {
       "A": "Because Tanh outputs only integers.",
       "B": "Because Tanh has no negative outputs.",
@@ -1857,14 +1857,14 @@
       "D": "Because Tanh's derivative at z = 0 is 0."
     },
     "answer": "C",
-    "explanation": "Whenever pre-activations move away from zero into the flat tails of Tanh, tanh'(z) = 1 - tanh2(z)\napproaches zero."
+    "explanation": "Whenever pre-activations move away from zero into the flat tails of Tanh, tanh'(z) = 1 - tanh2(z) approaches zero."
   },
   {
     "id": 125,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "Which technique is specifically designed to stop exploding gradients without\nchanging the network architecture?",
+    "question": "Which technique is specifically designed to stop exploding gradients without changing the network architecture?",
     "options": {
       "A": "One-Hot Encoding",
       "B": "Data Augmentation",
@@ -1872,14 +1872,14 @@
       "D": "Gradient Clipping"
     },
     "answer": "D",
-    "explanation": "Gradient clipping directly bounds the maximum norm or value of gradients prior to updating\nparameters."
+    "explanation": "Gradient clipping directly bounds the maximum norm or value of gradients prior to updating parameters."
   },
   {
     "id": 126,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "What happens to a gradient passing through 5 active ReLU neurons (all with z > 0) if\nweights are near 1?",
+    "question": "What happens to a gradient passing through 5 active ReLU neurons (all with z > 0) if weights are near 1?",
     "options": {
       "A": "Each ReLU contributes a derivative factor of 1.0, so 15 = 1.0 (no activation-induced decay).",
       "B": "It becomes negative.",
@@ -1887,14 +1887,14 @@
       "D": "It shrinks by 0.255."
     },
     "answer": "A",
-    "explanation": "Active ReLU units have slope 1.0, avoiding the multiplicative shrinkage caused by saturating\nfunctions."
+    "explanation": "Active ReLU units have slope 1.0, avoiding the multiplicative shrinkage caused by saturating functions."
   },
   {
     "id": 127,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "If a model's weights are initialized with excessively large random values (e.g.,\nstandard deviation = 50), which issue is most likely to occur on the first forward and backward pass?",
+    "question": "If a model's weights are initialized with excessively large random values (e.g., standard deviation = 50), which issue is most likely to occur on the first forward and backward pass?",
     "options": {
       "A": "Underfitting due to zero weights.",
       "B": "Automatic early stopping.",
@@ -1902,14 +1902,14 @@
       "D": "Exploding activations and exploding gradients."
     },
     "answer": "D",
-    "explanation": "Multiplying inputs through layers with large weights compounds magnitudes exponentially across\ndepth."
+    "explanation": "Multiplying inputs through layers with large weights compounds magnitudes exponentially across depth."
   },
   {
     "id": 128,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "theory",
-    "question": "Which three practices together form the standard defense against vanishing\ngradients in modern MLPs?",
+    "question": "Which three practices together form the standard defense against vanishing gradients in modern MLPs?",
     "options": {
       "A": "Sigmoid activations, large learning rates, and no validation set.",
       "B": "Linear activations, MSE loss, and unnormalized inputs.",
@@ -1917,14 +1917,14 @@
       "D": "ReLU-family activations, He/Xavier weight initialization, and Batch Normalization."
     },
     "answer": "D",
-    "explanation": "Non-saturating activations, variance-preserving initialization, and BatchNorm keep gradients well-\nscaled throughout training."
+    "explanation": "Non-saturating activations, variance-preserving initialization, and BatchNorm keep gradients well- scaled throughout training."
   },
   {
     "id": 129,
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "calculation",
-    "question": "In a 3-layer Sigmoid network where each layer has derivative 0.20 and weight 1.0,\nwhat is the combined multiplicative factor applied to the gradient reaching layer 1?",
+    "question": "In a 3-layer Sigmoid network where each layer has derivative 0.20 and weight 1.0, what is the combined multiplicative factor applied to the gradient reaching layer 1?",
     "options": {
       "A": "0.20",
       "B": "0.60",
@@ -1939,7 +1939,7 @@
     "topicCode": "T13",
     "topic": "T13 · Vanishing and Exploding Gradients",
     "type": "calculation",
-    "question": "A 3-layer network has weight amplification factor 2.5 at each layer during\nbackpropagation. By what factor does an error signal grow across all 3 layers?",
+    "question": "A 3-layer network has weight amplification factor 2.5 at each layer during backpropagation. By what factor does an error signal grow across all 3 layers?",
     "options": {
       "A": "7.5",
       "B": "15.625",
@@ -1954,7 +1954,7 @@
     "topicCode": "T14",
     "topic": "T14 · Overfitting",
     "type": "theory",
-    "question": "Which phenomenon occurs when a model memorizes training examples instead of\nlearning underlying patterns?",
+    "question": "Which phenomenon occurs when a model memorizes training examples instead of learning underlying patterns?",
     "options": {
       "A": "Underfitting",
       "B": "Gradient Exploding",
@@ -1962,14 +1962,14 @@
       "D": "Overfitting"
     },
     "answer": "D",
-    "explanation": "Overfitting happens when a model fits training noise too closely and loses generalization ability on\nunseen data."
+    "explanation": "Overfitting happens when a model fits training noise too closely and loses generalization ability on unseen data."
   },
   {
     "id": 132,
     "topicCode": "T14",
     "topic": "T14 · Overfitting",
     "type": "theory",
-    "question": "Which regularization method encourages sparsity by driving less important weights\nto become exactly zero?",
+    "question": "Which regularization method encourages sparsity by driving less important weights to become exactly zero?",
     "options": {
       "A": "Batch Normalization",
       "B": "L1 regularization",
@@ -1977,7 +1977,7 @@
       "D": "Momentum"
     },
     "answer": "B",
-    "explanation": "L1 regularization applies a constant subgradient push toward zero, causing unimportant weights\nto snap to exact 0."
+    "explanation": "L1 regularization applies a constant subgradient push toward zero, causing unimportant weights to snap to exact 0."
   },
   {
     "id": 133,
@@ -1992,14 +1992,14 @@
       "D": "lambda * sum(wi 2)"
     },
     "answer": "D",
-    "explanation": "L2 regularization penalizes the sum of squared weight values scaled by regularization strength\nlambda."
+    "explanation": "L2 regularization penalizes the sum of squared weight values scaled by regularization strength lambda."
   },
   {
     "id": 134,
     "topicCode": "T14",
     "topic": "T14 · Overfitting",
     "type": "theory",
-    "question": "How does increasing the regularization strength lambda from 0 to a very large value\naffect a model?",
+    "question": "How does increasing the regularization strength lambda from 0 to a very large value affect a model?",
     "options": {
       "A": "It causes the model to memorize every training outlier.",
       "B": "It has no effect on model weights.",
@@ -2007,7 +2007,7 @@
       "D": "It forces weights closer to zero, reducing variance/overfitting, though an excessively large lambda can cause underfitting."
     },
     "answer": "D",
-    "explanation": "Larger lambda prioritizes small weights over fitting training data, shifting the model from\noverfitting toward underfitting if set too high."
+    "explanation": "Larger lambda prioritizes small weights over fitting training data, shifting the model from overfitting toward underfitting if set too high."
   },
   {
     "id": 135,
@@ -2022,7 +2022,7 @@
       "D": "Training accuracy is 99% and validation accuracy is 62%."
     },
     "answer": "B",
-    "explanation": "Low performance on both training and validation sets shows the model has not learned the data\npatterns."
+    "explanation": "Low performance on both training and validation sets shows the model has not learned the data patterns."
   },
   {
     "id": 136,
@@ -2037,14 +2037,14 @@
       "D": "More training data reduces the number of weights in the network."
     },
     "answer": "B",
-    "explanation": "Abundant training data constrains the hypothesis space so noise memorization becomes\nineffective."
+    "explanation": "Abundant training data constrains the hypothesis space so noise memorization becomes ineffective."
   },
   {
     "id": 137,
     "topicCode": "T14",
     "topic": "T14 · Overfitting",
     "type": "theory",
-    "question": "What happens to the total regularized loss L_total = L_data + lambda * sum(wi\n2)\nwhen a network uses unnecessarily huge weights?",
+    "question": "What happens to the total regularized loss L_total = L_data + lambda * sum(wi 2) when a network uses unnecessarily huge weights?",
     "options": {
       "A": "L_total increases significantly, penalizing the optimizer and pushing weights back down.",
       "B": "Gradient descent stops updating weights.",
@@ -2052,7 +2052,7 @@
       "D": "The penalty term becomes negative."
     },
     "answer": "A",
-    "explanation": "Large weights inflate the penalty term, creating an opposing gradient that shrinks weights toward\nzero."
+    "explanation": "Large weights inflate the penalty term, creating an opposing gradient that shrinks weights toward zero."
   },
   {
     "id": 138,
@@ -2074,7 +2074,7 @@
     "topicCode": "T14",
     "topic": "T14 · Overfitting",
     "type": "calculation",
-    "question": "Given weights w = [-4.0, 2.0] and regularization parameter lambda = 0.25, compute\nthe L1 regularization penalty lambda * sum(|wi|).",
+    "question": "Given weights w = [-4.0, 2.0] and regularization parameter lambda = 0.25, compute the L1 regularization penalty lambda * sum(|wi|).",
     "options": {
       "A": "2.0",
       "B": "0.5",
@@ -2089,7 +2089,7 @@
     "topicCode": "T14",
     "topic": "T14 · Overfitting",
     "type": "calculation",
-    "question": "Given weights w = [-4.0, 2.0] and regularization parameter lambda = 0.25, compute\nthe L2 regularization penalty lambda * sum(wi\n2).",
+    "question": "Given weights w = [-4.0, 2.0] and regularization parameter lambda = 0.25, compute the L2 regularization penalty lambda * sum(wi 2).",
     "options": {
       "A": "1.5",
       "B": "20.0",
@@ -2112,14 +2112,14 @@
       "D": "Class imbalance in raw CSV files"
     },
     "answer": "B",
-    "explanation": "Dropout regularizes high-capacity networks by preventing neuron co-adaptation and reducing\noverfitting."
+    "explanation": "Dropout regularizes high-capacity networks by preventing neuron co-adaptation and reducing overfitting."
   },
   {
     "id": 142,
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "theory",
-    "question": "During a single training forward pass with Dropout, what happens to the gradients\nof weights connected to a neuron that was dropped (set to 0)?",
+    "question": "During a single training forward pass with Dropout, what happens to the gradients of weights connected to a neuron that was dropped (set to 0)?",
     "options": {
       "A": "Those weights are permanently deleted.",
       "B": "Those weights receive zero gradient update on that specific step because the dropped neuron contributed nothing to the forward pass.",
@@ -2127,14 +2127,14 @@
       "D": "Those weights are doubled."
     },
     "answer": "B",
-    "explanation": "Since the dropped unit's output is masked to 0, no error signal flows through it on that batch; its\nweights update on other batches when it is active."
+    "explanation": "Since the dropped unit's output is masked to 0, no error signal flows through it on that batch; its weights update on other batches when it is active."
   },
   {
     "id": 143,
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "theory",
-    "question": "If a layer uses `nn.Dropout(p=0.4)` in PyTorch, what fraction of neurons is dropped\non average during training, and what fraction is dropped during `model.eval()`?",
+    "question": "If a layer uses `nn.Dropout(p=0.4)` in PyTorch, what fraction of neurons is dropped on average during training, and what fraction is dropped during `model.eval()`?",
     "options": {
       "A": "40% dropped during training; 0% dropped during evaluation.",
       "B": "60% dropped during training; 40% dropped during evaluation.",
@@ -2142,14 +2142,14 @@
       "D": "40% dropped during training; 40% dropped during evaluation."
     },
     "answer": "A",
-    "explanation": "p = 0.4 means 40% probability of zeroing each unit during training, and 0% (disabled) during\nevaluation."
+    "explanation": "p = 0.4 means 40% probability of zeroing each unit during training, and 0% (disabled) during evaluation."
   },
   {
     "id": 144,
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "theory",
-    "question": "Why does Inverted Dropout eliminate the need to scale weights or activations\nduring test-time inference?",
+    "question": "Why does Inverted Dropout eliminate the need to scale weights or activations during test-time inference?",
     "options": {
       "A": "Because scaling by 1 / (1 - p) already happened during training, so the expected activation scale at test time already matches training.",
       "B": "Because test inputs are always zero.",
@@ -2164,7 +2164,7 @@
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "theory",
-    "question": "What happens if Dropout is mistakenly applied to the input layer with a high rate\nlike p = 0.5 on tabular data with only 4 features?",
+    "question": "What happens if Dropout is mistakenly applied to the input layer with a high rate like p = 0.5 on tabular data with only 4 features?",
     "options": {
       "A": "The model converges twice as fast.",
       "B": "Half of the vital input features are wiped out on every sample, severely hurting accuracy.",
@@ -2172,14 +2172,14 @@
       "D": "The 4 features automatically expand to 40 features."
     },
     "answer": "B",
-    "explanation": "Dropping raw input features when few features exist discards critical information; Dropout is\nmainly used on larger hidden layers."
+    "explanation": "Dropping raw input features when few features exist discards critical information; Dropout is mainly used on larger hidden layers."
   },
   {
     "id": 146,
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "theory",
-    "question": "How does Dropout affect the training speed per epoch versus total epochs needed to\nconverge?",
+    "question": "How does Dropout affect the training speed per epoch versus total epochs needed to converge?",
     "options": {
       "A": "Training stops after 1 epoch.",
       "B": "It makes each step 100 times slower.",
@@ -2187,14 +2187,14 @@
       "D": "It eliminates backpropagation."
     },
     "answer": "C",
-    "explanation": "Because only a random subset of units updates per step, convergence is slightly slower per epoch\nbut yields better generalization."
+    "explanation": "Because only a random subset of units updates per step, convergence is slightly slower per epoch but yields better generalization."
   },
   {
     "id": 147,
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "theory",
-    "question": "Why are different random dropout masks generated for every mini-batch rather\nthan using the same fixed mask for the whole training run?",
+    "question": "Why are different random dropout masks generated for every mini-batch rather than using the same fixed mask for the whole training run?",
     "options": {
       "A": "Using the same fixed mask would simply train a single smaller static network instead of regularizing across many sub-networks.",
       "B": "Random masks are required by the operating system.",
@@ -2217,14 +2217,14 @@
       "D": "After the Cross-Entropy loss calculation."
     },
     "answer": "C",
-    "explanation": "Dropout is placed after hidden activations to randomly mask neuron outputs before feeding the\nnext layer."
+    "explanation": "Dropout is placed after hidden activations to randomly mask neuron outputs before feeding the next layer."
   },
   {
     "id": 149,
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "calculation",
-    "question": "A hidden layer has 120 neurons and applies Dropout with p = 0.25. On average, how\nmany neurons are dropped (set to zero) in a training pass?",
+    "question": "A hidden layer has 120 neurons and applies Dropout with p = 0.25. On average, how many neurons are dropped (set to zero) in a training pass?",
     "options": {
       "A": "25 neurons",
       "B": "30 neurons",
@@ -2239,7 +2239,7 @@
     "topicCode": "T15",
     "topic": "T15 · Dropout",
     "type": "calculation",
-    "question": "In Inverted Dropout with p = 0.25, by what multiplier are active neuron activations\nscaled during training?",
+    "question": "In Inverted Dropout with p = 0.25, by what multiplier are active neuron activations scaled during training?",
     "options": {
       "A": "4.00",
       "B": "1.25",
@@ -2254,7 +2254,7 @@
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "theory",
-    "question": "What are the initial default values typically used for BatchNorm's learnable\nparameters gamma and beta before training begins?",
+    "question": "What are the initial default values typically used for BatchNorm's learnable parameters gamma and beta before training begins?",
     "options": {
       "A": "gamma = 1 and beta = 0 (starting as an identity mapping on normalized values)",
       "B": "gamma = 0 and beta = 0",
@@ -2262,14 +2262,14 @@
       "D": "gamma = 100 and beta = -100"
     },
     "answer": "A",
-    "explanation": "Initializing gamma = 1 and beta = 0 ensures the layer starts out outputting exact zero-mean, unit-\nvariance activations."
+    "explanation": "Initializing gamma = 1 and beta = 0 ensures the layer starts out outputting exact zero-mean, unit- variance activations."
   },
   {
     "id": 152,
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "theory",
-    "question": "Why cannot BatchNorm use mini-batch statistics when predicting on a single test\nsample (batch size = 1) in production?",
+    "question": "Why cannot BatchNorm use mini-batch statistics when predicting on a single test sample (batch size = 1) in production?",
     "options": {
       "A": "PyTorch blocks batch size 1 during evaluation.",
       "B": "Running averages are always equal to zero.",
@@ -2277,14 +2277,14 @@
       "D": "Test samples do not have numerical features."
     },
     "answer": "C",
-    "explanation": "With 1 sample, x = muB so x - muB = 0; therefore inference uses running mean and running\nvariance learned across training."
+    "explanation": "With 1 sample, x = muB so x - muB = 0; therefore inference uses running mean and running variance learned across training."
   },
   {
     "id": 153,
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "theory",
-    "question": "Which benefit is directly associated with adding Batch Normalization to a deep\nMLP?",
+    "question": "Which benefit is directly associated with adding Batch Normalization to a deep MLP?",
     "options": {
       "A": "Reduction of output classes to 1.",
       "B": "Complete elimination of the need for a loss function.",
@@ -2292,14 +2292,14 @@
       "D": "Faster training convergence, reduced vanishing/exploding gradients, and less sensitivity to weight initialization."
     },
     "answer": "D",
-    "explanation": "BatchNorm keeps layer activations well-conditioned throughout training, enabling faster, more\nstable optimization."
+    "explanation": "BatchNorm keeps layer activations well-conditioned throughout training, enabling faster, more stable optimization."
   },
   {
     "id": 154,
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "theory",
-    "question": "In Batch Normalization, are gamma and beta updated by gradient descent just like\nregular network weights?",
+    "question": "In Batch Normalization, are gamma and beta updated by gradient descent just like regular network weights?",
     "options": {
       "A": "Yes, gamma and beta are learnable parameters updated via backpropagation.",
       "B": "No, they are computed as the test set mean.",
@@ -2314,7 +2314,7 @@
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "theory",
-    "question": "What happens if you forget to call `model.eval()` during testing on a network with\nBatchNorm?",
+    "question": "What happens if you forget to call `model.eval()` during testing on a network with BatchNorm?",
     "options": {
       "A": "All predictions become equal to 1.",
       "B": "BatchNorm continues computing batch statistics from the test batch and updating its running averages instead of using frozen training statistics.",
@@ -2329,7 +2329,7 @@
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "theory",
-    "question": "In the BatchNorm equation x_hati = (xi - muB) / sqrt(sigmaB\n2 + epsilon), what do muB\nand sigmaB\n2 represent?",
+    "question": "In the BatchNorm equation x_hati = (xi - muB) / sqrt(sigmaB 2 + epsilon), what do muB and sigmaB 2 represent?",
     "options": {
       "A": "The mean and variance of activations for that feature across the current mini-batch.",
       "B": "The minimum and maximum pixel values in the test set.",
@@ -2337,7 +2337,7 @@
       "D": "The number of training and validation samples."
     },
     "answer": "A",
-    "explanation": "BatchNorm computes the mean and variance across the m samples in the mini-batch for each\nfeature dimension."
+    "explanation": "BatchNorm computes the mean and variance across the m samples in the mini-batch for each feature dimension."
   },
   {
     "id": 157,
@@ -2359,7 +2359,7 @@
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "theory",
-    "question": "Does BatchNorm track running mean and running variance as learnable gradient-\ndescent weights or as non-gradient buffers?",
+    "question": "Does BatchNorm track running mean and running variance as learnable gradient- descent weights or as non-gradient buffers?",
     "options": {
       "A": "As exponential moving average buffers updated during forward passes, not via gradient descent.",
       "B": "They are computed from the validation labels.",
@@ -2367,14 +2367,14 @@
       "D": "As standard weights updated by Adam."
     },
     "answer": "A",
-    "explanation": "Running statistics are statistical estimates accumulated during training forward passes, whereas\ngamma and beta are learned via gradients."
+    "explanation": "Running statistics are statistical estimates accumulated during training forward passes, whereas gamma and beta are learned via gradients."
   },
   {
     "id": 159,
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "calculation",
-    "question": "A mini-batch of 4 activations for a single neuron is [2, 4, 6, 8]. What is the mini-batch\nmean muB?",
+    "question": "A mini-batch of 4 activations for a single neuron is [2, 4, 6, 8]. What is the mini-batch mean muB?",
     "options": {
       "A": "5.0",
       "B": "6.0",
@@ -2389,7 +2389,7 @@
     "topicCode": "T16",
     "topic": "T16 · Batch Normalization",
     "type": "calculation",
-    "question": "Given normalized activation x_hat = 0.8, scale gamma = 3.0, and shift beta = -0.4,\ncompute the BatchNorm output y = gamma * x_hat + beta.",
+    "question": "Given normalized activation x_hat = 0.8, scale gamma = 3.0, and shift beta = -0.4, compute the BatchNorm output y = gamma * x_hat + beta.",
     "options": {
       "A": "2.4",
       "B": "1.2",
@@ -2412,14 +2412,14 @@
       "D": "Using the test set to choose the stopping epoch leaks test information into model selection, biasing final evaluation."
     },
     "answer": "D",
-    "explanation": "Any hyperparameter or stopping decision must rely strictly on the validation set so the test set\nremains an unbiased final benchmark."
+    "explanation": "Any hyperparameter or stopping decision must rely strictly on the validation set so the test set remains an unbiased final benchmark."
   },
   {
     "id": 162,
     "topicCode": "T17",
     "topic": "T17 · Early Stopping",
     "type": "theory",
-    "question": "What does it indicate when training loss keeps decreasing after Epoch 15 while\nvalidation loss steadily increases?",
+    "question": "What does it indicate when training loss keeps decreasing after Epoch 15 while validation loss steadily increases?",
     "options": {
       "A": "The model is underfitting and needs 100 more epochs.",
       "B": "The model began overfitting after Epoch 15, so Epoch 15 is the optimal early stopping checkpoint.",
@@ -2434,7 +2434,7 @@
     "topicCode": "T17",
     "topic": "T17 · Early Stopping",
     "type": "theory",
-    "question": "If Early Stopping stops training at Epoch 30 with `patience = 4`, why would using\nEpoch 30's weights instead of Epoch 26's checkpoint be a mistake?",
+    "question": "If Early Stopping stops training at Epoch 30 with `patience = 4`, why would using Epoch 30's weights instead of Epoch 26's checkpoint be a mistake?",
     "options": {
       "A": "Because Epoch 26 had higher validation loss.",
       "B": "Because during Epochs 27–30 the model was already overfitting and validation performance had degraded compared to Epoch 26.",
@@ -2442,14 +2442,14 @@
       "D": "Because Epoch 30's weights are all set to zero."
     },
     "answer": "B",
-    "explanation": "The final epoch after waiting out patience has worse validation generalization than the best\ncheckpoint epoch."
+    "explanation": "The final epoch after waiting out patience has worse validation generalization than the best checkpoint epoch."
   },
   {
     "id": 164,
     "topicCode": "T17",
     "topic": "T17 · Early Stopping",
     "type": "theory",
-    "question": "How does setting a very large patience (e.g., `patience = 50` on a 60-epoch run) affect\nEarly Stopping?",
+    "question": "How does setting a very large patience (e.g., `patience = 50` on a 60-epoch run) affect Early Stopping?",
     "options": {
       "A": "It forces the model to underfit.",
       "B": "It doubles the batch size.",
@@ -2479,7 +2479,7 @@
     "topicCode": "T17",
     "topic": "T17 · Early Stopping",
     "type": "theory",
-    "question": "What happens to the patience counter if validation loss stays completely flat (0.4500\n→ 0.4500 → 0.4500) for several epochs?",
+    "question": "What happens to the patience counter if validation loss stays completely flat (0.4500 → 0.4500 → 0.4500) for several epochs?",
     "options": {
       "A": "Since there is no improvement below 0.4500, the patience counter increments each epoch until training stops.",
       "B": "The patience counter resets to zero every epoch.",
@@ -2487,7 +2487,7 @@
       "D": "The learning rate increases by 10x."
     },
     "answer": "A",
-    "explanation": "No improvement means the model has plateaued, so the patience counter advances toward\nstopping."
+    "explanation": "No improvement means the model has plateaued, so the patience counter advances toward stopping."
   },
   {
     "id": 167,
@@ -2502,7 +2502,7 @@
       "D": "Increasing the learning rate."
     },
     "answer": "B",
-    "explanation": "Checkpoints overwrite the saved model state only when validation performance sets a new best\nrecord."
+    "explanation": "Checkpoints overwrite the saved model state only when validation performance sets a new best record."
   },
   {
     "id": 168,
@@ -2524,7 +2524,7 @@
     "topicCode": "T17",
     "topic": "T17 · Early Stopping",
     "type": "calculation",
-    "question": "Validation losses for Epochs 1–5 are: [0.90, 0.70, 0.65, 0.67, 0.69]. With `patience = 2`, at\nwhich epoch does training stop and which epoch is restored?",
+    "question": "Validation losses for Epochs 1–5 are: [0.90, 0.70, 0.65, 0.67, 0.69]. With `patience = 2`, at which epoch does training stop and which epoch is restored?",
     "options": {
       "A": "Stops at Epoch 4; restores Epoch 2.",
       "B": "Stops at Epoch 5; restores Epoch 5.",
@@ -2532,14 +2532,14 @@
       "D": "Stops at Epoch 5; restores Epoch 3."
     },
     "answer": "D",
-    "explanation": "Best validation loss is 0.65 at Epoch 3. Epochs 4 (0.67) and 5 (0.69) do not improve on 0.65 (2 epochs\n= patience), so training stops at Epoch 5 and restores Epoch 3."
+    "explanation": "Best validation loss is 0.65 at Epoch 3. Epochs 4 (0.67) and 5 (0.69) do not improve on 0.65 (2 epochs = patience), so training stops at Epoch 5 and restores Epoch 3."
   },
   {
     "id": 170,
     "topicCode": "T17",
     "topic": "T17 · Early Stopping",
     "type": "calculation",
-    "question": "A model achieves its lowest validation loss at Epoch 14. If `patience = 4` and no later\nepoch beats Epoch 14, at which epoch will Early Stopping halt training?",
+    "question": "A model achieves its lowest validation loss at Epoch 14. If `patience = 4` and no later epoch beats Epoch 14, at which epoch will Early Stopping halt training?",
     "options": {
       "A": "Epoch 10",
       "B": "Epoch 18",
@@ -2547,7 +2547,7 @@
       "D": "Epoch 14"
     },
     "answer": "B",
-    "explanation": "Epochs 15, 16, 17, and 18 represent 4 consecutive epochs without improvement, halting training at\n14 + 4 = Epoch 18."
+    "explanation": "Epochs 15, 16, 17, and 18 represent 4 consecutive epochs without improvement, halting training at 14 + 4 = Epoch 18."
   },
   {
     "id": 171,
@@ -2562,14 +2562,14 @@
       "D": "Using a symmetric activation function like Tanh."
     },
     "answer": "A",
-    "explanation": "Without symmetry-breaking random weights, multiple neurons in a hidden layer behave\nidentically and cannot learn diverse features."
+    "explanation": "Without symmetry-breaking random weights, multiple neurons in a hidden layer behave identically and cannot learn diverse features."
   },
   {
     "id": 172,
     "topicCode": "T18",
     "topic": "T18 · Weight Initialization",
     "type": "theory",
-    "question": "Which initialization method is best matched with a network using ReLU hidden\nlayers?",
+    "question": "Which initialization method is best matched with a network using ReLU hidden layers?",
     "options": {
       "A": "All-zero weight initialization",
       "B": "He (Kaiming) initialization",
@@ -2584,7 +2584,7 @@
     "topicCode": "T18",
     "topic": "T18 · Weight Initialization",
     "type": "theory",
-    "question": "Which initialization method is best matched with a network using Tanh or Sigmoid\nhidden layers?",
+    "question": "Which initialization method is best matched with a network using Tanh or Sigmoid hidden layers?",
     "options": {
       "A": "Large uniform [-100, 100] initialization",
       "B": "Constant weight = -1.0 initialization",
@@ -2592,14 +2592,14 @@
       "D": "All-zero initialization"
     },
     "answer": "C",
-    "explanation": "Xavier initialization preserves signal variance across linear/symmetric activation regimes around\nzero."
+    "explanation": "Xavier initialization preserves signal variance across linear/symmetric activation regimes around zero."
   },
   {
     "id": 174,
     "topicCode": "T18",
     "topic": "T18 · Weight Initialization",
     "type": "theory",
-    "question": "Why does a hidden layer with 1,000 inputs require smaller initial weight variance\nthan a layer with 10 inputs?",
+    "question": "Why does a hidden layer with 1,000 inputs require smaller initial weight variance than a layer with 10 inputs?",
     "options": {
       "A": "Because larger layers always overfit.",
       "B": "Because summing 1,000 weighted inputs produces a much larger total sum unless each weight is scaled down proportionally.",
@@ -2607,14 +2607,14 @@
       "D": "Because GPUs cannot multiply large numbers."
     },
     "answer": "B",
-    "explanation": "Scaling variance inversely with fan-in keeps the pre-activation sum z well-scaled regardless of\nlayer width."
+    "explanation": "Scaling variance inversely with fan-in keeps the pre-activation sum z well-scaled regardless of layer width."
   },
   {
     "id": 175,
     "topicCode": "T18",
     "topic": "T18 · Weight Initialization",
     "type": "theory",
-    "question": "If a student initializes all weights to 0.0 and biases to 0.0 in a 3-layer MLP with ReLU,\nwhat happens during training?",
+    "question": "If a student initializes all weights to 0.0 and biases to 0.0 in a 3-layer MLP with ReLU, what happens during training?",
     "options": {
       "A": "Only the output layer learns while hidden layers stay zero.",
       "B": "The network achieves 100% accuracy in 1 epoch.",
@@ -2644,7 +2644,7 @@
     "topicCode": "T18",
     "topic": "T18 · Weight Initialization",
     "type": "theory",
-    "question": "What happens if initial weights are drawn from a distribution with mean 0 and\nstandard deviation 0.00001 in a 15-layer network?",
+    "question": "What happens if initial weights are drawn from a distribution with mean 0 and standard deviation 0.00001 in a 15-layer network?",
     "options": {
       "A": "Activations explode to infinity.",
       "B": "The network converges immediately.",
@@ -2674,7 +2674,7 @@
     "topicCode": "T18",
     "topic": "T18 · Weight Initialization",
     "type": "calculation",
-    "question": "Using He initialization Var(W) = 2 / nin for a layer with nin = 200 inputs, what is the\ninitial weight variance?",
+    "question": "Using He initialization Var(W) = 2 / nin for a layer with nin = 200 inputs, what is the initial weight variance?",
     "options": {
       "A": "0.005",
       "B": "0.01",
@@ -2689,7 +2689,7 @@
     "topicCode": "T18",
     "topic": "T18 · Weight Initialization",
     "type": "calculation",
-    "question": "Using Xavier initialization Var(W) = 2 / (nin + nout) with nin = 25 and nout = 25, what\nare the variance and standard deviation of W?",
+    "question": "Using Xavier initialization Var(W) = 2 / (nin + nout) with nin = 25 and nout = 25, what are the variance and standard deviation of W?",
     "options": {
       "A": "Variance = 0.02, Standard deviation = 0.14",
       "B": "Variance = 0.16, Standard deviation = 0.40",
@@ -2712,14 +2712,14 @@
       "D": "The number of training epochs"
     },
     "answer": "C",
-    "explanation": "Weights W(1) are updated automatically by gradient descent, whereas p, epochs, and lambda are\nset manually."
+    "explanation": "Weights W(1) are updated automatically by gradient descent, whereas p, epochs, and lambda are set manually."
   },
   {
     "id": 182,
     "topicCode": "T19",
     "topic": "T19 · Hyperparameter Tuning",
     "type": "theory",
-    "question": "What is the main advantage of Random Search over Grid Search when one\nhyperparameter has little impact on accuracy and another has a huge impact?",
+    "question": "What is the main advantage of Random Search over Grid Search when one hyperparameter has little impact on accuracy and another has a huge impact?",
     "options": {
       "A": "Random Search tries a unique value of the important hyperparameter on every trial instead of repeating the same grid points.",
       "B": "Random Search always finds zero training error.",
@@ -2727,7 +2727,7 @@
       "D": "Random Search uses half as many hidden layers."
     },
     "answer": "A",
-    "explanation": "In Grid Search, varying an unimportant parameter repeats the exact same learning rate multiple\ntimes; Random Search explores new values every run."
+    "explanation": "In Grid Search, varying an unimportant parameter repeats the exact same learning rate multiple times; Random Search explores new values every run."
   },
   {
     "id": 183,
@@ -2742,14 +2742,14 @@
       "D": "[-0.1, 0.0, 0.1, 0.2]"
     },
     "answer": "B",
-    "explanation": "Each step scales by a constant multiplicative factor (10-1), covering multiple orders of magnitude\nevenly."
+    "explanation": "Each step scales by a constant multiplicative factor (10-1), covering multiple orders of magnitude evenly."
   },
   {
     "id": 184,
     "topicCode": "T19",
     "topic": "T19 · Hyperparameter Tuning",
     "type": "theory",
-    "question": "If a model's training loss oscillates wildly up and down from epoch to epoch, which\nhyperparameter should you try reducing first?",
+    "question": "If a model's training loss oscillates wildly up and down from epoch to epoch, which hyperparameter should you try reducing first?",
     "options": {
       "A": "The number of validation samples",
       "B": "The random seed",
@@ -2764,7 +2764,7 @@
     "topicCode": "T19",
     "topic": "T19 · Hyperparameter Tuning",
     "type": "theory",
-    "question": "If a model is overfitting heavily on the validation set, which hyperparameter\nadjustment is appropriate?",
+    "question": "If a model is overfitting heavily on the validation set, which hyperparameter adjustment is appropriate?",
     "options": {
       "A": "Increase Dropout rate p or L2 weight decay lambda.",
       "B": "Evaluate on the test set every epoch.",
@@ -2772,14 +2772,14 @@
       "D": "Set Dropout rate p to 0 and double the hidden layer width."
     },
     "answer": "A",
-    "explanation": "Increasing regularization strength constrains model complexity and narrows the generalization\ngap."
+    "explanation": "Increasing regularization strength constrains model complexity and narrows the generalization gap."
   },
   {
     "id": 186,
     "topicCode": "T19",
     "topic": "T19 · Hyperparameter Tuning",
     "type": "theory",
-    "question": "Why is tuning hyperparameters on the Test Set considered a serious methodological\nerror?",
+    "question": "Why is tuning hyperparameters on the Test Set considered a serious methodological error?",
     "options": {
       "A": "It prevents backpropagation.",
       "B": "It sets all weights to zero.",
@@ -2802,14 +2802,14 @@
       "D": "A technique for normalizing pixel values."
     },
     "answer": "B",
-    "explanation": "Unlike blind Grid or Random Search, Bayesian optimization uses prior trial outcomes to focus\nevaluations near high-performing regions."
+    "explanation": "Unlike blind Grid or Random Search, Bayesian optimization uses prior trial outcomes to focus evaluations near high-performing regions."
   },
   {
     "id": 188,
     "topicCode": "T19",
     "topic": "T19 · Hyperparameter Tuning",
     "type": "theory",
-    "question": "Once the optimal hyperparameters are selected using the Validation Set, what is the\nfinal step before deployment?",
+    "question": "Once the optimal hyperparameters are selected using the Validation Set, what is the final step before deployment?",
     "options": {
       "A": "Evaluate the selected model once on the held-out Test Set to report unbiased final generalization performance.",
       "B": "Retune the learning rate on the Test Set.",
@@ -2824,7 +2824,7 @@
     "topicCode": "T19",
     "topic": "T19 · Hyperparameter Tuning",
     "type": "calculation",
-    "question": "A Grid Search tests 5 learning rates, 3 batch sizes, and 3 hidden layer widths. How\nmany total combinations are in the grid?",
+    "question": "A Grid Search tests 5 learning rates, 3 batch sizes, and 3 hidden layer widths. How many total combinations are in the grid?",
     "options": {
       "A": "15 combinations",
       "B": "30 combinations",
@@ -2839,7 +2839,7 @@
     "topicCode": "T19",
     "topic": "T19 · Hyperparameter Tuning",
     "type": "calculation",
-    "question": "Testing 4 hyperparameter combinations with 10-Fold Cross-Validation requires how\nmany total model training runs?",
+    "question": "Testing 4 hyperparameter combinations with 10-Fold Cross-Validation requires how many total model training runs?",
     "options": {
       "A": "4 runs",
       "B": "20 runs",
@@ -2907,7 +2907,7 @@
       "D": "F1 = 2*(FP + FN) / TP"
     },
     "answer": "A",
-    "explanation": "Substituting P = TP/(TP+FP) and R = TP/(TP+FN) into 2PR/(P+R) simplifies algebraically to 2*TP /\n(2*TP + FP + FN)."
+    "explanation": "Substituting P = TP/(TP+FP) and R = TP/(TP+FN) into 2PR/(P+R) simplifies algebraically to 2*TP / (2*TP + FP + FN)."
   },
   {
     "id": 195,
@@ -2929,7 +2929,7 @@
     "topicCode": "T20",
     "topic": "T20 · Evaluation Metrics",
     "type": "theory",
-    "question": "Why is ROC-AUC useful when you have not yet chosen a final decision probability\nthreshold?",
+    "question": "Why is ROC-AUC useful when you have not yet chosen a final decision probability threshold?",
     "options": {
       "A": "Because ROC-AUC summarizes ranking performance across all possible thresholds from 0 to 1.",
       "B": "Because ROC-AUC does not use predicted probabilities.",
@@ -2944,7 +2944,7 @@
     "topicCode": "T20",
     "topic": "T20 · Evaluation Metrics",
     "type": "theory",
-    "question": "In a 3-class classification problem (Cat, Dog, Bird), how are Precision and Recall\ncomputed for the 'Dog' class?",
+    "question": "In a 3-class classification problem (Cat, Dog, Bird), how are Precision and Recall computed for the 'Dog' class?",
     "options": {
       "A": "By dividing total samples by 3.",
       "B": "By ignoring all 'Cat' and 'Bird' predictions completely.",
@@ -2952,7 +2952,7 @@
       "D": "By averaging the three diagonal cells."
     },
     "answer": "C",
-    "explanation": "One-vs-Rest defines TP_Dog as actual Dogs predicted Dog, FP_Dog as non-Dogs predicted Dog, and\nFN_Dog as actual Dogs predicted as another class."
+    "explanation": "One-vs-Rest defines TP_Dog as actual Dogs predicted Dog, FP_Dog as non-Dogs predicted Dog, and FN_Dog as actual Dogs predicted as another class."
   },
   {
     "id": 198,
@@ -2967,14 +2967,14 @@
       "D": "When predicting continuous house prices."
     },
     "answer": "A",
-    "explanation": "Macro-F1 assigns equal weight (1/K) to every class, ensuring minority class failures are not masked\nby large majority classes."
+    "explanation": "Macro-F1 assigns equal weight (1/K) to every class, ensuring minority class failures are not masked by large majority classes."
   },
   {
     "id": 199,
     "topicCode": "T20",
     "topic": "T20 · Evaluation Metrics",
     "type": "calculation",
-    "question": "A 3-class classifier tested on 100 images has diagonal entries 28 (Cat), 18 (Dog), and 30\n(Bird) in its confusion matrix. What is its overall Accuracy?",
+    "question": "A 3-class classifier tested on 100 images has diagonal entries 28 (Cat), 18 (Dog), and 30 (Bird) in its confusion matrix. What is its overall Accuracy?",
     "options": {
       "A": "0.72 (72%)",
       "B": "0.80 (80%)",
@@ -2989,7 +2989,7 @@
     "topicCode": "T20",
     "topic": "T20 · Evaluation Metrics",
     "type": "calculation",
-    "question": "A binary model produces TP = 45, FP = 5, FN = 15, and TN = 135. What are its Precision\nand Recall?",
+    "question": "A binary model produces TP = 45, FP = 5, FN = 15, and TN = 135. What are its Precision and Recall?",
     "options": {
       "A": "Precision = 0.75, Recall = 0.90",
       "B": "Precision = 0.90, Recall = 0.75",
