@@ -1404,6 +1404,13 @@
 
     /* Responsive Adjustments */
     @media (max-width: 600px) {
+      html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+      body {
+        width: 100%;
+      }
       .header-bar {
         padding: 0.5rem 0.85rem;
       }
@@ -1548,6 +1555,20 @@
                 <span class="subj-meta">200 Questions &bull; 8 Lectures</span>
               </div>
             </a>
+            <a href="./ml.html" class="subject-dropdown-item">
+              <span class="subj-icon">🧠</span>
+              <div class="subj-info">
+                <span class="subj-name">Machine Learning</span>
+                <span class="subj-meta">200 Questions &bull; 1 Lecture</span>
+              </div>
+            </a>
+            <a href="./ann.html" class="subject-dropdown-item">
+              <span class="subj-icon">🔬</span>
+              <div class="subj-info">
+                <span class="subj-name">Artificial Neural Networks</span>
+                <span class="subj-meta">200 Questions &bull; 20 Topics</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -1616,6 +1637,12 @@
           </a>
           <a href="./nlp.html" class="drawer-segmented-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem; padding:0.5rem 0.4rem;">
             <span>🤖 NLP (200)</span>
+          </a>
+          <a href="./ml.html" class="drawer-segmented-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem; padding:0.5rem 0.4rem;">
+            <span>🧠 ML (200)</span>
+          </a>
+          <a href="./ann.html" class="drawer-segmented-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem; padding:0.5rem 0.4rem;">
+            <span>🔬 ANN (200)</span>
           </a>
         </div>
       </div>

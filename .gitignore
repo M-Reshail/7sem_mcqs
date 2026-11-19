@@ -4,8 +4,22 @@ __pycache__/
 build_page.py
 update_app.py
 mcqs_data.json
+scratch/
+
+# Temp ANN extraction files
+ANN_full_text.txt
+extract_ann.py
+extract_ann2.py
+check.js
+check_data.py
+scratch_check.js
+
+# Node
+node_modules/
+
+# Claude Code
+.claude/
 
 # OS files
 .DS_Store
 Thumbs.db
-
