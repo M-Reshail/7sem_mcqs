@@ -1,31 +1,53 @@
-# Data Visualization (CDB601220) – Interactive MCQ Bank
+# 7th Semester MCQ Bank
 
-A modern, responsive, and interactive Data Visualization MCQ study and quiz application featuring 300 curated questions (40 Calculation + 260 Theory across 23 topics).
+A clean, mobile-friendly MCQ practice app for 7th semester subjects. No frameworks — pure HTML/CSS/JS, deployed on Vercel via GitHub.
 
-## 🚀 Live Demo
-Ready to deploy on [Vercel](https://vercel.com) with zero configuration.
+## Subjects
 
-## ✨ Key Features
-- **3 Dedicated Study Modes**:
-  - **🧮 Mode 1: Calculation Only (40 MCQs)**: Interactive practice for all numerical and formula-based questions with 3-line step-by-step explanations (Topic, Formula, and Step-by-Step Calculation preserving math symbols $\div$, $\times$, $\sqrt{}$, $\approx$, $^2$).
-  - **📚 Mode 2: Theory Topic-wise (260 MCQs)**: Conceptual questions organized across 23 syllabus topics with an interactive topic filter selector, live question counts, and Select All / Clear toggles.
-  - **🔀 Mode 3: All MCQs Mixed (300 MCQs)**: Complete question bank in sequential (`Q1` $\to$ `Q300`) or randomized order with a Shuffle toggle.
-- **Instant Feedback on Mistakes**:
-  - Picking an incorrect option marks it red (`✗ Your Choice`) and instantly highlights the correct answer in vibrant green (`✓ Correct Answer`) alongside detailed explanations.
-- **Flexible Practice Views**:
-  - **List View**: Seamless scrolling and solving of all questions.
-  - **Single Focus Mode**: Question-by-question view with Previous / Next navigation.
-- **Navigator Grid Matrix (`Q1` to `Q300`)**:
-  - Quick popup matrix indicating question status (Unsolved, Correct, Wrong, Calculation item) with 1-click jump.
-- **Search & Filters**:
-  - Real-time search across questions, formulas, topics, and option text.
-  - Filter by Unsolved, Incorrect, Correct, and ⭐ Starred.
-- **Theme & Offline Support**:
-  - Full Dark and Light theme toggle.
-  - Automatic `localStorage` persistence for answers, bookmarks, and progress.
+| Subject | Page | MCQs | Topics | Type Filter |
+|---------|------|------|--------|-------------|
+| 📊 Data Visualization | `index.html` | 300 | 23 topics (W1–W6) | Theory / Calculation |
+| 🤖 Natural Language Processing | `nlp.html` | 200 | 8 lectures (L1–L8) | — |
+| 🧠 Machine Learning | `ml.html` | 200 | 1 module | — |
+| 🔬 Artificial Neural Networks | `ann.html` | 200 | 20 topics (T01–T20) | Conceptual / Numerical |
 
-## 📂 Repository Contents
-- `index.html`: The main web application (fully self-contained, no external runtime dependencies).
-- `mcqs.json`: Full structured JSON dataset containing topics, questions, options, answers, formulas, and calculations.
-- `vercel.json`: Vercel static deployment configuration.
+**Total: 900 MCQs**
 
+## Features
+
+- 📖 **Revision Mode** — pre-highlights all correct answers in green; works with all filters
+- ⭐ **Star / Bookmark** — mark questions for later review
+- 🔍 **Topic & Type Filters** — filter by topic and question type (theory/calculation)
+- 🎯 **Focus Mode** — single-card view with Prev/Next navigation
+- 🧭 **Question Navigator** — grid overview of all questions with color-coded status
+- 🌙 **Dark Mode** — persistent across sessions
+- 📊 **Score Stats** — live correct/wrong count in the header
+- 📱 **Mobile Friendly** — responsive layout, sticky header, back-to-top button
+
+## Stack
+
+- Pure HTML + CSS + JavaScript (no build tools, no frameworks)
+- MCQ data embedded inline as JSON `<script>` tags
+- Deployed on **Vercel** (auto-deploys from GitHub `main` branch)
+- Hosted at: `https://7sem-mcqs.vercel.app` *(or your Vercel URL)*
+
+## Repo Structure
+
+```
+├── index.html          # DV MCQs (300)
+├── nlp.html            # NLP MCQs (200)
+├── ml.html             # ML MCQs (200)
+├── ann.html            # ANN MCQs (200)
+├── mcqs.json           # DV topic/MCQ data
+├── ANN/
+│   └── ann_mcqs.json   # ANN MCQ data (source)
+├── ML/
+│   └── ml_mcqs.json    # ML MCQ data (source)
+├── NLP/
+│   └── nlp_mcqs.json   # NLP MCQ data (source)
+├── favicon.svg         # DV favicon
+├── favicon-nlp.svg     # NLP favicon
+├── favicon-ml.svg      # ML favicon
+├── vercel.json         # Vercel config
+└── README.md
+```
