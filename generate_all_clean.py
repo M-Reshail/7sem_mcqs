@@ -147,9 +147,6 @@ BASE_CSS = '''
     html {
       -webkit-text-size-adjust: 100%;
       scroll-behavior: smooth;
-      overflow-x: hidden;
-      max-width: 100%;
-      width: 100%;
     }
 
     body {
@@ -162,10 +159,9 @@ BASE_CSS = '''
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: transparent;
       padding-bottom: env(safe-area-inset-bottom);
-      overflow-x: hidden;
-      max-width: 100%;
+      overflow-x: clip;
       width: 100%;
-      position: relative;
+      max-width: 100%;
     }
 
     /* Sticky App Header */
@@ -178,8 +174,10 @@ BASE_CSS = '''
       border-bottom: 1px solid var(--border-color);
       box-shadow: var(--shadow-sm);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       width: 100%;
       max-width: 100%;
+      padding-top: env(safe-area-inset-top);
     }
 
     .header-bar {
@@ -398,85 +396,6 @@ BASE_CSS = '''
     .btn-header-icon:hover {
       background: var(--bg-subtle);
       color: var(--text-primary);
-    }
-
-    /* Reveal Pill Button in Header */
-    .btn-revision-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.36rem 0.75rem;
-      border-radius: 9999px;
-      border: 1.5px solid var(--border-color);
-      background: var(--bg-surface);
-      color: var(--text-primary);
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.18s;
-      user-select: none;
-      flex-shrink: 0;
-    }
-    .btn-revision-pill:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
-    }
-    .btn-revision-pill.active {
-      background: var(--primary) !important;
-      border-color: var(--primary) !important;
-      color: #fff !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .filter-summary-strip {
-      background: var(--bg-subtle);
-      border-bottom: 1px solid var(--border-color);
-      padding: 0.4rem 1rem;
-    }
-    .filter-summary-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      font-size: 0.78rem;
-      font-weight: 600;
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-    .active-mode-tag {
-      color: var(--primary);
-      cursor: pointer;
-    }
-    .active-mode-tag:hover {
-      text-decoration: underline;
-    }
-    .active-filter-tag {
-      color: var(--text-secondary);
-    }
-    .active-revision-tag {
-      font-size: 0.72rem;
-      background: var(--success-light);
-      color: var(--success-text);
-      border: 1px solid var(--success-border);
-      padding: 0.15rem 0.55rem;
-      border-radius: 9999px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-    .btn-open-menu-link {
-      margin-left: auto;
-      color: var(--text-secondary);
-      cursor: pointer;
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-    }
-    .btn-open-menu-link:hover {
-      color: var(--text-primary);
-      background: var(--bg-surface);
     }
 
     /* Drawer Backdrop & Side Drawer */
@@ -1202,12 +1121,12 @@ BASE_CSS = '''
 
     @media (max-width: 600px) {
       .header-bar {
-        padding: 0.45rem 0.65rem;
-        gap: 0.35rem;
-        height: 54px;
+        padding: 0.45rem 0.75rem;
+        gap: 0.5rem;
+        height: 52px;
       }
       .header-left {
-        gap: 0.35rem;
+        gap: 0.4rem;
         flex-shrink: 0;
       }
       .hamburger-btn {
@@ -1230,15 +1149,10 @@ BASE_CSS = '''
         font-size: 0.75rem;
       }
       .header-right {
-        gap: 0.3rem;
-      }
-      .btn-revision-pill {
-        padding: 0.28rem 0.55rem;
-        font-size: 0.75rem;
-        gap: 0.25rem;
+        gap: 0.4rem;
       }
       .header-score-pill {
-        padding: 0.25rem 0.45rem;
+        padding: 0.25rem 0.5rem;
         font-size: 0.74rem;
         gap: 0.25rem;
       }
@@ -1246,13 +1160,6 @@ BASE_CSS = '''
         width: 34px;
         height: 34px;
         font-size: 1rem;
-      }
-      .filter-summary-strip {
-        padding: 0.35rem 0.65rem;
-      }
-      .filter-summary-inner {
-        font-size: 0.74rem;
-        gap: 0.35rem;
       }
       main {
         padding: 0.9rem 0.65rem 4rem;
@@ -1286,37 +1193,17 @@ BASE_CSS = '''
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 480px) {
       .header-score-pill .score-sep-pct,
       .header-score-pill .c-pct {
         display: none !important;
       }
       .header-bar {
-        padding: 0.4rem 0.5rem;
-        gap: 0.25rem;
-      }
-      .header-right {
-        gap: 0.25rem;
+        padding: 0.4rem 0.6rem;
       }
       .header-score-pill {
-        padding: 0.22rem 0.4rem;
+        padding: 0.22rem 0.45rem;
         font-size: 0.72rem;
-      }
-      .btn-revision-pill {
-        padding: 0.25rem 0.45rem;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .btn-revision-pill .rev-pill-text {
-        display: none;
-      }
-      .btn-revision-pill {
-        padding: 0.25rem 0.45rem;
-      }
-      .header-score-pill {
-        padding: 0.2rem 0.35rem;
-        font-size: 0.7rem;
       }
     }
 '''
@@ -1482,12 +1369,6 @@ def generate_page(config):
       </div>
 
       <div class="header-right">
-        <!-- Reveal Pill Button in Header -->
-        <button class="btn-revision-pill" id="revisionToggleBtn" title="Reveal Correct Answers">
-          <span>📖</span>
-          <span class="rev-pill-text">Reveal</span>
-        </button>
-
         <!-- Compact Score Pill -->
         <div class="header-score-pill" id="scorePill" title="Your performance summary">
           <span class="score-item c-ok" id="statCorrect">✓ 0</span>
@@ -1501,16 +1382,6 @@ def generate_page(config):
         <button class="btn-header-icon" id="matrixOpenBtn" title="Open Question Grid (Q1–Q{total_q})">
           <span>📑</span>
         </button>
-      </div>
-    </div>
-
-    <!-- Active Filter Summary Strip -->
-    <div class="filter-summary-strip">
-      <div class="filter-summary-inner">
-        <span class="active-mode-tag" id="activeModeSummary">{config['subject_full']} ({total_q})</span>
-        <span class="active-filter-tag" id="activeFilterSummary">All</span>
-        <span class="active-revision-tag" id="activeRevisionSummary" style="display: none;">Answers Revealed</span>
-        <span class="btn-open-menu-link" id="openMenuLink">⚙️ Menu &amp; Filters</span>
       </div>
     </div>
   </header>
@@ -1663,10 +1534,6 @@ def generate_page(config):
     const drawerBackdrop = document.getElementById('drawerBackdrop');
     const menuToggleBtn = document.getElementById('menuToggleBtn');
     const drawerCloseBtn = document.getElementById('drawerCloseBtn');
-    const activeModeSummary = document.getElementById('activeModeSummary');
-    const activeFilterSummary = document.getElementById('activeFilterSummary');
-    const activeRevisionSummary = document.getElementById('activeRevisionSummary');
-    const openMenuLink = document.getElementById('openMenuLink');
     const statCorrect = document.getElementById('statCorrect');
     const statWrong = document.getElementById('statWrong');
     const statAccuracy = document.getElementById('statAccuracy');
@@ -1677,7 +1544,6 @@ def generate_page(config):
     const topicChipsGrid = document.getElementById('topicChipsGrid');
     const topicSelectedCountBadge = document.getElementById('topicSelectedCountBadge');
     const drawerShuffleBtn = document.getElementById('drawerShuffleBtn');
-    const revisionToggleBtn = document.getElementById('revisionToggleBtn');
     const revealAnswersBtn = document.getElementById('revealAnswersBtn');
     const revealAnswersText = document.getElementById('revealAnswersText');
     const highlightAnswersBtn = document.getElementById('highlightAnswersBtn');
@@ -1789,8 +1655,6 @@ def generate_page(config):
     }});
     drawerCloseBtn.addEventListener('click', closeDrawer);
     drawerBackdrop.addEventListener('click', closeDrawer);
-    openMenuLink.addEventListener('click', openDrawer);
-    activeModeSummary.addEventListener('click', openDrawer);
 
     // Prevent background scrolling on backdrop touch
     drawerBackdrop.addEventListener('touchmove', (e) => e.preventDefault(), {{ passive: false }});
@@ -1816,39 +1680,7 @@ def generate_page(config):
       statAccuracy.textContent = `${{pct}}%`;
     }}
 
-    // Update Summary Strip
-    function updateSummaryStrip() {{
-      const topicCount = state.selectedTopics.size;
-      const totalTopics = Object.keys(TOPICS).length;
-      let modeText = '{config['subject_full']} ({total_q})';
-      if (totalTopics > 1) {{
-        if (HAS_TOPIC_WISE_TOGGLE) {{
-          modeText = state.isTopicWise ? `📚 Topic-wise (${{topicCount}}/${{totalTopics}} Topics)` : '{config['subject_full']} ({total_q})';
-        }} else {{
-          modeText = `${{topicCount}}/${{totalTopics}} Topics · {config['code']}`;
-        }}
-      }}
-      if (state.isShuffled) {{
-        modeText = '🔀 Shuffled · ' + modeText;
-      }}
-      activeModeSummary.textContent = modeText;
-
-      let filterText = 'All';
-      if (state.filter === 'calc') {{
-        filterText = '{'🧮 Numerical' if code == 'ANN' else '🧮 Calc'}';
-      }} else if (state.filter === 'theory') {{
-        filterText = '{'📘 Conceptual' if code == 'ANN' else '📖 Theory'}';
-      }} else if (state.filter === 'unsolved') {{
-        filterText = 'Unsolved';
-      }} else if (state.filter === 'wrong') {{
-        filterText = 'Incorrect';
-      }} else if (state.filter === 'correct') {{
-        filterText = 'Correct';
-      }} else if (state.filter === 'bookmarked') {{
-        filterText = '⭐ Starred';
-      }}
-      activeFilterSummary.textContent = filterText;
-    }}
+    function updateSummaryStrip() {{}}
 
     // Filtering Pool
     function getBasePoolMCQs() {{
@@ -1966,14 +1798,6 @@ def generate_page(config):
           revealAnswersText.textContent = active ? 'Hide Answers' : 'Reveal Answers';
         }}
       }}
-      if (revisionToggleBtn) {{
-        revisionToggleBtn.classList.toggle('active', active);
-        const textSpan = revisionToggleBtn.querySelector('.rev-pill-text');
-        if (textSpan) textSpan.textContent = active ? 'Revealed' : 'Reveal';
-      }}
-      if (activeRevisionSummary) {{
-        activeRevisionSummary.style.display = active ? 'inline-flex' : 'none';
-      }}
       if (highlightAnswersBtn) {{
         highlightAnswersBtn.style.display = active ? 'inline-flex' : 'none';
       }}
@@ -1988,7 +1812,6 @@ def generate_page(config):
     }}
 
     if (revealAnswersBtn) revealAnswersBtn.addEventListener('click', toggleRevealAnswers);
-    if (revisionToggleBtn) revisionToggleBtn.addEventListener('click', toggleRevealAnswers);
 
     // Highlight Answers Handler
     function updateHighlightUI() {{
