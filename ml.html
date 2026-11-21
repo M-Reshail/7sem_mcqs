@@ -1234,7 +1234,7 @@
       <!-- Section: Select Subject -->
       <div>
         <div class="drawer-section-title">
-          <span>📚 Select Subject</span>
+          <span> Select Subject</span>
         </div>
         <div class="drawer-segmented" style="padding: 4px; gap: 4px;">
           <a href="./index.html" class="drawer-segmented-btn" style="text-decoration:none; display:flex; align-items:center; justify-content:center; gap:0.4rem; padding:0.5rem 0.4rem;">
@@ -1255,21 +1255,21 @@
       <!-- Section: View Style -->
       <div>
         <div class="drawer-section-title">
-          <span>📱 View Style</span>
+          <span> View Style</span>
         </div>
         <div class="drawer-segmented">
-          <button class="drawer-segmented-btn active" data-view="list" id="viewListTab">List Stream</button>
-          <button class="drawer-segmented-btn" data-view="focus" id="viewFocusTab">Focus Single</button>
+          <button class="drawer-segmented-btn active" data-view="list" id="viewListTab">List</button>
+          <button class="drawer-segmented-btn" data-view="focus" id="viewFocusTab">Single</button>
         </div>
         <div class="drawer-btn-row">
           <button class="drawer-action-btn" id="revealAnswersBtn">
-            <span id="revealAnswersText">Reveal Answers</span>
+            <span id="revealAnswersText">Answers</span>
           </button>
           <button class="drawer-action-btn" id="highlightAnswersBtn" style="display: none;">
-            <span>🎯</span> <span id="highlightAnswersText">Highlight Answers</span>
+            <span id="highlightAnswersText">Highlight</span>
           </button>
           <button class="drawer-action-btn" id="topicWiseToggleBtn">
-            <span id="topicWiseIcon">📚</span> <span id="topicWiseText">Topic-wise MCQs</span>
+             <span id="topicWiseText">Topic-wise MCQs</span>
           </button>
         </div>
       </div>
@@ -1277,7 +1277,7 @@
       <!-- Section: Topic Filter -->
       <div id="drawerTopicSection" style="display: none;">
         <div class="drawer-section-title">
-          <span>🏷️ Filter by Topic (23 Topics)</span>
+          <span> Filter by Topic (23 Topics)</span>
           <span id="topicSelectedCountBadge" style="font-size:0.72rem; color:var(--text-secondary);">(23/23)</span>
         </div>
         <div class="drawer-topic-box">
@@ -1294,7 +1294,7 @@
       <!-- Section: Filter Questions -->
       <div>
         <div class="drawer-section-title">
-          <span>🎯 Filter Questions</span>
+          <span> Filter Questions</span>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 0.45rem;">
           <button class="btn-filter-pill active" data-filter="all">All (200)</button>
@@ -1735,7 +1735,7 @@
       highlightAnswersBtn.classList.toggle('active', !!state.isHighlightAnswers);
       const textSpan = document.getElementById('highlightAnswersText');
       if (textSpan) {
-        textSpan.textContent = state.isHighlightAnswers ? 'Highlight: ON' : 'Highlight Answers';
+        textSpan.textContent = 'Highlight';
       }
     }
 

@@ -1269,7 +1269,7 @@ def generate_page(config):
 
     has_highlight_toggle = config.get('has_highlight_toggle', True)
     highlight_btn_html = '''          <button class="drawer-action-btn" id="highlightAnswersBtn" style="display: none;">
-            <span>🎯</span> <span id="highlightAnswersText">Highlight Answers</span>
+            <span id="highlightAnswersText">Highlight</span>
           </button>''' if has_highlight_toggle else ""
 
     topic_wise_btn_html = f'''          <button class="drawer-action-btn" id="topicWiseToggleBtn">
@@ -1859,7 +1859,7 @@ def generate_page(config):
       highlightAnswersBtn.classList.toggle('active', !!state.isHighlightAnswers);
       const textSpan = document.getElementById('highlightAnswersText');
       if (textSpan) {{
-        textSpan.textContent = state.isHighlightAnswers ? 'Highlight: ON' : 'Highlight Answers';
+        textSpan.textContent = 'Highlight';
       }}
     }}
 
