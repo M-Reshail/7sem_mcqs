@@ -1,5 +1,7 @@
 {
   "version": 2,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/favicon.ico", "destination": "/icons/favicon.ico" }
+  ]
 }
-

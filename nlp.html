@@ -8,11 +8,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>Natural Language Processing (NLP) – MCQ Bank (200 MCQs)</title>
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEkElEQVR4nMVXXYiUVRh+3vd8PzOzM+66KmaKS4lSUva3sNmPRYqpF0EXWRfhjQRiXSaEYONGBdLPXZh3gV3EBhVmWKlUhJUgREYZpahl/tXqzqzrzDff9503zjs7OuqsrrS7Pjdz5jvv9z7PeX/Odw7Boe8pg5UfpoWPXppi2vNrIfIkrNwJEQOA8H9BEBj+A0yf2kplc3nFa4cgRQb1WmqQt28vLqGc/y4F/hzUEkicYEzhGVDoQ+K4X6rxi6Xlve+hr8/o6jq+7H2EwuBriIVU4xRE7jmPqQARAWDhGcPtOST/Dq4pL9+4hfLbilNNhvdx4HdJNU5A8MaU+AohsPBZIKghkYXshVjDbZkuqdbScSd3IDBckEM/C7ZFT0ArEcUyHPaJAZGRSiQQWuaR4A7EqSOfOAEOAgJRlid05VeIEBnbSr9+0I0WgBGrnjRFgNX2rYOJtJ3lwtil8uJ8w6YZrWyuKYAARDZBLCnyJtBnFoLBpIYMezDEGEwiBGwQkLnE/VBSU1sZ9hOyp3bNC7mqAAKQiMWctk5MC/LYN3BMI+EcdbfPwsGhfpSTCIs6b8GxagnHq2V4xBdEdHfMQpY9re3YpjhSGcCJahk5LxjeDC8FX/6gsbo1s3uwu2c1nph+O0rREGaEBezqWY0HOmfDZ9bx0zPuUlv3TmPF79+9Ejt7VmN79yp8df9z2Pfg83h0yq0amcvT01JAAzWb6u/rtz2OzjCPyKYa2EYo3dhFqhmJCEL28dnp39C1exMWfrdZSTfMfUxtW/U7jyTA5fpcUsPMcBI2zF2MgbiihXkxVc3/LsIj0vdODv2DXwZPabpy7KutjLoLRJA1Po5UzqLvxM94Zd4SfHvmiK6CmzRTkxAaJi8lVU3b4aUvY3pYUD/F33ddsL1chjdSBFKx6PAzePPQN1g16x68NX/FcAu6PbRhIxBJVVgsFgakxXrwfD+2/v2jUu49+yf2DvyFgpdRn6OLAACXcSZGJa1h3YEd+Pi+Z7W9XGs6x448ZIM2L4OCF6qAoSTWlts/eBJvHNgBCgvwiZH3gtG3YQNZ9rWd8n4W2079ig+O78czNy8Au282MQwRivMWY92ch1Wow6Lvt+j8FD8HExYwNWhTwSORO1DHF72XzLo8xTbB/MJ0dbDn7FEN3WQ/i+72mfipfAKlJMJDk7vgs6m31nAP7jlzFAsm3aSF5+x83aRGJm8poCGiYmPNrdsJ3X83Pp/WtKhc359LInXdTFAwIc7bWGshZ4Jrkju0TIF7MWfqraOFBtGwd/hZWHdudOdIP3vFey5S7V6o81cL+zUFoIUDJ8KJaaBVRdefj464AcYNBk/wQayFACuH4Rm3o1xf7MYEkjJAn1DouzjYieMVSxnf7fh72NraO1KJygi8+qVh/MkFzClS3dRfZb0oJvYFLmRN/cOue+04kcOCyPK0Sb6NapvKy4o72V0QB5Zv3Cr9g2theIjaMkaPQOMAygYM32N7urSp9APWu4txnalxQ95RvJcywXokdilE8nqiHJsLi8CYCIa/tVH0dnlZ7+cQcade+Q/wXg5lXrfQ9gAAAABJRU5ErkJggg==" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-nlp-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-nlp-16x16.png" />
-  <link rel="icon" type="image/svg+xml" href="./favicon-nlp.svg" />
-  <link rel="shortcut icon" href="./favicon-nlp.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-nlp.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-nlp-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-nlp-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="./icons/favicon-nlp.svg" />
+  <link rel="shortcut icon" href="./icons/favicon-nlp.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-nlp.png" />
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
 
@@ -1266,7 +1266,7 @@
             <span id="revealAnswersText">Reveal Answers</span>
           </button>
           <button class="drawer-action-btn" id="highlightAnswersBtn" style="display: none;">
-            <span>🎯</span> <span id="highlightAnswersText">Highlight Answers</span>
+            <span id="highlightAnswersText">Highlight</span>
           </button>
 
         </div>
@@ -1733,7 +1733,7 @@
       highlightAnswersBtn.classList.toggle('active', !!state.isHighlightAnswers);
       const textSpan = document.getElementById('highlightAnswersText');
       if (textSpan) {
-        textSpan.textContent = state.isHighlightAnswers ? 'Highlight: ON' : 'Highlight Answers';
+        textSpan.textContent = 'Highlight';
       }
     }
 

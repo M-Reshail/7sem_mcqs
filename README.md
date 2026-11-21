@@ -34,20 +34,21 @@ A clean, mobile-friendly MCQ practice app for 7th semester subjects. No framewor
 ## Repo Structure
 
 ```
-├── index.html          # DV MCQs (300)
-├── nlp.html            # NLP MCQs (200)
-├── ml.html             # ML MCQs (200)
-├── ann.html            # ANN MCQs (200)
-├── mcqs.json           # DV topic/MCQ data
+├── index.html              # DV MCQs (300)
+├── nlp.html                # NLP MCQs (200)
+├── ml.html                 # ML MCQs (200)
+├── ann.html                # ANN MCQs (200)
+├── DV/
+│   └── mcqs.json           # DV topic/MCQ data
 ├── ANN/
-│   └── ann_mcqs.json   # ANN MCQ data (source)
+│   └── ann_mcqs.json       # ANN MCQ data (source)
 ├── ML/
-│   └── ml_mcqs.json    # ML MCQ data (source)
+│   ├── ml_mcqs.json        # ML MCQ data (source)
+│   └── topicwise_mcqs.json # ML topic groupings
 ├── NLP/
-│   └── nlp_mcqs.json   # NLP MCQ data (source)
-├── favicon.svg         # DV favicon
-├── favicon-nlp.svg     # NLP favicon
-├── favicon-ml.svg      # ML favicon
-├── vercel.json         # Vercel config
+│   └── nlp_mcqs.json       # NLP MCQ data (source)
+├── icons/                  # Favicons and touch icons for all subjects
+├── generate_all_clean.py   # Page generator script
+├── vercel.json             # Vercel deployment & rewrite config
 └── README.md
 ```

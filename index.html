@@ -8,11 +8,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>Data Visualization (CDB601220) – MCQ Bank (300 MCQs)</title>
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEgklEQVR4nMVXXYhVVRT+1t7n3HvP/FmjcG2IJhw1KSMS04mCHpqRlIx6GKMHQYlMJKigXiSQIAhf6iGilMaiHoIEs0QrxbAfrSYpS7BkZtJq0mZsruXM/Tn3nL1XrH1mbKZp/pyfvqd79917r2+v9a1v300QtLDGbjJL1nfNtUHVFmb7ACzfDFgNgDBlEEPpdiK9z6L4SsfObCe2scKzZAkt72jsXmcWbexqIr/6VdJBA5sS2IRTjzuUgvJBXgBrwl7Exafad2XfaGlh7U638JGeu7SuOsLWwMYFQ1AEgppWBmCBJeVrL3M14mL35vbW+Tto8abf5rFNHyedqeeoEIPIm97AI3hYaJ8BKiMOb1cc+5tVqqaeo7yZ8eACIgUTQXmZgEltUwCt47jEkLTPFoi0jfqZgHs8gJeyCaXms0dAwCxSCxSIZjfwcBI8zUqfNOj/JoBxVa9Fpv8qkmXA2uSzSFep5LuMD0LWyFpmwNgrJMAMXOxntzEzJyolgq+BqiBhlQ8ZYQQEKSCTIrdGgscmWespoLoiGZ8wAaKEdcYnPH5/BSozzhsdZNO20xGOnio7YveuSGPFYh8Hvynj81NlVGUIpYhRV6vxzEMBzvVatH5UhC/9xpPIADOQ8oFH1wTwE8cehp0fFPH0a33wPcLGVQEa6jQ+OVmGVoRCidF0awobmwO8fqiIfIlRW0MwZmQchTEgC/qLwK8XDBqfzGHlEzk8+Pxf+LnHYNPqAM3LUtj7RQm/56zLwvVZjWKZkfaB1cvTLotvHym5g/AoOlBjEXApGriQe/60+OOSxYGvQ7z0fsFlaO3KDLovWhz8NnT1v/MmH7l+iwXXaCxf7OOHX2Kc7opRkaZhAp0UAYEUQE6R8oDaasLZbrk2gGvnKQQpwv62spu3tjGNKAbuuDHlxLfnWAml8tgm72GikE4Y0MYghIQI9MRPEc50GzQu8bEgq3H3LSk37/CJsuuO0U4vmLARuVYE0F9izKtRLsD5nHVjfQXGvi9DJ9b1TRncdoOP4+0ROs6Zy615xQSMGIxNzEY2WlinsaE5cKc/fCJ06ZXySBtK729eU4HqgLDnaAmxHWlikyqBUonBXFWp8dWLc93YnMpkx3ePhS7F0vdywJNnI/zYFWNpvYdSmfHxdxEqxxDfuARowIz2t4WoqVTO/QS5PsanJ8t4T1LuDTifSpxvx4EC7mvM4PszEc7nzJjqvxxn0cMXRp0iP4ipJFb8z5ikXdIsueAhhOXk5Ti5A0ScY9V+3AwIJID4+H+VUbIzdH8JJi1ZkU7GBy+r8eCNN2GiG7m5rk8xKahpeXdMAYrZniH5myz37ayDjbxA9pKWy32062Im4rJVfgXY8lHFsX3ZRvlL0KKe2SAh/2y0kVcYFD+nOt7MdlobPaYzczSUVgw2MxdbJE3Wq6z1TVTY3tE6/5CSl3HnruxbcaFnC8jLa79Gz5QwlV+lSKdVnO/d3nldduvlx+ng87xhQ88ynUpvZbarYE3VQE9NBxsm5YUg/zNj8i90tmY/lCF5tv8NU9b7XJCcMBkAAAAASUVORK5CYII=" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="shortcut icon" href="./favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
+  <link rel="shortcut icon" href="./icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
 
@@ -1266,7 +1266,7 @@
             <span id="revealAnswersText">Reveal Answers</span>
           </button>
           <button class="drawer-action-btn" id="highlightAnswersBtn" style="display: none;">
-            <span>🎯</span> <span id="highlightAnswersText">Highlight Answers</span>
+            <span id="highlightAnswersText">Highlight</span>
           </button>
 
         </div>
@@ -1735,7 +1735,7 @@
       highlightAnswersBtn.classList.toggle('active', !!state.isHighlightAnswers);
       const textSpan = document.getElementById('highlightAnswersText');
       if (textSpan) {
-        textSpan.textContent = state.isHighlightAnswers ? 'Highlight: ON' : 'Highlight Answers';
+        textSpan.textContent = 'Highlight';
       }
     }
 

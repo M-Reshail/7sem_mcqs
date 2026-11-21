@@ -8,11 +8,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>Artificial Neural Networks (ANN) – MCQ Bank (200 MCQs)</title>
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAERUlEQVR4nN1XW2gdRRj+/pnZ3bPn5CTRJNiWQrzESosVbw0xD2kfohQfeoMUfBD0QVqKvllbQyUUE6EPFUGl9k3QFxvUQotEvII0trQqUi8PpViklVIam/ZcevYy88vM8cQmTVKrJ4n4cw67O7P7f99883+zOwQAfX0sh4dJ71x1tsX3G7cBvNGwWQkYCYDwr4NYQJ0iIQ+lprhvaPS20wMDLHbvJkN9fQfk8PBmvbPrfG+gcm95IrwrNRWkJkI9Q5IHJUOkJh7T5urzg6Otbx/oY+lG91LX76uVyn7J0Eh0WYMEESDqSYDB9mek8GRWNaEQXdw6dLRtPw2sPteq08wJRWF7osspEal6Ak9DxEh4DEJsUHlEpHGwNSOb2hNd0nMNboNAQnMCT4QhWA0IEDYnusJW9rkGnyBBJCNdZABr7Yjv1RzZOZ83AtVgIlAoCBZ7YYJhuK6VfvNBtMAEUF+v/z8JkLXHlDK1E3dt26TzKRlvVOLiRuBJxIiv8iSTRmWGTv9KnsYAG9jFFlHJLboT99u+f0RASKB8hdG7JYsNL+ZQKVYTh3nCM/sa0bJUuuSW4NrnQrTdIbHkHoWnXstbf8FowAsI63bkEGQJxkz/XhUzEbDJmxcJ3PmQQvt9HhbfLZ0S0gM6Oj2s35GFMQyTAouXKWQaCMoHlvf4WPN0iPK4cddLlysIu9zxTSggJNyIV/b6OPNdiuMHK+jcmEGlwMjkBX78Inb9j27JojBmoBPAJEAmR/j+4wgdqzysWOOjNM5IY54RfGYFGJAKWNFTJXDqWOJG3XCrcGB+lvD+YAkPPB7g9vs9VIrGFZ/0yIEe2lvCuu05+CG5qZhtkVdTG2wiK/WiDuVkf3hDAB0D+RaBZd0ezv2cusTj5zU+3V/Gpl05p4ydY5Mycs2EHz6P0bkpwfoXsihfNhCzlLq4jgBVq7z7iQDffhTj3e0FvDdQxMgbZfQ8mYFU5NRpaBE49mGES78ZN1VWBRWQm75cs8DhvWVXlFY5O6CZ7CimNljJsk0CfobwzeGoKq0ETn4WoTDGuGWJwK8nU8BU53zk9TJOH0/cc6VLBhfOGHgBkFQYH7xSwtmf0qoDZgja1T12XYlYtmmCCXB7g/W59b7yqkergr3PAttC8zI0sRZYFVyOGM4p1o4zhZqu0Saxdqud10h5fvXakrBH+ycJVxPuvLZC/tlnbWgrsJbjbxNwMc1DtUSTEk512TUXswH/l15GtMAEWP8iyXMf7fMNzsxaMMRBT7gqmsUs9Q3DbDyRBREfEaD0zYopXlEisBzmgQSzJKkNtP08HxR2o8gmfTZUeSmEElaWuYO2AySTD5q92JT3vHyk9RNhN4hDX7e9U0gubhPwShnVKGmOCtNXDUKKQBSiy3v80bZ+uyt3SLXteX/XhQc9GfYzzGPMuoGrpq4HGyaoSAr1VZJWXh062jLC1Y0J/wGQKt+bJNr+CwAAAABJRU5ErkJggg==" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-ann-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-ann-16x16.png" />
-  <link rel="icon" type="image/svg+xml" href="./favicon-ann.svg" />
-  <link rel="shortcut icon" href="./favicon-ann.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-ann.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-ann-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-ann-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="./icons/favicon-ann.svg" />
+  <link rel="shortcut icon" href="./icons/favicon-ann.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-ann.png" />
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
 
@@ -1266,7 +1266,7 @@
             <span id="revealAnswersText">Reveal Answers</span>
           </button>
           <button class="drawer-action-btn" id="highlightAnswersBtn" style="display: none;">
-            <span>🎯</span> <span id="highlightAnswersText">Highlight Answers</span>
+            <span id="highlightAnswersText">Highlight</span>
           </button>
 
         </div>
@@ -1735,7 +1735,7 @@
       highlightAnswersBtn.classList.toggle('active', !!state.isHighlightAnswers);
       const textSpan = document.getElementById('highlightAnswersText');
       if (textSpan) {
-        textSpan.textContent = state.isHighlightAnswers ? 'Highlight: ON' : 'Highlight Answers';
+        textSpan.textContent = 'Highlight';
       }
     }
 

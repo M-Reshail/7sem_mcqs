@@ -1,7 +1,7 @@
 import json
 
 # 1. Load Data
-with open('mcqs.json', encoding='utf-8') as f:
+with open('DV/mcqs.json', encoding='utf-8') as f:
     dv_raw = json.load(f)
 dv_topics = dv_raw['topics']
 dv_mcqs = dv_raw['mcqs']
@@ -2467,15 +2467,16 @@ def generate_page(config):
 import base64
 
 def get_icon_html(code, base_name):
-    with open(f'{base_name}-32x32.png', 'rb') as f:
+    icon_path = f'icons/{base_name}-32x32.png'
+    with open(icon_path, 'rb') as f:
         b64_png = base64.b64encode(f.read()).decode()
     touch_icon = f'apple-touch-icon-{code.lower()}.png' if code != 'DV' else 'apple-touch-icon.png'
     return f'''<link rel="icon" type="image/png" href="data:image/png;base64,{b64_png}" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./{base_name}-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./{base_name}-16x16.png" />
-  <link rel="icon" type="image/svg+xml" href="./{base_name}.svg" />
-  <link rel="shortcut icon" href="./{base_name}.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./{touch_icon}" />'''
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/{base_name}-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/{base_name}-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="./icons/{base_name}.svg" />
+  <link rel="shortcut icon" href="./icons/{base_name}.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/{touch_icon}" />'''
 
 # Configurations for all 4 files
 dv_config = {
