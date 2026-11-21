@@ -667,21 +667,31 @@ BASE_CSS = '''
       color: #fff;
     }
 
-    .drawer-action-btn {
-      width: 100%;
+    .drawer-btn-row {
       display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.55rem;
+    }
+    .drawer-action-btn {
+      flex: 1 1 calc(50% - 0.25rem);
+      min-width: 110px;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1rem;
+      gap: 0.4rem;
+      padding: 0.48rem 0.65rem;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-color);
       background: var(--bg-surface);
       color: var(--text-primary);
-      font-size: 0.86rem;
-      font-weight: 700;
+      font-size: 0.8rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.15s;
+      text-align: center;
+      line-height: 1.25;
+      box-sizing: border-box;
     }
     .drawer-action-btn:hover {
       border-color: var(--primary);
@@ -692,6 +702,9 @@ BASE_CSS = '''
       border-color: var(--success) !important;
       background: var(--success-light) !important;
       color: var(--success-text) !important;
+    }
+    .drawer-action-btn.full-width {
+      flex: 1 1 100%;
     }
     .drawer-action-btn.danger {
       color: var(--danger);
@@ -1254,9 +1267,14 @@ def generate_page(config):
     else:
         topic_section_html = ''
 
-    topic_wise_btn_html = f'''        <button class="drawer-action-btn" id="topicWiseToggleBtn" style="margin-top: 0.45rem;">
-          <span id="topicWiseIcon">📚</span> <span id="topicWiseText">Topic-wise MCQs</span>
-        </button>''' if has_topic_wise_toggle else ""
+    has_highlight_toggle = config.get('has_highlight_toggle', True)
+    highlight_btn_html = '''          <button class="drawer-action-btn" id="highlightAnswersBtn" style="display: none;">
+            <span>🎯</span> <span id="highlightAnswersText">Highlight Answers</span>
+          </button>''' if has_highlight_toggle else ""
+
+    topic_wise_btn_html = f'''          <button class="drawer-action-btn" id="topicWiseToggleBtn">
+            <span id="topicWiseIcon">📚</span> <span id="topicWiseText">Topic-wise MCQs</span>
+          </button>''' if has_topic_wise_toggle else ""
 
     # Filter pills in Drawer
     if code == 'DV':
@@ -1390,10 +1408,13 @@ def generate_page(config):
           <button class="drawer-segmented-btn active" data-view="list" id="viewListTab">List Stream</button>
           <button class="drawer-segmented-btn" data-view="focus" id="viewFocusTab">Focus Single</button>
         </div>
-        <button class="drawer-action-btn" id="revealAnswersBtn" style="margin-top: 0.6rem;">
-          <span id="revealAnswersText">Reveal Answers</span>
-        </button>
+        <div class="drawer-btn-row">
+          <button class="drawer-action-btn" id="revealAnswersBtn">
+            <span id="revealAnswersText">Reveal Answers</span>
+          </button>
+{highlight_btn_html}
 {topic_wise_btn_html}
+        </div>
       </div>
 
 {topic_section_html}
@@ -1413,14 +1434,14 @@ def generate_page(config):
         <div class="drawer-section-title">
           <span>⚡ Actions</span>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+        <div class="drawer-btn-row">
           <button class="drawer-action-btn" id="drawerShuffleBtn">
-            <span>🔀</span> <span id="shuffleBtnText">Shuffle Questions</span>
+            <span>🔀</span> <span id="shuffleBtnText">Shuffle</span>
           </button>
           <button class="drawer-action-btn" id="drawerGridBtn">
-            <span>📑</span> <span>Open Navigator Grid (Q1–Q{total_q})</span>
+            <span>📑</span> <span>Grid Jump</span>
           </button>
-          <button class="drawer-action-btn danger" id="resetProgressBtn">
+          <button class="drawer-action-btn full-width danger" id="resetProgressBtn">
             <span>↺</span> <span>Reset All Answers &amp; Scores</span>
           </button>
         </div>
@@ -1482,6 +1503,7 @@ def generate_page(config):
       viewType: localStorage.getItem(storagePrefix + 'view_type') || 'list',
       filter: 'all',
       isRevisionMode: localStorage.getItem(storagePrefix + 'revision_mode') === 'true',
+      isHighlightAnswers: localStorage.getItem(storagePrefix + 'highlight_answers') === 'true',
       isTopicWise: localStorage.getItem(storagePrefix + 'topic_wise') === 'true',
       theme: localStorage.getItem(storagePrefix + 'theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
       userAnswers: JSON.parse(localStorage.getItem(storagePrefix + 'answers') || '{{}}'),
@@ -1521,6 +1543,7 @@ def generate_page(config):
     const revisionToggleBtn = document.getElementById('revisionToggleBtn');
     const revealAnswersBtn = document.getElementById('revealAnswersBtn');
     const revealAnswersText = document.getElementById('revealAnswersText');
+    const highlightAnswersBtn = document.getElementById('highlightAnswersBtn');
     const topicWiseToggleBtn = document.getElementById('topicWiseToggleBtn');
     const drawerTopicSection = document.getElementById('drawerTopicSection');
     const drawerThemeBtn = document.getElementById('drawerThemeBtn');
@@ -1814,6 +1837,9 @@ def generate_page(config):
       if (activeRevisionSummary) {{
         activeRevisionSummary.style.display = active ? 'inline-flex' : 'none';
       }}
+      if (highlightAnswersBtn) {{
+        highlightAnswersBtn.style.display = active ? 'inline-flex' : 'none';
+      }}
     }}
 
     function toggleRevealAnswers() {{
@@ -1826,6 +1852,26 @@ def generate_page(config):
 
     if (revealAnswersBtn) revealAnswersBtn.addEventListener('click', toggleRevealAnswers);
     if (revisionToggleBtn) revisionToggleBtn.addEventListener('click', toggleRevealAnswers);
+
+    // Highlight Answers Handler
+    function updateHighlightUI() {{
+      if (!highlightAnswersBtn) return;
+      highlightAnswersBtn.classList.toggle('active', !!state.isHighlightAnswers);
+      const textSpan = document.getElementById('highlightAnswersText');
+      if (textSpan) {{
+        textSpan.textContent = state.isHighlightAnswers ? 'Highlight: ON' : 'Highlight Answers';
+      }}
+    }}
+
+    function toggleHighlightAnswers() {{
+      state.isHighlightAnswers = !state.isHighlightAnswers;
+      localStorage.setItem(storagePrefix + 'highlight_answers', state.isHighlightAnswers ? 'true' : 'false');
+      updateHighlightUI();
+      renderActiveView();
+      showToast(state.isHighlightAnswers ? 'Correct options highlighted' : 'Option highlighting off');
+    }}
+
+    if (highlightAnswersBtn) highlightAnswersBtn.addEventListener('click', toggleHighlightAnswers);
 
     // Topic-wise View Handler
     function updateTopicWiseUI() {{
@@ -1971,8 +2017,10 @@ def generate_page(config):
         optBtn.appendChild(textSpan);
 
         if (isRevision) {{
-          // Do not highlight option button in revision mode as requested
           optBtn.style.cursor = 'default';
+          if (state.isHighlightAnswers && key === q.answer) {{
+            optBtn.classList.add('revealed-correct');
+          }}
         }} else if (isRevealed) {{
           if (key === userAns && isCorrect) {{
             optBtn.classList.add('selected-correct');
@@ -2404,6 +2452,7 @@ def generate_page(config):
     }}
     buildTopicSelector();
     updateRevealUI();
+    updateHighlightUI();
     updateTopicWiseUI();
     updateStats();
     renderActiveView();
